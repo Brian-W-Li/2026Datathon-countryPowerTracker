@@ -1,0 +1,17 @@
+[
+  {
+    "bucket_id": "CPM",
+    "bucket_name": "Carbon Pricing & Markets",
+    "lift": 1.84
+  },
+  {
+    "bucket_id": "RE",
+    "bucket_name": "Renewable Energy Incentives",
+    "lift": 1.72
+  },
+  {
+    "bucket_id": "FPD",
+    "bucket_name": "Fossil Fuel Phase-Down",
+    "lift": 1.45
+  }
+]
