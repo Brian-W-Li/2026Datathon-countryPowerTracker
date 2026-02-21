@@ -14,6 +14,7 @@ Responsibilities:
 - Preprocess data:
   * Select the latest emission value per country or the average recently
 - Returns:
+
     data/
       countries.json              // country-level emissions + metadata
       policy_buckets.json        // policies grouped by country and bucket
