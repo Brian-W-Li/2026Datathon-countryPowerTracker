@@ -14,11 +14,10 @@ Responsibilities:
 - Preprocess data:
   * Select the latest emission value per country or the average recently
 - Returns:
+- data/
+- countries.json // country-level emissions + metadata
+- policy_buckets.json        // policies grouped by country and bucket
+- lift_by_bucket.json        // lift score per policy category
+- recommendations.json       // recommended policy buckets top 3 maybe?
 
-    data/
-      countries.json              // country-level emissions + metadata
-      policy_buckets.json        // policies grouped by country and bucket
-      lift_by_bucket.json        // lift score per policy category
-      recommendations.json       // recommended policy buckets top 3 maybe?
-
-  Front end will use this data and display it
+- Front end will use this data and display it
