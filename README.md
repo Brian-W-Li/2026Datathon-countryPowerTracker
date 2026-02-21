@@ -153,7 +153,7 @@ One entry per country. Used for the trend chart inside a country card.
 | View | What it shows | Driven by |
 |---|---|---|
 | **World Map** | Countries colored by green score | `countries.json` |
-| **Country Card** | Trend chart + policies grouped by sector | `sparklines.json` + `policy_buckets.json` + `clean_energy.json` |
+| **Country Card** | Trend chart + policies grouped by sector | `sparklines.json` + `policy_buckets.json` + `clean_energy.json` + 'country_deep_dive.json'|
 | **Lift Chart** | Sectors ranked by lift score | `lift_by_bucket.json` |
 | **Recommendations** | Top 3 global sectors | `recommendations.json` |
 
@@ -174,8 +174,18 @@ One entry per country. Used for the renewable energy chart inside a country card
         "clean_share": 0.0
 },
 ```
-
-
+### 'country_deep_dive.json'
+One entry per country. Two CO₂ metrics over time (1990–2024) for trend charts. 
+```json
+{
+  "iso3": "USA",
+  "series": [
+    { "year": 1990, "co2_per_capita": 20.25, "co2_per_gdp": 519.2 },
+    { "year": 2000, "co2_per_capita": 21.4,  "co2_per_gdp": 442.29 },
+    { "year": 2024, "co2_per_capita": 14.2,  "co2_per_gdp": 213.96 }
+  ]
+}
+```
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js · TypeScript · D3.js · Recharts
