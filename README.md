@@ -20,9 +20,8 @@ One entry per country. Used to color the map and populate country cards.
   "iso3": "USA",
   "name": "United States",
   "region": "North America",
-  "green_score": 72.4, (or whatever score to rank the country)
-  "data_year": 2022,
-  "policy_count": 38
+  "green_score": 72.4,
+  "data_year": 2022
 }
 ```
 
@@ -45,9 +44,10 @@ One entry per policy. Used to show what policies a country has and which categor
 ---
 
 ### `lift_by_bucket.json`
-One entry per policy category. Used for the lift score chart.
-lift answers: which policy categories do the well-performing countries tend to have?
-Lift is calculated by comparing how often a policy bucket appears in top-performing countries vs all countries.
+One entry per policy category. Answers: which policy buckets do the top-performing countries tend to have?
+
+Lift = % of top countries with this bucket / % of all countries with this bucket. A lift > 1 means the bucket is more common among top performers.
+
 ```json
 {
   "bucket_id": "CPM",
@@ -59,7 +59,7 @@ Lift is calculated by comparing how often a policy bucket appears in top-perform
 ---
 
 ### `recommendations.json`
-One entry per country. Used for the recommendations panel.
+The top 3 policy buckets globally — the buckets most associated with top-performing countries.
 
 ```json
 [
@@ -79,7 +79,6 @@ One entry per country. Used for the recommendations panel.
     "lift": 1.45
   }
 ]
-
 ```
 
 ---
@@ -106,8 +105,8 @@ One entry per country. Used for the trend chart inside a country card.
 |---|---|---|
 | **World Map** | Countries colored by green score | `countries.json` |
 | **Country Card** | Trend chart + policies in place | `sparklines.json` + `policy_buckets.json` |
-| **Lift Chart** | Policy categories ranked by lift score | `lift_by_bucket.json` |
-| **Recommendations** | Top 3 missing policy buckets for a country | `recommendations.json` |
+| **Lift Chart** | Policy buckets ranked by lift score | `lift_by_bucket.json` |
+| **Recommendations** | Top 3 global policy buckets | `recommendations.json` |
 
 ---
 
