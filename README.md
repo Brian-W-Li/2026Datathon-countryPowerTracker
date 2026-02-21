@@ -159,6 +159,23 @@ One entry per country. Used for the trend chart inside a country card.
 
 ---
 
+### `clean_energy.json`
+One entry per country. Used for the renewable energy chart inside a country card.
+
+```json
+[
+{
+    "iso3": "ABW",
+    "series": [
+      {
+        "year": 2006,
+        "clean_capacity_mw": 0.0,
+        "total_capacity_mw": 23.4,
+        "clean_share": 0.0
+},
+```
+
+
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js · TypeScript · D3.js · Recharts
