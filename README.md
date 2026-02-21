@@ -28,26 +28,48 @@ One entry per country. Used to color the map and populate country cards.
 ---
 
 ### `policy_buckets.json`
-One entry per policy. Used to show what policies a country has and which category they fall into.
+One entry per policy. Each policy belongs to one sector (bucket). Used to show what policies a country has.
 
 ```json
 {
   "iso3": "DEU",
   "country": "Germany",
   "policy_name": "Renewable Energy Act (EEG)",
-  "start_year": 2000
-  "- instrument_type: one of [carbon_tax, cap_and_trade, subsidy, tax_credit, feed_in_tariff, mandate, ban, standard, voluntary_agreement, labeling, reporting, framework_legislation, other]
-- legally_binding: true or false (is this an enforceable law/regulation/standard, or a plan/strategy/voluntary program?)
-- has_quantified_target: true or false (does it mention a specific number like "30% by 2030" or "net zero by 2050"?)"
+  "start_year": 2000,
+  "bucket_id": "RE",
+  "bucket_name": "Renewable Energy Incentives",
+  "instrument_type": "feed_in_tariff",
+  "legally_binding": true,
+  "has_quantified_target": false,
+  "scope": "national"
 }
 ```
+
+**Bucket (sector) options:**
+
+| `bucket_id` | `bucket_name` |
+|---|---|
+| `RE` | Renewable Energy Incentives |
+| `FPD` | Fossil Fuel Phase-Down |
+| `CPM` | Carbon Pricing & Markets |
+| `EEF` | Energy Efficiency |
+| `GRT` | Grid & Transport Decarbonisation |
+| `LU` | Land Use, Forests & Agriculture |
+| `CF` | Climate Finance & Governance |
+
+**Attribute options:**
+
+- `instrument_type`: `carbon_tax` · `cap_and_trade` · `subsidy` · `tax_credit` · `feed_in_tariff` · `mandate` · `ban` · `standard` · `voluntary_agreement` · `labeling` · `reporting` · `framework_legislation` · `other`
+- `legally_binding`: `true` or `false`
+- `has_quantified_target`: `true` or `false`
+- `scope`: `national` · `international` · `state` · `provisional`
 
 ---
 
 ### `lift_by_bucket.json`
-One entry per policy category. Answers: which policy buckets do the top-performing countries tend to have?
+One entry per sector. Answers: which sectors do the top-performing countries tend to have?
 
-Lift = % of top countries with this bucket / % of all countries with this bucket. A lift > 1 means the bucket is more common among top performers.
+Lift = % of top countries with this sector / % of all countries with this sector. A lift > 1 means the sector is more common among top performers.
 
 ```json
 {
@@ -60,7 +82,7 @@ Lift = % of top countries with this bucket / % of all countries with this bucket
 ---
 
 ### `recommendations.json`
-The top 3 policy buckets globally — the buckets most associated with top-performing countries.
+The top 3 sectors globally — the sectors most associated with top-performing countries.
 
 ```json
 [
@@ -105,9 +127,9 @@ One entry per country. Used for the trend chart inside a country card.
 | View | What it shows | Driven by |
 |---|---|---|
 | **World Map** | Countries colored by green score | `countries.json` |
-| **Country Card** | Trend chart + policies in place | `sparklines.json` + `policy_buckets.json` |
-| **Lift Chart** | Policy buckets ranked by lift score | `lift_by_bucket.json` |
-| **Recommendations** | Top 3 global policy buckets | `recommendations.json` |
+| **Country Card** | Trend chart + policies grouped by sector | `sparklines.json` + `policy_buckets.json` |
+| **Lift Chart** | Sectors ranked by lift score | `lift_by_bucket.json` |
+| **Recommendations** | Top 3 global sectors | `recommendations.json` |
 
 ---
 
@@ -125,7 +147,5 @@ One entry per country. Used for the trend chart inside a country card.
 npm install
 npm run dev
 ```
-
-each country has multiple policies each policy has 3+ attributes 
 
 Open [http://localhost:3000](http://localhost:3000). Requires the 5 JSON files to be present in `public/data/`.
