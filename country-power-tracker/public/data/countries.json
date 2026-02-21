@@ -1318,7 +1318,7 @@
   {
     "iso3": "GRL",
     "name": "Greenland",
-    "region": "Other",
+    "region": "North America",
     "green_score": null,
     "data_year": 2024
   },
@@ -1416,7 +1416,7 @@
   {
     "iso3": "SHN",
     "name": "Saint Helena",
-    "region": "Other",
+    "region": "Africa",
     "green_score": null,
     "data_year": 2024
   },
