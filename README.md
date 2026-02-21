@@ -36,6 +36,9 @@ One entry per policy. Used to show what policies a country has and which categor
   "country": "Germany",
   "policy_name": "Renewable Energy Act (EEG)",
   "start_year": 2000
+  "- instrument_type: one of [carbon_tax, cap_and_trade, subsidy, tax_credit, feed_in_tariff, mandate, ban, standard, voluntary_agreement, labeling, reporting, framework_legislation, other]
+- legally_binding: true or false (is this an enforceable law/regulation/standard, or a plan/strategy/voluntary program?)
+- has_quantified_target: true or false (does it mention a specific number like "30% by 2030" or "net zero by 2050"?)"
 }
 ```
 
