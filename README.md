@@ -1,70 +1,23 @@
-# 🌍 Country Power Tracker
+# 2026Datathon-countryPowerTracker
+A renewable energy progress tracker for global countries with respect to the COP28 Agreement, with recommended steps for each country
 
-Frontend dashboard for visualizing country-level CO₂ emissions and policy-based recommendations.
 
----
+A two-stage pipeline that separates data processing from application logic
 
-## 📌 Overview
+## Data processing layer (Python)
+We use python for all data ingestion, cleaning, and analysis
 
-This frontend application consumes precomputed data to display:
+Responsibilities:
+- Load raw datasets:
+  * CO2 emissions per country
+  * Policy datasets
+- Preprocess data:
+  * Select the latest emission value per country or the average recently
+- Returns:
+- data/
+- countries.json // country-level emissions + metadata
+- policy_buckets.json        // policies grouped by country and bucket
+- lift_by_bucket.json        // lift score per policy category
+- recommendations.json       // recommended policy buckets top 3 maybe?
 
-- Country-level CO₂ emissions
-- Policy categories (buckets) per country
-- Policy effectiveness signals (lift scores)
-- Recommended policy categories for each country
-
-All data processing, aggregation, and analysis are performed in a separate backend pipeline (Python).
-
----
-
----
-
-## 📥 Inputs (Required Data)
-
-The frontend expects the following JSON files in:
-
-`countries.json`
-Country-level emissions and metadata
-
-```json
-{
-  "iso3": "USA",
-  "name": "United States",
-  "co2_per_capita": 14.7,
-  "data_year": 2022
-}
-
-`policy_buckets.json`
-
-{
-  "iso3": "DEU",
-  "bucket_id": "RE",
-  "bucket_name": "Renewable Energy Incentives"
-}
-
-`lift_by_bucket.json`
-{
-  "bucket_id": "CPM",
-  "bucket_name": "Carbon Pricing & Markets",
-  "lift": 1.84
-}
-
-`recommendations.json`
-{
-  "iso3": "IND",
-  "recommendations": [
-    {
-      "bucket_id": "CPM",
-      "bucket_name": "Carbon Pricing & Markets",
-      "lift": 1.84
-    }
-  ]
-}
-
-Outputs (frontend)
-Country dashboard: map of countries with CO2 emmissions per country
-Policy buckets view: policy categories associated with each country
-Lift insights: Visualization of lift scores per policy category
-Recommenations: Top policy categories per country
-
-Tech stack: Javascript frontend Python backend
+- Front end will use this data and display it
