@@ -1,0 +1,1500 @@
+[
+  {
+    "iso3": "EST",
+    "name": "Estonia",
+    "region": "Europe",
+    "green_score": 75.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LUX",
+    "name": "Luxembourg",
+    "region": "Europe",
+    "green_score": 75.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "DEU",
+    "name": "Germany",
+    "region": "Europe",
+    "green_score": 74.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "FIN",
+    "name": "Finland",
+    "region": "Europe",
+    "green_score": 73.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "region": "Europe",
+    "green_score": 72.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SWE",
+    "name": "Sweden",
+    "region": "Europe",
+    "green_score": 70.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NOR",
+    "name": "Norway",
+    "region": "Europe",
+    "green_score": 69.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AUT",
+    "name": "Austria",
+    "region": "Europe",
+    "green_score": 68.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CHE",
+    "name": "Switzerland",
+    "region": "Europe",
+    "green_score": 67.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "DNK",
+    "name": "Denmark",
+    "region": "Europe",
+    "green_score": 67.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GRC",
+    "name": "Greece",
+    "region": "Europe",
+    "green_score": 67.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "FRA",
+    "name": "France",
+    "region": "Europe",
+    "green_score": 67.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "region": "Europe",
+    "green_score": 66.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MLT",
+    "name": "Malta",
+    "region": "Europe",
+    "green_score": 66.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BEL",
+    "name": "Belgium",
+    "region": "Europe",
+    "green_score": 66.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "IRL",
+    "name": "Ireland",
+    "region": "Europe",
+    "green_score": 65.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CZE",
+    "name": "Czechia",
+    "region": "Europe",
+    "green_score": 65.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SVK",
+    "name": "Slovakia",
+    "region": "Europe",
+    "green_score": 65.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ISL",
+    "name": "Iceland",
+    "region": "Europe",
+    "green_score": 64.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "POL",
+    "name": "Poland",
+    "region": "Europe",
+    "green_score": 64.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LTU",
+    "name": "Lithuania",
+    "region": "Europe",
+    "green_score": 64.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ESP",
+    "name": "Spain",
+    "region": "Europe",
+    "green_score": 64.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AUS",
+    "name": "Australia",
+    "region": "Oceania",
+    "green_score": 63.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SVN",
+    "name": "Slovenia",
+    "region": "Europe",
+    "green_score": 62.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "HRV",
+    "name": "Croatia",
+    "region": "Europe",
+    "green_score": 62.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PRT",
+    "name": "Portugal",
+    "region": "Europe",
+    "green_score": 61.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "JPN",
+    "name": "Japan",
+    "region": "Asia",
+    "green_score": 61.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CAN",
+    "name": "Canada",
+    "region": "North America",
+    "green_score": 61.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ITA",
+    "name": "Italy",
+    "region": "Europe",
+    "green_score": 60.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LVA",
+    "name": "Latvia",
+    "region": "Europe",
+    "green_score": 60.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "HUN",
+    "name": "Hungary",
+    "region": "Europe",
+    "green_score": 59.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BLR",
+    "name": "Belarus",
+    "region": "Europe",
+    "green_score": 58.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NZL",
+    "name": "New Zealand",
+    "region": "Oceania",
+    "green_score": 57.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ROU",
+    "name": "Romania",
+    "region": "Europe",
+    "green_score": 57.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "USA",
+    "name": "United States",
+    "region": "North America",
+    "green_score": 57.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SUR",
+    "name": "Suriname",
+    "region": "South America",
+    "green_score": 56.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BGR",
+    "name": "Bulgaria",
+    "region": "Europe",
+    "green_score": 56.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BHS",
+    "name": "Bahamas",
+    "region": "North America",
+    "green_score": 55.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ATG",
+    "name": "Antigua and Barbuda",
+    "region": "North America",
+    "green_score": 55.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CRI",
+    "name": "Costa Rica",
+    "region": "North America",
+    "green_score": 55.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "UKR",
+    "name": "Ukraine",
+    "region": "Europe",
+    "green_score": 54.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "VCT",
+    "name": "Saint Vincent and the Grenadines",
+    "region": "North America",
+    "green_score": 54.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CYP",
+    "name": "Cyprus",
+    "region": "Asia",
+    "green_score": 53.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "VEN",
+    "name": "Venezuela",
+    "region": "South America",
+    "green_score": 53.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GAB",
+    "name": "Gabon",
+    "region": "Africa",
+    "green_score": 53.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BRB",
+    "name": "Barbados",
+    "region": "North America",
+    "green_score": 53.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BRA",
+    "name": "Brazil",
+    "region": "South America",
+    "green_score": 53.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SGP",
+    "name": "Singapore",
+    "region": "Asia",
+    "green_score": 53.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PAN",
+    "name": "Panama",
+    "region": "North America",
+    "green_score": 52.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CUB",
+    "name": "Cuba",
+    "region": "North America",
+    "green_score": 52.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TTO",
+    "name": "Trinidad and Tobago",
+    "region": "North America",
+    "green_score": 52.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ALB",
+    "name": "Albania",
+    "region": "Europe",
+    "green_score": 52.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ZWE",
+    "name": "Zimbabwe",
+    "region": "Africa",
+    "green_score": 51.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ARE",
+    "name": "United Arab Emirates",
+    "region": "Asia",
+    "green_score": 51.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ECU",
+    "name": "Ecuador",
+    "region": "South America",
+    "green_score": 51.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "OMN",
+    "name": "Oman",
+    "region": "Asia",
+    "green_score": 51.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LCA",
+    "name": "Saint Lucia",
+    "region": "North America",
+    "green_score": 51.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KOR",
+    "name": "South Korea",
+    "region": "Asia",
+    "green_score": 50.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MKD",
+    "name": "North Macedonia",
+    "region": "Europe",
+    "green_score": 50.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TWN",
+    "name": "Taiwan",
+    "region": "Asia",
+    "green_score": 50.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TLS",
+    "name": "East Timor",
+    "region": "Asia",
+    "green_score": 49.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SRB",
+    "name": "Serbia",
+    "region": "Europe",
+    "green_score": 49.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "COL",
+    "name": "Colombia",
+    "region": "South America",
+    "green_score": 49.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CHL",
+    "name": "Chile",
+    "region": "South America",
+    "green_score": 49.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "DMA",
+    "name": "Dominica",
+    "region": "North America",
+    "green_score": 49.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BWA",
+    "name": "Botswana",
+    "region": "Africa",
+    "green_score": 49.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GUY",
+    "name": "Guyana",
+    "region": "South America",
+    "green_score": 49.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "JAM",
+    "name": "Jamaica",
+    "region": "North America",
+    "green_score": 48.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BRN",
+    "name": "Brunei",
+    "region": "Asia",
+    "green_score": 48.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ISR",
+    "name": "Israel",
+    "region": "Asia",
+    "green_score": 48.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SYC",
+    "name": "Seychelles",
+    "region": "Africa",
+    "green_score": 47.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KAZ",
+    "name": "Kazakhstan",
+    "region": "Asia",
+    "green_score": 47.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MNE",
+    "name": "Montenegro",
+    "region": "Europe",
+    "green_score": 47.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "DOM",
+    "name": "Dominican Republic",
+    "region": "North America",
+    "green_score": 47.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BLZ",
+    "name": "Belize",
+    "region": "North America",
+    "green_score": 47.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NIC",
+    "name": "Nicaragua",
+    "region": "North America",
+    "green_score": 47.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "JOR",
+    "name": "Jordan",
+    "region": "Asia",
+    "green_score": 47.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GEO",
+    "name": "Georgia",
+    "region": "Asia",
+    "green_score": 47.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MUS",
+    "name": "Mauritius",
+    "region": "Africa",
+    "green_score": 47.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "WSM",
+    "name": "Samoa",
+    "region": "Oceania",
+    "green_score": 47.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ARG",
+    "name": "Argentina",
+    "region": "South America",
+    "green_score": 47.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "QAT",
+    "name": "Qatar",
+    "region": "Asia",
+    "green_score": 46.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ZMB",
+    "name": "Zambia",
+    "region": "Africa",
+    "green_score": 46.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "RUS",
+    "name": "Russia",
+    "region": "Europe",
+    "green_score": 46.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PER",
+    "name": "Peru",
+    "region": "South America",
+    "green_score": 46.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MDA",
+    "name": "Moldova",
+    "region": "Europe",
+    "green_score": 46.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BIH",
+    "name": "Bosnia and Herzegovina",
+    "region": "Europe",
+    "green_score": 46.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "FJI",
+    "name": "Fiji",
+    "region": "Oceania",
+    "green_score": 46.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GRD",
+    "name": "Grenada",
+    "region": "North America",
+    "green_score": 45.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "THA",
+    "name": "Thailand",
+    "region": "Asia",
+    "green_score": 45.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TUN",
+    "name": "Tunisia",
+    "region": "Africa",
+    "green_score": 45.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BOL",
+    "name": "Bolivia",
+    "region": "South America",
+    "green_score": 45.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "VUT",
+    "name": "Vanuatu",
+    "region": "Oceania",
+    "green_score": 45.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ARM",
+    "name": "Armenia",
+    "region": "Asia",
+    "green_score": 44.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KWT",
+    "name": "Kuwait",
+    "region": "Asia",
+    "green_score": 44.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KIR",
+    "name": "Kiribati",
+    "region": "Oceania",
+    "green_score": 44.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MEX",
+    "name": "Mexico",
+    "region": "North America",
+    "green_score": 44.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "URY",
+    "name": "Uruguay",
+    "region": "South America",
+    "green_score": 44.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NAM",
+    "name": "Namibia",
+    "region": "Africa",
+    "green_score": 44.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SEN",
+    "name": "Senegal",
+    "region": "Africa",
+    "green_score": 43.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "EGY",
+    "name": "Egypt",
+    "region": "Africa",
+    "green_score": 43.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TZA",
+    "name": "Tanzania",
+    "region": "Africa",
+    "green_score": 43.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BTN",
+    "name": "Bhutan",
+    "region": "Asia",
+    "green_score": 43.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CIV",
+    "name": "Cote d'Ivoire",
+    "region": "Africa",
+    "green_score": 42.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KGZ",
+    "name": "Kyrgyzstan",
+    "region": "Asia",
+    "green_score": 42.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "region": "Africa",
+    "green_score": 42.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "UZB",
+    "name": "Uzbekistan",
+    "region": "Asia",
+    "green_score": 42.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SAU",
+    "name": "Saudi Arabia",
+    "region": "Asia",
+    "green_score": 42.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MHL",
+    "name": "Marshall Islands",
+    "region": "Oceania",
+    "green_score": 42.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SLB",
+    "name": "Solomon Islands",
+    "region": "Oceania",
+    "green_score": 42.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BFA",
+    "name": "Burkina Faso",
+    "region": "Africa",
+    "green_score": 42.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GNB",
+    "name": "Guinea-Bissau",
+    "region": "Africa",
+    "green_score": 42.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "IRN",
+    "name": "Iran",
+    "region": "Asia",
+    "green_score": 41.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GNQ",
+    "name": "Equatorial Guinea",
+    "region": "Africa",
+    "green_score": 41.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "DZA",
+    "name": "Algeria",
+    "region": "Africa",
+    "green_score": 41.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SLV",
+    "name": "El Salvador",
+    "region": "North America",
+    "green_score": 41.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "COG",
+    "name": "Congo",
+    "region": "Africa",
+    "green_score": 41.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "region": "Asia",
+    "green_score": 41.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "FSM",
+    "name": "Micronesia",
+    "region": "Oceania",
+    "green_score": 40.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TKM",
+    "name": "Turkmenistan",
+    "region": "Asia",
+    "green_score": 40.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AZE",
+    "name": "Azerbaijan",
+    "region": "Asia",
+    "green_score": 40.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TON",
+    "name": "Tonga",
+    "region": "Oceania",
+    "green_score": 40.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "HND",
+    "name": "Honduras",
+    "region": "North America",
+    "green_score": 40.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AGO",
+    "name": "Angola",
+    "region": "Africa",
+    "green_score": 40.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NER",
+    "name": "Niger",
+    "region": "Africa",
+    "green_score": 40.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LBN",
+    "name": "Lebanon",
+    "region": "Asia",
+    "green_score": 39.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SLE",
+    "name": "Sierra Leone",
+    "region": "Africa",
+    "green_score": 39.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PRY",
+    "name": "Paraguay",
+    "region": "South America",
+    "green_score": 39.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MAR",
+    "name": "Morocco",
+    "region": "Africa",
+    "green_score": 39.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "COD",
+    "name": "DR Congo",
+    "region": "Africa",
+    "green_score": 39.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SDN",
+    "name": "Sudan",
+    "region": "Africa",
+    "green_score": 39.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CAF",
+    "name": "Central African Republic",
+    "region": "Africa",
+    "green_score": 39.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MOZ",
+    "name": "Mozambique",
+    "region": "Africa",
+    "green_score": 39.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LKA",
+    "name": "Sri Lanka",
+    "region": "Asia",
+    "green_score": 38.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SWZ",
+    "name": "Eswatini",
+    "region": "Africa",
+    "green_score": 38.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CMR",
+    "name": "Cameroon",
+    "region": "Africa",
+    "green_score": 38.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "COM",
+    "name": "Comoros",
+    "region": "Africa",
+    "green_score": 38.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MDV",
+    "name": "Maldives",
+    "region": "Asia",
+    "green_score": 38.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CPV",
+    "name": "Cape Verde",
+    "region": "Africa",
+    "green_score": 38.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NGA",
+    "name": "Nigeria",
+    "region": "Africa",
+    "green_score": 37.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BEN",
+    "name": "Benin",
+    "region": "Africa",
+    "green_score": 37.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GMB",
+    "name": "Gambia",
+    "region": "Africa",
+    "green_score": 37.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MNG",
+    "name": "Mongolia",
+    "region": "Asia",
+    "green_score": 37.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TUR",
+    "name": "Turkey",
+    "region": "Asia",
+    "green_score": 37.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LSO",
+    "name": "Lesotho",
+    "region": "Africa",
+    "green_score": 36.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GHA",
+    "name": "Ghana",
+    "region": "Africa",
+    "green_score": 36.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PNG",
+    "name": "Papua New Guinea",
+    "region": "Oceania",
+    "green_score": 36.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KEN",
+    "name": "Kenya",
+    "region": "Africa",
+    "green_score": 36.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GIN",
+    "name": "Guinea",
+    "region": "Africa",
+    "green_score": 36.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "HTI",
+    "name": "Haiti",
+    "region": "North America",
+    "green_score": 36.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ETH",
+    "name": "Ethiopia",
+    "region": "Africa",
+    "green_score": 36.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "STP",
+    "name": "Sao Tome and Principe",
+    "region": "Africa",
+    "green_score": 36.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TCD",
+    "name": "Chad",
+    "region": "Africa",
+    "green_score": 35.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "UGA",
+    "name": "Uganda",
+    "region": "Africa",
+    "green_score": 35.8,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TGO",
+    "name": "Togo",
+    "region": "Africa",
+    "green_score": 35.7,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CHN",
+    "name": "China",
+    "region": "Asia",
+    "green_score": 35.4,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BHR",
+    "name": "Bahrain",
+    "region": "Asia",
+    "green_score": 35.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MWI",
+    "name": "Malawi",
+    "region": "Africa",
+    "green_score": 35.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MRT",
+    "name": "Mauritania",
+    "region": "Africa",
+    "green_score": 34.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MLI",
+    "name": "Mali",
+    "region": "Africa",
+    "green_score": 34.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LBR",
+    "name": "Liberia",
+    "region": "Africa",
+    "green_score": 34.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "RWA",
+    "name": "Rwanda",
+    "region": "Africa",
+    "green_score": 33.9,
+    "data_year": 2024
+  },
+  {
+    "iso3": "IDN",
+    "name": "Indonesia",
+    "region": "Asia",
+    "green_score": 33.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BDI",
+    "name": "Burundi",
+    "region": "Africa",
+    "green_score": 33.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NPL",
+    "name": "Nepal",
+    "region": "Asia",
+    "green_score": 33.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GTM",
+    "name": "Guatemala",
+    "region": "North America",
+    "green_score": 32.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TJK",
+    "name": "Tajikistan",
+    "region": "Asia",
+    "green_score": 32.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "DJI",
+    "name": "Djibouti",
+    "region": "Africa",
+    "green_score": 32.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PHL",
+    "name": "Philippines",
+    "region": "Asia",
+    "green_score": 32.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KHM",
+    "name": "Cambodia",
+    "region": "Asia",
+    "green_score": 31.2,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AFG",
+    "name": "Afghanistan",
+    "region": "Asia",
+    "green_score": 31.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "IRQ",
+    "name": "Iraq",
+    "region": "Asia",
+    "green_score": 30.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MDG",
+    "name": "Madagascar",
+    "region": "Africa",
+    "green_score": 30.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ERI",
+    "name": "Eritrea",
+    "region": "Africa",
+    "green_score": 29.0,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BGD",
+    "name": "Bangladesh",
+    "region": "Asia",
+    "green_score": 28.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "IND",
+    "name": "India",
+    "region": "Asia",
+    "green_score": 27.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MMR",
+    "name": "Myanmar",
+    "region": "Asia",
+    "green_score": 27.1,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LAO",
+    "name": "Laos",
+    "region": "Asia",
+    "green_score": 26.3,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PAK",
+    "name": "Pakistan",
+    "region": "Asia",
+    "green_score": 25.5,
+    "data_year": 2024
+  },
+  {
+    "iso3": "VNM",
+    "name": "Vietnam",
+    "region": "Asia",
+    "green_score": 24.6,
+    "data_year": 2024
+  },
+  {
+    "iso3": "ABW",
+    "name": "Aruba",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AIA",
+    "name": "Anguilla",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "AND",
+    "name": "Andorra",
+    "region": "Europe",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BES",
+    "name": "Bonaire Sint Eustatius and Saba",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "BMU",
+    "name": "Bermuda",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "COK",
+    "name": "Cook Islands",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "CUW",
+    "name": "Curacao",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "FRO",
+    "name": "Faroe Islands",
+    "region": "Europe",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "GRL",
+    "name": "Greenland",
+    "region": "Other",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "HKG",
+    "name": "Hong Kong",
+    "region": "Asia",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "KNA",
+    "name": "Saint Kitts and Nevis",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LBY",
+    "name": "Libya",
+    "region": "Africa",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "LIE",
+    "name": "Liechtenstein",
+    "region": "Europe",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MAC",
+    "name": "Macao",
+    "region": "Asia",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "MSR",
+    "name": "Montserrat",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NCL",
+    "name": "New Caledonia",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NIU",
+    "name": "Niue",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "NRU",
+    "name": "Nauru",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PLW",
+    "name": "Palau",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PRK",
+    "name": "North Korea",
+    "region": "Asia",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PSE",
+    "name": "Palestine",
+    "region": "Asia",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "PYF",
+    "name": "French Polynesia",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SHN",
+    "name": "Saint Helena",
+    "region": "Other",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SOM",
+    "name": "Somalia",
+    "region": "Africa",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SPM",
+    "name": "Saint Pierre and Miquelon",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SSD",
+    "name": "South Sudan",
+    "region": "Africa",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SXM",
+    "name": "Sint Maarten (Dutch part)",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "SYR",
+    "name": "Syria",
+    "region": "Asia",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TCA",
+    "name": "Turks and Caicos Islands",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "TUV",
+    "name": "Tuvalu",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "VGB",
+    "name": "British Virgin Islands",
+    "region": "North America",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "WLF",
+    "name": "Wallis and Futuna",
+    "region": "Oceania",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "XKX",
+    "name": "Kosovo",
+    "region": "Europe",
+    "green_score": null,
+    "data_year": 2024
+  },
+  {
+    "iso3": "YEM",
+    "name": "Yemen",
+    "region": "Asia",
+    "green_score": null,
+    "data_year": 2024
+  }
+]
