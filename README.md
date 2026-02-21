@@ -35,8 +35,6 @@ One entry per policy. Used to show what policies a country has and which categor
   "iso3": "DEU",
   "country": "Germany",
   "policy_name": "Renewable Energy Act (EEG)",
-  "bucket_id": "RE",
-  "bucket_name": "Renewable Energy Incentives",
   "start_year": 2000
 }
 ```
