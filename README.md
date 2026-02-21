@@ -46,7 +46,8 @@ One entry per policy. Used to show what policies a country has and which categor
 
 ### `lift_by_bucket.json`
 One entry per policy category. Used for the lift score chart.
-
+lift answers: which policy categories do the well-performing countries tend to have?
+Lift is calculated by comparing how often a policy bucket appears in top-performing countries vs all countries.
 ```json
 {
   "bucket_id": "CPM",
@@ -61,18 +62,24 @@ One entry per policy category. Used for the lift score chart.
 One entry per country. Used for the recommendations panel.
 
 ```json
-{
-  "iso3": "IND",
-  "buckets_present": ["RE", "EEF"],
-  "recommendations": [
-    {
-      "bucket_id": "CPM",
-      "bucket_name": "Carbon Pricing & Markets",
-      "lift": 1.84,
-      "rationale": "15 of the best-performing countries have adopted this policy type."
-    }
-  ]
-}
+[
+  {
+    "bucket_id": "CPM",
+    "bucket_name": "Carbon Pricing & Markets",
+    "lift": 1.84
+  },
+  {
+    "bucket_id": "RE",
+    "bucket_name": "Renewable Energy Incentives",
+    "lift": 1.72
+  },
+  {
+    "bucket_id": "FPD",
+    "bucket_name": "Fossil Fuel Phase-Down",
+    "lift": 1.45
+  }
+]
+
 ```
 
 ---
