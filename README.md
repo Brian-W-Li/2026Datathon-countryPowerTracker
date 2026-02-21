@@ -42,6 +42,7 @@ One entry per policy. Each policy belongs to one sector (bucket). Used to show w
   "legally_binding": true,
   "has_quantified_target": false,
   "scope": "national"
+  "status": enforced
 }
 ```
 
