@@ -5,6 +5,31 @@ A dashboard for visualizing country-level climate policy data and recommendation
 All data is precomputed by a separate Python pipeline. The frontend only reads JSON.
 
 ---
+## 🚀 Running Locally
+
+### Prerequisites
+- Node.js 18+
+- Git
+
+### Steps
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-org/2026Datathon-countryPowerTracker.git
+
+# 2. Go into the Next.js app folder
+cd country-power-tracker
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the dev server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+> ⚠️ Make sure you `cd country-power-tracker` first — running `npm run dev` from the repo root will throw an error.
 
 ## 📥 JSON Inputs
 
