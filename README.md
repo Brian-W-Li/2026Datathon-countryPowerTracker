@@ -125,4 +125,6 @@ npm install
 npm run dev
 ```
 
+each country has multiple policies each policy has 3+ attributes 
+
 Open [http://localhost:3000](http://localhost:3000). Requires the 5 JSON files to be present in `public/data/`.
