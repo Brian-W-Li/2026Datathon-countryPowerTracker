@@ -20,7 +20,7 @@ One entry per country. Used to color the map and populate country cards.
   "iso3": "USA",
   "name": "United States",
   "region": "North America",
-  "green_score": 72.4,
+  "green_score": 72.4, (or whatever score to rank the country)
   "data_year": 2022,
   "policy_count": 38
 }
