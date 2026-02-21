@@ -153,7 +153,7 @@ One entry per country. Used for the trend chart inside a country card.
 | View | What it shows | Driven by |
 |---|---|---|
 | **World Map** | Countries colored by green score | `countries.json` |
-| **Country Card** | Trend chart + policies grouped by sector | `sparklines.json` + `policy_buckets.json` |
+| **Country Card** | Trend chart + policies grouped by sector | `sparklines.json` + `policy_buckets.json` + `clean_energy.json` |
 | **Lift Chart** | Sectors ranked by lift score | `lift_by_bucket.json` |
 | **Recommendations** | Top 3 global sectors | `recommendations.json` |
 
