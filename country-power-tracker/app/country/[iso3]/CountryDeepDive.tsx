@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import PathToTopTier from "../../components/PathToTopTier";
 import {
   LineChart,
   Line,
@@ -54,6 +55,8 @@ type Props = {
   totalPolicies: number;
   activePolicies: number;
   activePolicyList: PolicyRecord[];
+  isTopTier: boolean;
+  isEpiTopTier: boolean | null;
 };
 
 const TOPIC_COLORS: Record<string, string> = {
@@ -91,6 +94,8 @@ export default function CountryDeepDive({
   totalPolicies,
   activePolicies,
   activePolicyList,
+  isTopTier,
+  isEpiTopTier,
 }: Props) {
   const router = useRouter();
   const [policySearch, setPolicySearch] = useState("");
@@ -202,6 +207,8 @@ export default function CountryDeepDive({
             <div className="text-xs text-gray-500 mt-1">of {totalPolicies} total</div>
           </div>
         </div>
+
+        <PathToTopTier isTopTier={isTopTier} isEpiTopTier={isEpiTopTier} />
 
         {/* Clean Energy Share Trend (small sparkline-style) */}
         {energySeries.length > 1 && cleanShareChange !== null && (
