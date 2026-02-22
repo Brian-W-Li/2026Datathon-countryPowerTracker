@@ -2,16 +2,22 @@
   {
     "bucket_id": "CPM",
     "bucket_name": "Carbon Pricing & Markets",
-    "lift": 1.52
+    "lift": 1.26,
+    "top_in_sector": 11,
+    "total_in_sector": 35
   },
   {
-    "bucket_id": "FPD",
-    "bucket_name": "Fossil Fuel Phase-Down",
-    "lift": 1.33
+    "bucket_id": "CF",
+    "bucket_name": "Cross-cutting / Framework",
+    "lift": 1.19,
+    "top_in_sector": 23,
+    "total_in_sector": 77
   },
   {
-    "bucket_id": "EEF",
-    "bucket_name": "Energy Efficiency",
-    "lift": 1.29
+    "bucket_id": "RE",
+    "bucket_name": "Renewable Energy",
+    "lift": 1.15,
+    "top_in_sector": 23,
+    "total_in_sector": 80
   }
 ]

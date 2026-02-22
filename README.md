@@ -59,15 +59,22 @@ Active policies per country, each assigned to one of 7 policy sectors.
 
 ```json
 {
-  "iso3": "DEU",
-  "country": "Germany",
-  "policy_name": "Renewable Energy Act (EEG)",
-  "start_year": 2000,
-  "bucket_id": "RE",
-  "bucket_name": "Renewable Energy Incentives",
-  "status": "In force",
-  "scope": "national"
-}
+    "id": 1,
+    "title": "Smart Farming Initiative",
+    "countries": [
+      {
+        "iso3": "IRL",
+        "name": "Ireland"
+      }
+    ],
+    "year": "2016",
+    "status": "In force",
+    "scope": "national",
+    "sector": "EEF",
+    "instrument_type": "subsidy",
+    "legally_binding": false,
+    "has_quantified_target": false
+  }
 ```
 
 **Sector IDs:** `RE` · `FPD` · `CPM` · `EEF` · `GRT` · `LU` · `CF`

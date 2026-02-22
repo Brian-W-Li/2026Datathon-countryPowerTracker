@@ -1,26 +1,9 @@
-import { notFound } from "next/navigation";
-import fs from "fs";
-import path from "path";
-import CountryDetail from "./CountryDetail";
-
-type CountryEntry = {
-  iso3: string;
-  name: string;
-  region: string;
-  green_score: number | null;
-  data_year: number;
-};
-
-type PolicyEntry = {
-  iso3: string;
-  country: string;
-  policy_name: string;
-  start_year: number | null;
-  bucket_id: string;
-  bucket_name: string;
-  status: string;
-  scope: string;
-};
+import CountryDeepDive from "./CountryDeepDive";
+import countriesData from "../../../public/data/countries.json";
+import deepDiveData from "../../../public/data/country_deep_dive.json";
+import cleanEnergyData from "../../../public/data/clean_energy.json";
+import policyData from "../../../public/data/country_policies.json";
+import policyListData from "../../../public/data/country_policy_list.json";
 
 type DeepDiveEntry = {
   iso3: string;
@@ -37,38 +20,84 @@ type CleanEnergyEntry = {
   }[];
 };
 
-function readJson<T>(filename: string): T {
-  const filePath = path.join(process.cwd(), "public", "data", filename);
-  return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
-}
+type TopicSummary = {
+  topic: string;
+  total: number;
+  active: number;
+};
 
-export default async function CountryPage({
-  params,
-}: {
+type PolicySummaryEntry = {
+  iso3: string;
+  topic_summary: TopicSummary[];
+  total_policies: number;
+  active_policies: number;
+};
+
+type PolicyRecord = {
+  title: string;
+  topic: string;
+  family: string | null;
+  year: number | null;
+  status: string;
+};
+
+type PolicyListEntry = {
+  iso3: string;
+  active_policies: PolicyRecord[];
+};
+
+type CountryEntry = {
+  iso3: string;
+  name: string;
+  green_score: number | null;
+  region: string;
+  data_year: number;
+};
+
+type Props = {
   params: Promise<{ iso3: string }>;
-}) {
+};
+
+export default async function CountryPage({ params }: Props) {
   const { iso3 } = await params;
-  const isoUpper = iso3.toUpperCase();
+  const upper = iso3.toUpperCase();
 
-  const countries = readJson<CountryEntry[]>("countries.json");
-  const country = countries.find((c) => c.iso3 === isoUpper);
-  if (!country) notFound();
+  const country = (countriesData as CountryEntry[]).find(
+    (c) => c.iso3 === upper
+  );
+  const deepDive = (deepDiveData as DeepDiveEntry[]).find(
+    (d) => d.iso3 === upper
+  );
+  const cleanEnergy = (cleanEnergyData as CleanEnergyEntry[]).find(
+    (d) => d.iso3 === upper
+  );
+  const policySummary = (policyData as PolicySummaryEntry[]).find(
+    (d) => d.iso3 === upper
+  );
+  const policyList = (policyListData as PolicyListEntry[]).find(
+    (d) => d.iso3 === upper
+  );
 
-  const allPolicies = readJson<PolicyEntry[]>("policy_buckets.json");
-  const policies = allPolicies.filter((p) => p.iso3 === isoUpper);
-
-  const allDeepDive = readJson<DeepDiveEntry[]>("country_deep_dive.json");
-  const deepDive = allDeepDive.find((d) => d.iso3 === isoUpper) ?? null;
-
-  const allCleanEnergy = readJson<CleanEnergyEntry[]>("clean_energy.json");
-  const cleanEnergy = allCleanEnergy.find((c) => c.iso3 === isoUpper) ?? null;
+  const name = country?.name ?? upper;
+  const region = country?.region ?? "Unknown";
+  const co2Series = deepDive?.series ?? [];
+  const energySeries = cleanEnergy?.series ?? [];
+  const topicSummary = policySummary?.topic_summary ?? [];
+  const totalPolicies = policySummary?.total_policies ?? 0;
+  const activePolicies = policySummary?.active_policies ?? 0;
+  const activePolicyList = policyList?.active_policies ?? [];
 
   return (
-    <CountryDetail
-      country={country}
-      policies={policies}
-      deepDive={deepDive}
-      cleanEnergy={cleanEnergy}
+    <CountryDeepDive
+      iso3={upper}
+      name={name}
+      region={region}
+      co2Series={co2Series}
+      energySeries={energySeries}
+      topicSummary={topicSummary}
+      totalPolicies={totalPolicies}
+      activePolicies={activePolicies}
+      activePolicyList={activePolicyList}
     />
   );
 }
