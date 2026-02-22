@@ -19,9 +19,9 @@ const NUMERIC_TO_ISO3: Record<number, string> = {
 };
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-//import { useRouter } from "next/navigation";
 
 type Country = {
   iso3: string;
@@ -37,8 +37,13 @@ type Props = {
 
 export default function WorldGlobe({ countries }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
-  //const router = useRouter();
-  const [tooltip, setTooltip] = useState<{ x: number; y: number; name: string; score: number } | null>(null);
+  const router = useRouter();
+  const [tooltip, setTooltip] = useState<{
+    x: number;
+    y: number;
+    name: string;
+    score: number | null;
+  } | null>(null);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -59,25 +64,24 @@ export default function WorldGlobe({ countries }: Props) {
 
     const path = d3.geoPath().projection(projection);
 
-    // Color scale: green (high score) → red (low score)
+    // Color scale: red (low GEPI) → yellow → green (high GEPI)
     const colorScale = d3.scaleSequential()
       .domain([0, 100])
       .interpolator(d3.interpolateRdYlGn);
 
-    const scoreMap = new Map(countries.map(c => [c.iso3, c]));
+    const scoreMap = new Map(countries.map((c) => [c.iso3, c]));
 
-    // Draw ocean
+    // Ocean background
     svg.append("circle")
       .attr("cx", width / 2)
       .attr("cy", height / 2)
       .attr("r", 280)
       .attr("fill", "#1a1a2e");
 
-    // Load world topology
     d3.json("/world-110m.json").then((world: any) => {
       const geojson = feature(world, world.objects.countries) as any;
 
-      // Draw countries
+      // Countries
       svg.selectAll(".country")
         .data(geojson.features)
         .enter()
@@ -85,42 +89,46 @@ export default function WorldGlobe({ countries }: Props) {
         .attr("class", "country")
         .attr("d", path as any)
         .attr("fill", (d: any) => {
-            const iso3 = NUMERIC_TO_ISO3[+d.id];
-            const country = scoreMap.get(iso3);
-            if (!country || country.green_score === null) return "#444444";
-            return colorScale(country.green_score);
+          const iso3 = NUMERIC_TO_ISO3[+d.id];
+          const country = scoreMap.get(iso3);
+          if (!country || country.green_score === null) return "#444444";
+          return colorScale(country.green_score);
         })
         .attr("stroke", "#ffffff")
         .attr("stroke-width", 0.3)
         .style("cursor", "pointer")
         .on("mouseover", function (event: MouseEvent, d: any) {
-            d3.select(this).attr("stroke-width", 1.5).attr("stroke", "#fff");
-            const iso3 = NUMERIC_TO_ISO3[+d.id];
-            const country = scoreMap.get(iso3);
-            if (country) {
-                setTooltip({
-                x: event.offsetX,
-                y: event.offsetY,
-                name: country.name,
-                score: country.green_score ?? 0,
-                });
-            }
+          d3.select(this).attr("stroke-width", 1.5).attr("stroke", "#fff");
+          const iso3 = NUMERIC_TO_ISO3[+d.id];
+          const country = scoreMap.get(iso3);
+          if (country) {
+            setTooltip({
+              x: event.offsetX,
+              y: event.offsetY,
+              name: country.name,
+              score: country.green_score,
+            });
+          }
         })
         .on("mousemove", function (event: MouseEvent) {
-            setTooltip(prev => prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null);
+          setTooltip((prev) =>
+            prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null
+          );
         })
         .on("mouseout", function () {
-            d3.select(this).attr("stroke-width", 0.3).attr("stroke", "#ffffff");
-            setTooltip(null);
+          d3.select(this).attr("stroke-width", 0.3).attr("stroke", "#ffffff");
+          setTooltip(null);
         })
-        //.on("click", (event: MouseEvent, d: any) => {
-          // Will route to country card once iso3 mapping is added
-        //});
+        .on("click", (_event: MouseEvent, d: any) => {
+          const iso3 = NUMERIC_TO_ISO3[+d.id];
+          if (iso3) router.push(`/country/${iso3}`);
+        });
 
       // Graticule
       const graticule = d3.geoGraticule();
       svg.append("path")
         .datum(graticule())
+        .attr("class", "graticule")
         .attr("d", path as any)
         .attr("fill", "none")
         .attr("stroke", "#ffffff10")
@@ -135,13 +143,14 @@ export default function WorldGlobe({ countries }: Props) {
         svg.selectAll(".graticule").attr("d", path as any);
       });
 
-      // Stop rotation on drag
+      // Drag to rotate (stops auto-rotation)
       const drag = d3.drag<SVGSVGElement, unknown>()
         .on("start", () => timer.stop())
         .on("drag", (event) => {
           const [rx, ry] = projection.rotate();
           projection.rotate([rx + event.dx * 0.5, ry - event.dy * 0.5]);
           svg.selectAll(".country").attr("d", path as any);
+          svg.selectAll(".graticule").attr("d", path as any);
         });
 
       svg.call(drag);
@@ -157,19 +166,29 @@ export default function WorldGlobe({ countries }: Props) {
 
       svg.call(zoom);
     });
-  }, [countries]);
+  }, [countries, router]);
 
   return (
     <div className="relative flex items-center justify-center">
       <svg ref={svgRef} className="rounded-full" />
       {tooltip && (
         <div
-          className="absolute bg-black text-white text-sm px-3 py-1 rounded pointer-events-none"
-          style={{ left: tooltip.x + 10, top: tooltip.y - 30 }}
+          className="absolute bg-gray-800 text-gray-100 text-sm px-3 py-2 rounded border border-gray-600 pointer-events-none"
+          style={{ left: tooltip.x + 12, top: tooltip.y - 36 }}
         >
-          {tooltip.name} — {tooltip.score}
+          <span className="font-semibold">{tooltip.name}</span>
+          {tooltip.score !== null ? (
+            <span className="text-gray-300">
+              {" "}— GEPI {tooltip.score}
+            </span>
+          ) : (
+            <span className="text-gray-500"> — no data</span>
+          )}
         </div>
       )}
+      <div className="absolute bottom-4 right-4 text-gray-400 text-xs">
+        Click a country for details
+      </div>
     </div>
   );
 }

@@ -20,9 +20,9 @@ const BUCKET_ICONS: Record<string, string> = {
 
 export default function Recommendations({ data }: Props) {
   return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-2">🌍 Global Policy Recommendations</h2>
-      <p className="text-gray-500 mb-6 text-sm">
+    <div className="p-6 max-w-2xl mx-auto w-full">
+      <h2 className="text-white text-2xl font-bold mb-2">Global Policy Recommendations</h2>
+      <p className="text-gray-300 mb-6 text-sm">
         The 3 policy sectors most associated with top-performing countries worldwide.
       </p>
 
@@ -30,10 +30,10 @@ export default function Recommendations({ data }: Props) {
         {data.map((rec, index) => (
           <div
             key={rec.bucket_id}
-            className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white shadow-sm"
+            className="flex items-center gap-4 p-4 rounded-xl border border-gray-700 bg-gray-900 shadow-sm"
           >
             {/* Rank */}
-            <div className="text-3xl font-black text-gray-200 w-8">
+            <div className="text-3xl font-black text-gray-600 w-8">
               {index + 1}
             </div>
 
@@ -44,13 +44,13 @@ export default function Recommendations({ data }: Props) {
 
             {/* Name */}
             <div className="flex-1">
-              <div className="font-semibold text-gray-800">{rec.bucket_name}</div>
+              <div className="font-semibold text-gray-100">{rec.bucket_name}</div>
               <div className="text-xs text-gray-400">{rec.bucket_id}</div>
             </div>
 
             {/* Lift badge */}
             <div className="text-right">
-              <div className="text-lg font-bold text-green-600">{rec.lift}×</div>
+              <div className="text-lg font-bold text-green-400">{rec.lift}×</div>
               <div className="text-xs text-gray-400">lift score</div>
             </div>
           </div>

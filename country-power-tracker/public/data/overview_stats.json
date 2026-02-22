@@ -1,0 +1,1304 @@
+{
+  "co2_gdp_changes": [
+    {
+      "iso3": "CUW",
+      "name": "Curacao",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 2108.7,
+      "end_value": 684.09,
+      "pct_change": -67.56
+    },
+    {
+      "iso3": "GUY",
+      "name": "Guyana",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 464.61,
+      "end_value": 164.28,
+      "pct_change": -64.64
+    },
+    {
+      "iso3": "EST",
+      "name": "Estonia",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 820.63,
+      "end_value": 304.09,
+      "pct_change": -62.94
+    },
+    {
+      "iso3": "MLT",
+      "name": "Malta",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 233.11,
+      "end_value": 92.41,
+      "pct_change": -60.36
+    },
+    {
+      "iso3": "IRL",
+      "name": "Ireland",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 152.0,
+      "end_value": 67.1,
+      "pct_change": -55.86
+    },
+    {
+      "iso3": "TCA",
+      "name": "Turks and Caicos Islands",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 317.49,
+      "end_value": 142.29,
+      "pct_change": -55.18
+    },
+    {
+      "iso3": "ALB",
+      "name": "Albania",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 516.98,
+      "end_value": 243.08,
+      "pct_change": -52.98
+    },
+    {
+      "iso3": "BGR",
+      "name": "Bulgaria",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 900.89,
+      "end_value": 462.08,
+      "pct_change": -48.71
+    },
+    {
+      "iso3": "FIN",
+      "name": "Finland",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 205.15,
+      "end_value": 117.13,
+      "pct_change": -42.91
+    },
+    {
+      "iso3": "POL",
+      "name": "Poland",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 668.65,
+      "end_value": 393.33,
+      "pct_change": -41.18
+    },
+    {
+      "iso3": "CZE",
+      "name": "Czechia",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 578.96,
+      "end_value": 344.53,
+      "pct_change": -40.49
+    },
+    {
+      "iso3": "NLD",
+      "name": "Netherlands",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 205.33,
+      "end_value": 123.04,
+      "pct_change": -40.08
+    },
+    {
+      "iso3": "LUX",
+      "name": "Luxembourg",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 166.97,
+      "end_value": 100.43,
+      "pct_change": -39.85
+    },
+    {
+      "iso3": "GRC",
+      "name": "Greece",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 403.21,
+      "end_value": 247.07,
+      "pct_change": -38.72
+    },
+    {
+      "iso3": "DNK",
+      "name": "Denmark",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 127.12,
+      "end_value": 78.1,
+      "pct_change": -38.56
+    },
+    {
+      "iso3": "PRT",
+      "name": "Portugal",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 244.58,
+      "end_value": 150.52,
+      "pct_change": -38.46
+    },
+    {
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 151.58,
+      "end_value": 94.36,
+      "pct_change": -37.75
+    },
+    {
+      "iso3": "ROU",
+      "name": "Romania",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 458.71,
+      "end_value": 289.34,
+      "pct_change": -36.92
+    },
+    {
+      "iso3": "ISR",
+      "name": "Israel",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 211.27,
+      "end_value": 134.0,
+      "pct_change": -36.57
+    },
+    {
+      "iso3": "CYP",
+      "name": "Cyprus",
+      "start_year": 2014,
+      "end_year": 2024,
+      "start_value": 257.72,
+      "end_value": 164.76,
+      "pct_change": -36.07
+    }
+  ],
+  "scatter_data": [
+    {
+      "iso3": "EST",
+      "name": "Estonia",
+      "gepi_score": 75.7,
+      "policy_count": 74
+    },
+    {
+      "iso3": "LUX",
+      "name": "Luxembourg",
+      "gepi_score": 75.1,
+      "policy_count": 107
+    },
+    {
+      "iso3": "DEU",
+      "name": "Germany",
+      "gepi_score": 74.5,
+      "policy_count": 337
+    },
+    {
+      "iso3": "FIN",
+      "name": "Finland",
+      "gepi_score": 73.8,
+      "policy_count": 118
+    },
+    {
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "gepi_score": 72.6,
+      "policy_count": 340
+    },
+    {
+      "iso3": "SWE",
+      "name": "Sweden",
+      "gepi_score": 70.3,
+      "policy_count": 152
+    },
+    {
+      "iso3": "NOR",
+      "name": "Norway",
+      "gepi_score": 69.9,
+      "policy_count": 181
+    },
+    {
+      "iso3": "AUT",
+      "name": "Austria",
+      "gepi_score": 68.9,
+      "policy_count": 166
+    },
+    {
+      "iso3": "CHE",
+      "name": "Switzerland",
+      "gepi_score": 67.8,
+      "policy_count": 115
+    },
+    {
+      "iso3": "DNK",
+      "name": "Denmark",
+      "gepi_score": 67.7,
+      "policy_count": 139
+    },
+    {
+      "iso3": "GRC",
+      "name": "Greece",
+      "gepi_score": 67.3,
+      "policy_count": 106
+    },
+    {
+      "iso3": "FRA",
+      "name": "France",
+      "gepi_score": 67.0,
+      "policy_count": 242
+    },
+    {
+      "iso3": "NLD",
+      "name": "Netherlands",
+      "gepi_score": 66.9,
+      "policy_count": 184
+    },
+    {
+      "iso3": "MLT",
+      "name": "Malta",
+      "gepi_score": 66.9,
+      "policy_count": 57
+    },
+    {
+      "iso3": "BEL",
+      "name": "Belgium",
+      "gepi_score": 66.8,
+      "policy_count": 133
+    },
+    {
+      "iso3": "IRL",
+      "name": "Ireland",
+      "gepi_score": 65.8,
+      "policy_count": 140
+    },
+    {
+      "iso3": "CZE",
+      "name": "Czechia",
+      "gepi_score": 65.5,
+      "policy_count": 95
+    },
+    {
+      "iso3": "SVK",
+      "name": "Slovakia",
+      "gepi_score": 65.1,
+      "policy_count": 121
+    },
+    {
+      "iso3": "ISL",
+      "name": "Iceland",
+      "gepi_score": 64.3,
+      "policy_count": 53
+    },
+    {
+      "iso3": "POL",
+      "name": "Poland",
+      "gepi_score": 64.2,
+      "policy_count": 144
+    },
+    {
+      "iso3": "LTU",
+      "name": "Lithuania",
+      "gepi_score": 64.1,
+      "policy_count": 75
+    },
+    {
+      "iso3": "ESP",
+      "name": "Spain",
+      "gepi_score": 64.0,
+      "policy_count": 250
+    },
+    {
+      "iso3": "AUS",
+      "name": "Australia",
+      "gepi_score": 63.1,
+      "policy_count": 405
+    },
+    {
+      "iso3": "SVN",
+      "name": "Slovenia",
+      "gepi_score": 62.4,
+      "policy_count": 44
+    },
+    {
+      "iso3": "HRV",
+      "name": "Croatia",
+      "gepi_score": 62.3,
+      "policy_count": 51
+    },
+    {
+      "iso3": "PRT",
+      "name": "Portugal",
+      "gepi_score": 61.9,
+      "policy_count": 189
+    },
+    {
+      "iso3": "JPN",
+      "name": "Japan",
+      "gepi_score": 61.4,
+      "policy_count": 222
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "gepi_score": 61.1,
+      "policy_count": 420
+    },
+    {
+      "iso3": "ITA",
+      "name": "Italy",
+      "gepi_score": 60.3,
+      "policy_count": 239
+    },
+    {
+      "iso3": "LVA",
+      "name": "Latvia",
+      "gepi_score": 60.2,
+      "policy_count": 55
+    },
+    {
+      "iso3": "HUN",
+      "name": "Hungary",
+      "gepi_score": 59.8,
+      "policy_count": 111
+    },
+    {
+      "iso3": "BLR",
+      "name": "Belarus",
+      "gepi_score": 58.2,
+      "policy_count": 32
+    },
+    {
+      "iso3": "NZL",
+      "name": "New Zealand",
+      "gepi_score": 57.3,
+      "policy_count": 107
+    },
+    {
+      "iso3": "ROU",
+      "name": "Romania",
+      "gepi_score": 57.3,
+      "policy_count": 51
+    },
+    {
+      "iso3": "USA",
+      "name": "United States",
+      "gepi_score": 57.2,
+      "policy_count": 738
+    },
+    {
+      "iso3": "SUR",
+      "name": "Suriname",
+      "gepi_score": 56.9,
+      "policy_count": 8
+    },
+    {
+      "iso3": "BGR",
+      "name": "Bulgaria",
+      "gepi_score": 56.2,
+      "policy_count": 40
+    },
+    {
+      "iso3": "BHS",
+      "name": "Bahamas",
+      "gepi_score": 55.9,
+      "policy_count": 3
+    },
+    {
+      "iso3": "ATG",
+      "name": "Antigua and Barbuda",
+      "gepi_score": 55.6,
+      "policy_count": 6
+    },
+    {
+      "iso3": "CRI",
+      "name": "Costa Rica",
+      "gepi_score": 55.5,
+      "policy_count": 47
+    },
+    {
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "gepi_score": 54.6,
+      "policy_count": 73
+    },
+    {
+      "iso3": "VCT",
+      "name": "Saint Vincent and the Grenadines",
+      "gepi_score": 54.2,
+      "policy_count": 5
+    },
+    {
+      "iso3": "CYP",
+      "name": "Cyprus",
+      "gepi_score": 53.9,
+      "policy_count": 41
+    },
+    {
+      "iso3": "VEN",
+      "name": "Venezuela",
+      "gepi_score": 53.3,
+      "policy_count": 23
+    },
+    {
+      "iso3": "GAB",
+      "name": "Gabon",
+      "gepi_score": 53.3,
+      "policy_count": 9
+    },
+    {
+      "iso3": "BRB",
+      "name": "Barbados",
+      "gepi_score": 53.1,
+      "policy_count": 6
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "gepi_score": 53.0,
+      "policy_count": 177
+    },
+    {
+      "iso3": "SGP",
+      "name": "Singapore",
+      "gepi_score": 53.0,
+      "policy_count": 103
+    },
+    {
+      "iso3": "PAN",
+      "name": "Panama",
+      "gepi_score": 52.9,
+      "policy_count": 30
+    },
+    {
+      "iso3": "CUB",
+      "name": "Cuba",
+      "gepi_score": 52.5,
+      "policy_count": 10
+    },
+    {
+      "iso3": "TTO",
+      "name": "Trinidad and Tobago",
+      "gepi_score": 52.5,
+      "policy_count": 4
+    },
+    {
+      "iso3": "ALB",
+      "name": "Albania",
+      "gepi_score": 52.2,
+      "policy_count": 20
+    },
+    {
+      "iso3": "ZWE",
+      "name": "Zimbabwe",
+      "gepi_score": 51.6,
+      "policy_count": 19
+    },
+    {
+      "iso3": "ARE",
+      "name": "United Arab Emirates",
+      "gepi_score": 51.6,
+      "policy_count": 53
+    },
+    {
+      "iso3": "ECU",
+      "name": "Ecuador",
+      "gepi_score": 51.3,
+      "policy_count": 38
+    },
+    {
+      "iso3": "OMN",
+      "name": "Oman",
+      "gepi_score": 51.3,
+      "policy_count": 29
+    },
+    {
+      "iso3": "LCA",
+      "name": "Saint Lucia",
+      "gepi_score": 51.1,
+      "policy_count": 4
+    },
+    {
+      "iso3": "KOR",
+      "name": "South Korea",
+      "gepi_score": 50.6,
+      "policy_count": 186
+    },
+    {
+      "iso3": "MKD",
+      "name": "North Macedonia",
+      "gepi_score": 50.3,
+      "policy_count": 5
+    },
+    {
+      "iso3": "TWN",
+      "name": "Taiwan",
+      "gepi_score": 50.1,
+      "policy_count": 42
+    },
+    {
+      "iso3": "TLS",
+      "name": "East Timor",
+      "gepi_score": 49.9,
+      "policy_count": 3
+    },
+    {
+      "iso3": "SRB",
+      "name": "Serbia",
+      "gepi_score": 49.8,
+      "policy_count": 25
+    },
+    {
+      "iso3": "COL",
+      "name": "Colombia",
+      "gepi_score": 49.7,
+      "policy_count": 133
+    },
+    {
+      "iso3": "CHL",
+      "name": "Chile",
+      "gepi_score": 49.6,
+      "policy_count": 128
+    },
+    {
+      "iso3": "DMA",
+      "name": "Dominica",
+      "gepi_score": 49.3,
+      "policy_count": 3
+    },
+    {
+      "iso3": "BWA",
+      "name": "Botswana",
+      "gepi_score": 49.2,
+      "policy_count": 16
+    },
+    {
+      "iso3": "GUY",
+      "name": "Guyana",
+      "gepi_score": 49.0,
+      "policy_count": 12
+    },
+    {
+      "iso3": "JAM",
+      "name": "Jamaica",
+      "gepi_score": 48.5,
+      "policy_count": 12
+    },
+    {
+      "iso3": "BRN",
+      "name": "Brunei",
+      "gepi_score": 48.3,
+      "policy_count": 16
+    },
+    {
+      "iso3": "ISR",
+      "name": "Israel",
+      "gepi_score": 48.0,
+      "policy_count": 60
+    },
+    {
+      "iso3": "SYC",
+      "name": "Seychelles",
+      "gepi_score": 47.9,
+      "policy_count": 9
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "gepi_score": 47.8,
+      "policy_count": 50
+    },
+    {
+      "iso3": "MNE",
+      "name": "Montenegro",
+      "gepi_score": 47.7,
+      "policy_count": 13
+    },
+    {
+      "iso3": "DOM",
+      "name": "Dominican Republic",
+      "gepi_score": 47.7,
+      "policy_count": 11
+    },
+    {
+      "iso3": "BLZ",
+      "name": "Belize",
+      "gepi_score": 47.4,
+      "policy_count": 7
+    },
+    {
+      "iso3": "NIC",
+      "name": "Nicaragua",
+      "gepi_score": 47.4,
+      "policy_count": 24
+    },
+    {
+      "iso3": "JOR",
+      "name": "Jordan",
+      "gepi_score": 47.3,
+      "policy_count": 28
+    },
+    {
+      "iso3": "GEO",
+      "name": "Georgia",
+      "gepi_score": 47.3,
+      "policy_count": 33
+    },
+    {
+      "iso3": "MUS",
+      "name": "Mauritius",
+      "gepi_score": 47.3,
+      "policy_count": 14
+    },
+    {
+      "iso3": "WSM",
+      "name": "Samoa",
+      "gepi_score": 47.1,
+      "policy_count": 6
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "gepi_score": 47.0,
+      "policy_count": 94
+    },
+    {
+      "iso3": "QAT",
+      "name": "Qatar",
+      "gepi_score": 46.8,
+      "policy_count": 23
+    },
+    {
+      "iso3": "ZMB",
+      "name": "Zambia",
+      "gepi_score": 46.7,
+      "policy_count": 19
+    },
+    {
+      "iso3": "RUS",
+      "name": "Russia",
+      "gepi_score": 46.7,
+      "policy_count": 67
+    },
+    {
+      "iso3": "PER",
+      "name": "Peru",
+      "gepi_score": 46.5,
+      "policy_count": 72
+    },
+    {
+      "iso3": "MDA",
+      "name": "Moldova",
+      "gepi_score": 46.1,
+      "policy_count": 35
+    },
+    {
+      "iso3": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "gepi_score": 46.0,
+      "policy_count": 17
+    },
+    {
+      "iso3": "FJI",
+      "name": "Fiji",
+      "gepi_score": 46.0,
+      "policy_count": 5
+    },
+    {
+      "iso3": "GRD",
+      "name": "Grenada",
+      "gepi_score": 45.8,
+      "policy_count": 3
+    },
+    {
+      "iso3": "THA",
+      "name": "Thailand",
+      "gepi_score": 45.7,
+      "policy_count": 48
+    },
+    {
+      "iso3": "TUN",
+      "name": "Tunisia",
+      "gepi_score": 45.3,
+      "policy_count": 32
+    },
+    {
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "gepi_score": 45.3,
+      "policy_count": 27
+    },
+    {
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "gepi_score": 45.0,
+      "policy_count": 4
+    },
+    {
+      "iso3": "ARM",
+      "name": "Armenia",
+      "gepi_score": 44.9,
+      "policy_count": 20
+    },
+    {
+      "iso3": "KWT",
+      "name": "Kuwait",
+      "gepi_score": 44.4,
+      "policy_count": 21
+    },
+    {
+      "iso3": "KIR",
+      "name": "Kiribati",
+      "gepi_score": 44.3,
+      "policy_count": 5
+    },
+    {
+      "iso3": "MEX",
+      "name": "Mexico",
+      "gepi_score": 44.2,
+      "policy_count": 198
+    },
+    {
+      "iso3": "URY",
+      "name": "Uruguay",
+      "gepi_score": 44.1,
+      "policy_count": 47
+    },
+    {
+      "iso3": "NAM",
+      "name": "Namibia",
+      "gepi_score": 44.0,
+      "policy_count": 32
+    },
+    {
+      "iso3": "SEN",
+      "name": "Senegal",
+      "gepi_score": 43.8,
+      "policy_count": 21
+    },
+    {
+      "iso3": "EGY",
+      "name": "Egypt",
+      "gepi_score": 43.7,
+      "policy_count": 60
+    },
+    {
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "gepi_score": 43.6,
+      "policy_count": 29
+    },
+    {
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "gepi_score": 43.3,
+      "policy_count": 4
+    },
+    {
+      "iso3": "CIV",
+      "name": "Cote d'Ivoire",
+      "gepi_score": 42.9,
+      "policy_count": 23
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "gepi_score": 42.8,
+      "policy_count": 16
+    },
+    {
+      "iso3": "ZAF",
+      "name": "South Africa",
+      "gepi_score": 42.7,
+      "policy_count": 148
+    },
+    {
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "gepi_score": 42.6,
+      "policy_count": 33
+    },
+    {
+      "iso3": "SAU",
+      "name": "Saudi Arabia",
+      "gepi_score": 42.5,
+      "policy_count": 38
+    },
+    {
+      "iso3": "MHL",
+      "name": "Marshall Islands",
+      "gepi_score": 42.5,
+      "policy_count": 3
+    },
+    {
+      "iso3": "SLB",
+      "name": "Solomon Islands",
+      "gepi_score": 42.2,
+      "policy_count": 7
+    },
+    {
+      "iso3": "BFA",
+      "name": "Burkina Faso",
+      "gepi_score": 42.2,
+      "policy_count": 12
+    },
+    {
+      "iso3": "GNB",
+      "name": "Guinea-Bissau",
+      "gepi_score": 42.0,
+      "policy_count": 6
+    },
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "gepi_score": 41.8,
+      "policy_count": 27
+    },
+    {
+      "iso3": "GNQ",
+      "name": "Equatorial Guinea",
+      "gepi_score": 41.7,
+      "policy_count": 5
+    },
+    {
+      "iso3": "DZA",
+      "name": "Algeria",
+      "gepi_score": 41.7,
+      "policy_count": 31
+    },
+    {
+      "iso3": "SLV",
+      "name": "El Salvador",
+      "gepi_score": 41.6,
+      "policy_count": 19
+    },
+    {
+      "iso3": "COG",
+      "name": "Congo",
+      "gepi_score": 41.6,
+      "policy_count": 10
+    },
+    {
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "gepi_score": 41.0,
+      "policy_count": 73
+    },
+    {
+      "iso3": "FSM",
+      "name": "Micronesia",
+      "gepi_score": 40.8,
+      "policy_count": 4
+    },
+    {
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "gepi_score": 40.6,
+      "policy_count": 13
+    },
+    {
+      "iso3": "AZE",
+      "name": "Azerbaijan",
+      "gepi_score": 40.5,
+      "policy_count": 40
+    },
+    {
+      "iso3": "TON",
+      "name": "Tonga",
+      "gepi_score": 40.4,
+      "policy_count": 3
+    },
+    {
+      "iso3": "HND",
+      "name": "Honduras",
+      "gepi_score": 40.2,
+      "policy_count": 24
+    },
+    {
+      "iso3": "AGO",
+      "name": "Angola",
+      "gepi_score": 40.1,
+      "policy_count": 36
+    },
+    {
+      "iso3": "NER",
+      "name": "Niger",
+      "gepi_score": 40.0,
+      "policy_count": 8
+    },
+    {
+      "iso3": "LBN",
+      "name": "Lebanon",
+      "gepi_score": 39.9,
+      "policy_count": 10
+    },
+    {
+      "iso3": "SLE",
+      "name": "Sierra Leone",
+      "gepi_score": 39.9,
+      "policy_count": 8
+    },
+    {
+      "iso3": "PRY",
+      "name": "Paraguay",
+      "gepi_score": 39.5,
+      "policy_count": 25
+    },
+    {
+      "iso3": "MAR",
+      "name": "Morocco",
+      "gepi_score": 39.5,
+      "policy_count": 55
+    },
+    {
+      "iso3": "COD",
+      "name": "DR Congo",
+      "gepi_score": 39.5,
+      "policy_count": 21
+    },
+    {
+      "iso3": "SDN",
+      "name": "Sudan",
+      "gepi_score": 39.1,
+      "policy_count": 5
+    },
+    {
+      "iso3": "CAF",
+      "name": "Central African Republic",
+      "gepi_score": 39.0,
+      "policy_count": 5
+    },
+    {
+      "iso3": "MOZ",
+      "name": "Mozambique",
+      "gepi_score": 39.0,
+      "policy_count": 25
+    },
+    {
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "gepi_score": 38.8,
+      "policy_count": 10
+    },
+    {
+      "iso3": "SWZ",
+      "name": "Eswatini",
+      "gepi_score": 38.7,
+      "policy_count": 11
+    },
+    {
+      "iso3": "CMR",
+      "name": "Cameroon",
+      "gepi_score": 38.6,
+      "policy_count": 11
+    },
+    {
+      "iso3": "COM",
+      "name": "Comoros",
+      "gepi_score": 38.2,
+      "policy_count": 6
+    },
+    {
+      "iso3": "MDV",
+      "name": "Maldives",
+      "gepi_score": 38.1,
+      "policy_count": 7
+    },
+    {
+      "iso3": "CPV",
+      "name": "Cape Verde",
+      "gepi_score": 38.0,
+      "policy_count": 6
+    },
+    {
+      "iso3": "NGA",
+      "name": "Nigeria",
+      "gepi_score": 37.9,
+      "policy_count": 58
+    },
+    {
+      "iso3": "BEN",
+      "name": "Benin",
+      "gepi_score": 37.8,
+      "policy_count": 5
+    },
+    {
+      "iso3": "GMB",
+      "name": "Gambia",
+      "gepi_score": 37.6,
+      "policy_count": 6
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "gepi_score": 37.2,
+      "policy_count": 11
+    },
+    {
+      "iso3": "TUR",
+      "name": "Turkey",
+      "gepi_score": 37.2,
+      "policy_count": 118
+    },
+    {
+      "iso3": "LSO",
+      "name": "Lesotho",
+      "gepi_score": 36.9,
+      "policy_count": 16
+    },
+    {
+      "iso3": "GHA",
+      "name": "Ghana",
+      "gepi_score": 36.9,
+      "policy_count": 30
+    },
+    {
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "gepi_score": 36.9,
+      "policy_count": 6
+    },
+    {
+      "iso3": "KEN",
+      "name": "Kenya",
+      "gepi_score": 36.9,
+      "policy_count": 34
+    },
+    {
+      "iso3": "GIN",
+      "name": "Guinea",
+      "gepi_score": 36.5,
+      "policy_count": 8
+    },
+    {
+      "iso3": "HTI",
+      "name": "Haiti",
+      "gepi_score": 36.4,
+      "policy_count": 4
+    },
+    {
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "gepi_score": 36.3,
+      "policy_count": 14
+    },
+    {
+      "iso3": "STP",
+      "name": "Sao Tome and Principe",
+      "gepi_score": 36.2,
+      "policy_count": 5
+    },
+    {
+      "iso3": "TCD",
+      "name": "Chad",
+      "gepi_score": 35.9,
+      "policy_count": 5
+    },
+    {
+      "iso3": "UGA",
+      "name": "Uganda",
+      "gepi_score": 35.8,
+      "policy_count": 16
+    },
+    {
+      "iso3": "TGO",
+      "name": "Togo",
+      "gepi_score": 35.7,
+      "policy_count": 6
+    },
+    {
+      "iso3": "CHN",
+      "name": "China",
+      "gepi_score": 35.4,
+      "policy_count": 346
+    },
+    {
+      "iso3": "BHR",
+      "name": "Bahrain",
+      "gepi_score": 35.3,
+      "policy_count": 12
+    },
+    {
+      "iso3": "MWI",
+      "name": "Malawi",
+      "gepi_score": 35.1,
+      "policy_count": 15
+    },
+    {
+      "iso3": "MRT",
+      "name": "Mauritania",
+      "gepi_score": 34.6,
+      "policy_count": 17
+    },
+    {
+      "iso3": "MLI",
+      "name": "Mali",
+      "gepi_score": 34.5,
+      "policy_count": 10
+    },
+    {
+      "iso3": "LBR",
+      "name": "Liberia",
+      "gepi_score": 34.3,
+      "policy_count": 6
+    },
+    {
+      "iso3": "RWA",
+      "name": "Rwanda",
+      "gepi_score": 33.9,
+      "policy_count": 14
+    },
+    {
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "gepi_score": 33.6,
+      "policy_count": 186
+    },
+    {
+      "iso3": "BDI",
+      "name": "Burundi",
+      "gepi_score": 33.5,
+      "policy_count": 8
+    },
+    {
+      "iso3": "NPL",
+      "name": "Nepal",
+      "gepi_score": 33.1,
+      "policy_count": 10
+    },
+    {
+      "iso3": "GTM",
+      "name": "Guatemala",
+      "gepi_score": 32.5,
+      "policy_count": 25
+    },
+    {
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "gepi_score": 32.3,
+      "policy_count": 5
+    },
+    {
+      "iso3": "DJI",
+      "name": "Djibouti",
+      "gepi_score": 32.3,
+      "policy_count": 4
+    },
+    {
+      "iso3": "PHL",
+      "name": "Philippines",
+      "gepi_score": 32.1,
+      "policy_count": 64
+    },
+    {
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "gepi_score": 31.2,
+      "policy_count": 15
+    },
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "gepi_score": 31.0,
+      "policy_count": 4
+    },
+    {
+      "iso3": "IRQ",
+      "name": "Iraq",
+      "gepi_score": 30.3,
+      "policy_count": 12
+    },
+    {
+      "iso3": "MDG",
+      "name": "Madagascar",
+      "gepi_score": 30.1,
+      "policy_count": 11
+    },
+    {
+      "iso3": "ERI",
+      "name": "Eritrea",
+      "gepi_score": 29.0,
+      "policy_count": 2
+    },
+    {
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "gepi_score": 28.1,
+      "policy_count": 30
+    },
+    {
+      "iso3": "IND",
+      "name": "India",
+      "gepi_score": 27.6,
+      "policy_count": 306
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "gepi_score": 27.1,
+      "policy_count": 12
+    },
+    {
+      "iso3": "LAO",
+      "name": "Laos",
+      "gepi_score": 26.3,
+      "policy_count": 16
+    },
+    {
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "gepi_score": 25.5,
+      "policy_count": 33
+    },
+    {
+      "iso3": "VNM",
+      "name": "Vietnam",
+      "gepi_score": 24.6,
+      "policy_count": 78
+    }
+  ],
+  "policy_mix_top_performers": [
+    {
+      "bucket_id": "RE",
+      "bucket_name": "Renewable Energy Incentives",
+      "count": 45,
+      "pct": 100.0
+    },
+    {
+      "bucket_id": "CF",
+      "bucket_name": "Climate Finance & Governance",
+      "count": 45,
+      "pct": 100.0
+    },
+    {
+      "bucket_id": "FPD",
+      "bucket_name": "Fossil Fuel Phase-Down",
+      "count": 41,
+      "pct": 91.1
+    },
+    {
+      "bucket_id": "GRT",
+      "bucket_name": "Grid & Transport Decarbonisation",
+      "count": 41,
+      "pct": 91.1
+    },
+    {
+      "bucket_id": "EEF",
+      "bucket_name": "Energy Efficiency",
+      "count": 41,
+      "pct": 91.1
+    },
+    {
+      "bucket_id": "CPM",
+      "bucket_name": "Carbon Pricing & Markets",
+      "count": 8,
+      "pct": 17.8
+    }
+  ]
+}
