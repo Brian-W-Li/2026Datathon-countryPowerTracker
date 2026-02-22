@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   LineChart,
@@ -35,6 +36,14 @@ type TopicSummary = {
   active: number;
 };
 
+type PolicyRecord = {
+  title: string;
+  topic: string;
+  family: string | null;
+  year: number | null;
+  status: string;
+};
+
 type Props = {
   iso3: string;
   name: string;
@@ -44,6 +53,7 @@ type Props = {
   topicSummary: TopicSummary[];
   totalPolicies: number;
   activePolicies: number;
+  activePolicyList: PolicyRecord[];
 };
 
 const TOPIC_COLORS: Record<string, string> = {
@@ -80,8 +90,12 @@ export default function CountryDeepDive({
   topicSummary,
   totalPolicies,
   activePolicies,
+  activePolicyList,
 }: Props) {
   const router = useRouter();
+  const [policySearch, setPolicySearch] = useState("");
+  const [topicFilter, setTopicFilter] = useState<string>("all");
+  const [showAllPolicies, setShowAllPolicies] = useState(false);
 
   // Compute energy data with fossil share for stacked area
   const stackedEnergy = energySeries.map((d) => ({
@@ -93,13 +107,18 @@ export default function CountryDeepDive({
 
   // Latest energy snapshot
   const latestEnergy = energySeries.length > 0 ? energySeries[energySeries.length - 1] : null;
-  const earliestEnergy = energySeries.length > 0 ? energySeries[0] : null;
 
   // CO2 trend
   const latestCO2 = co2Series.length > 0 ? co2Series[co2Series.length - 1] : null;
   const earliestCO2 = co2Series.length > 0 ? co2Series[0] : null;
   const co2Change = latestCO2 && earliestCO2
     ? ((latestCO2.co2_per_capita - earliestCO2.co2_per_capita) / earliestCO2.co2_per_capita * 100)
+    : null;
+
+  // Clean energy share change
+  const earliestEnergy = energySeries.length > 0 ? energySeries[0] : null;
+  const cleanShareChange = latestEnergy && earliestEnergy
+    ? (latestEnergy.clean_share - earliestEnergy.clean_share)
     : null;
 
   // Policy effectiveness = active / total ratio
@@ -109,6 +128,15 @@ export default function CountryDeepDive({
     inactive: t.total - t.active,
     effectiveness: t.total > 0 ? Math.round((t.active / t.total) * 100) : 0,
   }));
+
+  // Filter active policies for the table
+  const allTopics = [...new Set(activePolicyList.map((p) => p.topic))].sort();
+  const filteredPolicies = activePolicyList.filter((p) => {
+    const matchesTopic = topicFilter === "all" || p.topic === topicFilter;
+    const matchesSearch = !policySearch || p.title.toLowerCase().includes(policySearch.toLowerCase());
+    return matchesTopic && matchesSearch;
+  });
+  const displayedPolicies = showAllPolicies ? filteredPolicies : filteredPolicies.slice(0, 20);
 
   return (
     <main className="min-h-screen bg-gray-950 text-white p-8">
@@ -127,7 +155,7 @@ export default function CountryDeepDive({
         </div>
 
         {/* Key stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
           {latestEnergy && (
             <>
               <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
@@ -166,13 +194,64 @@ export default function CountryDeepDive({
               <div className="text-xs text-gray-500 mt-1">since {earliestCO2!.year}</div>
             </div>
           )}
+          <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+            <div className="text-xs text-gray-500 mb-1">Active Policies</div>
+            <div className="text-2xl font-bold text-cyan-400">
+              {activePolicies}
+            </div>
+            <div className="text-xs text-gray-500 mt-1">of {totalPolicies} total</div>
+          </div>
         </div>
 
-        {/* Renewable Energy Chart */}
+        {/* Clean Energy Share Trend (small sparkline-style) */}
+        {energySeries.length > 1 && cleanShareChange !== null && (
+          <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-6">
+            <div className="flex items-center justify-between mb-1">
+              <h2 className="text-lg font-semibold">Clean Energy Share Over Time</h2>
+              <div className={`text-sm font-bold ${cleanShareChange >= 0 ? "text-emerald-400" : "text-red-400"}`}>
+                {cleanShareChange >= 0 ? "+" : ""}{cleanShareChange.toFixed(1)} pp since {earliestEnergy!.year}
+              </div>
+            </div>
+            <p className="text-xs text-gray-500 mb-4">
+              Percentage of total installed capacity from renewable sources
+            </p>
+            <ResponsiveContainer width="100%" height={200}>
+              <AreaChart data={energySeries}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="year" stroke="#9CA3AF" tick={{ fontSize: 12 }} />
+                <YAxis
+                  stroke="#9CA3AF"
+                  tick={{ fontSize: 12 }}
+                  domain={[0, 100]}
+                  tickFormatter={(v: number) => `${v}%`}
+                />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#1F2937",
+                    border: "1px solid #374151",
+                    borderRadius: "8px",
+                    color: "#fff",
+                  }}
+                  labelStyle={{ color: "#9CA3AF" }}
+                  formatter={((value: number) => [`${(value ?? 0).toFixed(1)}%`, "Clean Share"]) as any}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="clean_share"
+                  stroke="#22c55e"
+                  fill="#22c55e20"
+                  strokeWidth={2}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        )}
+
+        {/* Renewable Energy Capacity Chart */}
         {stackedEnergy.length > 0 && (
           <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-6">
             <h2 className="text-lg font-semibold mb-1">
-              Renewable Energy Capacity Over Time
+              Energy Capacity Breakdown
             </h2>
             <p className="text-xs text-gray-500 mb-4">
               Clean vs fossil power generation capacity (MW)
@@ -387,6 +466,107 @@ export default function CountryDeepDive({
                   </div>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {/* Active Policy Table */}
+        {activePolicyList.length > 0 && (
+          <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-6">
+            <div className="flex items-center justify-between mb-1">
+              <h2 className="text-lg font-semibold">Active Policies</h2>
+              <span className="text-sm text-emerald-400 font-medium">{activePolicyList.length} policies</span>
+            </div>
+            <p className="text-xs text-gray-500 mb-4">
+              Currently enforced climate and energy policies
+            </p>
+
+            {/* Search & filter controls */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
+              <input
+                type="text"
+                placeholder="Search policies..."
+                value={policySearch}
+                onChange={(e) => { setPolicySearch(e.target.value); setShowAllPolicies(false); }}
+                className="flex-1 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none placeholder-gray-500"
+              />
+              <select
+                value={topicFilter}
+                onChange={(e) => { setTopicFilter(e.target.value); setShowAllPolicies(false); }}
+                className="px-3 py-2 bg-gray-800 text-white text-sm rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none"
+              >
+                <option value="all">All sectors</option>
+                {allTopics.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-gray-700">
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Policy Name</th>
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Sector</th>
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Type</th>
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {displayedPolicies.map((p, i) => (
+                    <tr
+                      key={i}
+                      className="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors"
+                    >
+                      <td className="py-2 px-3 text-gray-200 max-w-md">
+                        <div className="truncate" title={p.title}>{p.title}</div>
+                      </td>
+                      <td className="py-2 px-3 whitespace-nowrap">
+                        <span
+                          className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full border"
+                          style={{
+                            color: TOPIC_COLORS[p.topic] ?? "#9CA3AF",
+                            borderColor: (TOPIC_COLORS[p.topic] ?? "#9CA3AF") + "40",
+                            backgroundColor: (TOPIC_COLORS[p.topic] ?? "#9CA3AF") + "10",
+                          }}
+                        >
+                          {TOPIC_ICONS[p.topic] ?? "📋"} {p.topic}
+                        </span>
+                      </td>
+                      <td className="py-2 px-3 text-gray-400 text-xs whitespace-nowrap">
+                        {p.family ?? "—"}
+                      </td>
+                      <td className="py-2 px-3 text-gray-400 font-mono text-xs">
+                        {p.year ?? "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Show more / results count */}
+            <div className="mt-3 flex items-center justify-between">
+              <span className="text-xs text-gray-500">
+                Showing {displayedPolicies.length} of {filteredPolicies.length} policies
+              </span>
+              {!showAllPolicies && filteredPolicies.length > 20 && (
+                <button
+                  onClick={() => setShowAllPolicies(true)}
+                  className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  Show all {filteredPolicies.length} policies
+                </button>
+              )}
+              {showAllPolicies && filteredPolicies.length > 20 && (
+                <button
+                  onClick={() => setShowAllPolicies(false)}
+                  className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  Show fewer
+                </button>
+              )}
             </div>
           </div>
         )}
