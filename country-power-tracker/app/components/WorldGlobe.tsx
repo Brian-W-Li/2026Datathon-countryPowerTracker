@@ -21,7 +21,7 @@ const NUMERIC_TO_ISO3: Record<number, string> = {
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-//import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type Country = {
   iso3: string;
@@ -37,7 +37,7 @@ type Props = {
 
 export default function WorldGlobe({ countries }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
-  //const router = useRouter();
+  const router = useRouter();
   const [tooltip, setTooltip] = useState<{ x: number; y: number; name: string; score: number } | null>(null);
 
   useEffect(() => {
@@ -113,9 +113,12 @@ export default function WorldGlobe({ countries }: Props) {
             d3.select(this).attr("stroke-width", 0.3).attr("stroke", "#ffffff");
             setTooltip(null);
         })
-        //.on("click", (event: MouseEvent, d: any) => {
-          // Will route to country card once iso3 mapping is added
-        //});
+        .on("click", (_event: MouseEvent, d: any) => {
+            const iso3 = NUMERIC_TO_ISO3[+d.id];
+            if (iso3) {
+              router.push(`/country/${iso3}`);
+            }
+        });
 
       // Graticule
       const graticule = d3.geoGraticule();
@@ -157,7 +160,7 @@ export default function WorldGlobe({ countries }: Props) {
 
       svg.call(zoom);
     });
-  }, [countries]);
+  }, [countries, router]);
 
   return (
     <div className="relative flex items-center justify-center">
