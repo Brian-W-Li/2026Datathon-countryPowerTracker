@@ -1,0 +1,3712 @@
+{
+  "sector_correlations": [
+    {
+      "name": "Renewable Energy",
+      "code": "RE",
+      "n": 164,
+      "r_co2_capita": -0.3047,
+      "p_co2_capita": 4.7e-05,
+      "r_co2_gdp": -0.2095,
+      "p_co2_gdp": 0.006402
+    },
+    {
+      "name": "Cross-cutting / Framework",
+      "code": "CF",
+      "n": 164,
+      "r_co2_capita": -0.0436,
+      "p_co2_capita": 0.578813,
+      "r_co2_gdp": -0.023,
+      "p_co2_gdp": 0.770022
+    },
+    {
+      "name": "Energy Efficiency",
+      "code": "EEF",
+      "n": 164,
+      "r_co2_capita": -0.1334,
+      "p_co2_capita": 0.086779,
+      "r_co2_gdp": 0.2384,
+      "p_co2_gdp": 0.001782
+    },
+    {
+      "name": "Fossil Phase-Down",
+      "code": "FPD",
+      "n": 164,
+      "r_co2_capita": 0.4285,
+      "p_co2_capita": 0.0,
+      "r_co2_gdp": 0.1469,
+      "p_co2_gdp": 0.058691
+    },
+    {
+      "name": "Green Transport",
+      "code": "GRT",
+      "n": 164,
+      "r_co2_capita": 0.0861,
+      "p_co2_capita": 0.271343,
+      "r_co2_gdp": -0.2493,
+      "p_co2_gdp": 0.001051
+    },
+    {
+      "name": "Carbon Pricing",
+      "code": "CPM",
+      "n": 164,
+      "r_co2_capita": -0.0444,
+      "p_co2_capita": 0.571921,
+      "r_co2_gdp": -0.1746,
+      "p_co2_gdp": 0.024013
+    },
+    {
+      "name": "Land Use",
+      "code": "LU",
+      "n": 164,
+      "r_co2_capita": 0.0069,
+      "p_co2_capita": 0.929639,
+      "r_co2_gdp": -0.1324,
+      "p_co2_gdp": 0.089225
+    }
+  ],
+  "instrument_effectiveness": [
+    {
+      "instrument": "Other",
+      "type_code": "other",
+      "avg_co2_with": 4.299,
+      "avg_co2_without": 22.932,
+      "difference": -18.633,
+      "countries_with": 163,
+      "r": -0.0807,
+      "p": 0.304557,
+      "significant": false
+    },
+    {
+      "instrument": "Subsidy/Grant",
+      "type_code": "subsidy",
+      "avg_co2_with": 4.042,
+      "avg_co2_without": 16.185,
+      "difference": -12.143,
+      "countries_with": 159,
+      "r": 0.0833,
+      "p": 0.29518,
+      "significant": false
+    },
+    {
+      "instrument": "Mandate",
+      "type_code": "mandate",
+      "avg_co2_with": 4.412,
+      "avg_co2_without": 4.494,
+      "difference": -0.082,
+      "countries_with": 163,
+      "r": -0.2053,
+      "p": 0.007785,
+      "significant": true
+    },
+    {
+      "instrument": "Labeling",
+      "type_code": "labeling",
+      "avg_co2_with": 5.097,
+      "avg_co2_without": 4.145,
+      "difference": 0.952,
+      "countries_with": 46,
+      "r": -0.2594,
+      "p": 0.074824,
+      "significant": false
+    },
+    {
+      "instrument": "Feed-in Tariff",
+      "type_code": "feed_in_tariff",
+      "avg_co2_with": 5.063,
+      "avg_co2_without": 3.916,
+      "difference": 1.147,
+      "countries_with": 71,
+      "r": -0.1679,
+      "p": 0.157195,
+      "significant": false
+    },
+    {
+      "instrument": "Tax Credit",
+      "type_code": "tax_credit",
+      "avg_co2_with": 5.588,
+      "avg_co2_without": 3.926,
+      "difference": 1.662,
+      "countries_with": 48,
+      "r": 0.0185,
+      "p": 0.900079,
+      "significant": false
+    },
+    {
+      "instrument": "Ban/Phase-out",
+      "type_code": "ban",
+      "avg_co2_with": 4.434,
+      "avg_co2_without": 2.682,
+      "difference": 1.752,
+      "countries_with": 162,
+      "r": -0.2206,
+      "p": 0.004225,
+      "significant": true
+    },
+    {
+      "instrument": "Framework Legislation",
+      "type_code": "framework_legislation",
+      "avg_co2_with": 4.447,
+      "avg_co2_without": 2.575,
+      "difference": 1.872,
+      "countries_with": 161,
+      "r": -0.0653,
+      "p": 0.409186,
+      "significant": false
+    },
+    {
+      "instrument": "Voluntary Agreement",
+      "type_code": "voluntary_agreement",
+      "avg_co2_with": 5.494,
+      "avg_co2_without": 3.407,
+      "difference": 2.087,
+      "countries_with": 79,
+      "r": -0.0391,
+      "p": 0.731645,
+      "significant": false
+    },
+    {
+      "instrument": "Carbon Tax",
+      "type_code": "carbon_tax",
+      "avg_co2_with": 5.98,
+      "avg_co2_without": 3.838,
+      "difference": 2.142,
+      "countries_with": 44,
+      "r": 0.1037,
+      "p": 0.499223,
+      "significant": false
+    },
+    {
+      "instrument": "Cap and Trade",
+      "type_code": "cap_and_trade",
+      "avg_co2_with": 6.125,
+      "avg_co2_without": 3.595,
+      "difference": 2.53,
+      "countries_with": 53,
+      "r": -0.2489,
+      "p": 0.06644,
+      "significant": false
+    },
+    {
+      "instrument": "Reporting Requirement",
+      "type_code": "reporting",
+      "avg_co2_with": 6.534,
+      "avg_co2_without": 3.837,
+      "difference": 2.697,
+      "countries_with": 35,
+      "r": 0.4708,
+      "p": 0.002173,
+      "significant": true
+    },
+    {
+      "instrument": "Standard/Regulation",
+      "type_code": "standard",
+      "avg_co2_with": 5.543,
+      "avg_co2_without": 2.045,
+      "difference": 3.498,
+      "countries_with": 111,
+      "r": 0.3875,
+      "p": 1.1e-05,
+      "significant": true
+    }
+  ],
+  "binding_target": {
+    "n": 164,
+    "binding_r": -0.1216,
+    "binding_p": 0.11903,
+    "target_r": -0.0579,
+    "target_p": 0.460132
+  },
+  "policy_cocktails": [
+    {
+      "combo": "Green Transport + Renewable Energy",
+      "combo_codes": [
+        "GRT",
+        "RE"
+      ],
+      "n": 4,
+      "avg_co2_gdp": 0.1205,
+      "median_co2_gdp": 0.111
+    },
+    {
+      "combo": "Cross-cutting / Framework + Renewable Energy",
+      "combo_codes": [
+        "CF",
+        "RE"
+      ],
+      "n": 42,
+      "avg_co2_gdp": 0.2239,
+      "median_co2_gdp": 0.195
+    },
+    {
+      "combo": "Cross-cutting / Framework + Fossil Phase-Down",
+      "combo_codes": [
+        "CF",
+        "FPD"
+      ],
+      "n": 3,
+      "avg_co2_gdp": 0.225,
+      "median_co2_gdp": 0.119
+    },
+    {
+      "combo": "Energy Efficiency + Renewable Energy",
+      "combo_codes": [
+        "EEF",
+        "RE"
+      ],
+      "n": 78,
+      "avg_co2_gdp": 0.2309,
+      "median_co2_gdp": 0.188
+    },
+    {
+      "combo": "Fossil Phase-Down + Renewable Energy",
+      "combo_codes": [
+        "FPD",
+        "RE"
+      ],
+      "n": 13,
+      "avg_co2_gdp": 0.2825,
+      "median_co2_gdp": 0.266
+    },
+    {
+      "combo": "Cross-cutting / Framework + Energy Efficiency",
+      "combo_codes": [
+        "CF",
+        "EEF"
+      ],
+      "n": 15,
+      "avg_co2_gdp": 0.3279,
+      "median_co2_gdp": 0.183
+    },
+    {
+      "combo": "Energy Efficiency + Fossil Phase-Down",
+      "combo_codes": [
+        "EEF",
+        "FPD"
+      ],
+      "n": 8,
+      "avg_co2_gdp": 0.4135,
+      "median_co2_gdp": 0.369
+    }
+  ],
+  "scatter_data": [
+    {
+      "country": "United States",
+      "iso3": "USA",
+      "co2_per_capita": 14.197,
+      "co2_per_gdp": 0.259,
+      "total_policies": 881,
+      "active_policies": 738,
+      "top_sector": "RE",
+      "population": 345426566.0,
+      "gdp_usd": 19493170182843.0,
+      "policy_density": 2.55,
+      "sectors": {
+        "RE": 286,
+        "CF": 168,
+        "FPD": 162,
+        "EEF": 147,
+        "GRT": 113,
+        "LU": 4,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Australia",
+      "iso3": "AUS",
+      "co2_per_capita": 14.477,
+      "co2_per_gdp": 0.286,
+      "total_policies": 584,
+      "active_policies": 405,
+      "top_sector": "RE",
+      "population": 26713206.0,
+      "gdp_usd": 1344251444393.0,
+      "policy_density": 21.86,
+      "sectors": {
+        "RE": 159,
+        "FPD": 126,
+        "EEF": 112,
+        "CF": 95,
+        "GRT": 86,
+        "LU": 3,
+        "CPM": 3
+      }
+    },
+    {
+      "country": "Canada",
+      "iso3": "CAN",
+      "co2_per_capita": 13.42,
+      "co2_per_gdp": 0.311,
+      "total_policies": 543,
+      "active_policies": 420,
+      "top_sector": "FPD",
+      "population": 39742429.0,
+      "gdp_usd": 1761295624423.0,
+      "policy_density": 13.66,
+      "sectors": {
+        "FPD": 124,
+        "EEF": 115,
+        "RE": 115,
+        "CF": 98,
+        "GRT": 87,
+        "LU": 3,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "People's Republic of China",
+      "iso3": "CHN",
+      "co2_per_capita": 8.658,
+      "co2_per_gdp": 0.434,
+      "total_policies": 492,
+      "active_policies": 346,
+      "top_sector": "RE",
+      "population": 1419321284.0,
+      "gdp_usd": 26966016991166.0,
+      "policy_density": 0.35,
+      "sectors": {
+        "RE": 180,
+        "CF": 99,
+        "GRT": 77,
+        "EEF": 72,
+        "FPD": 62,
+        "LU": 1,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "United Kingdom",
+      "iso3": "GBR",
+      "co2_per_capita": 4.526,
+      "co2_per_gdp": 0.119,
+      "total_policies": 454,
+      "active_policies": 340,
+      "top_sector": "CF",
+      "population": 69138185.0,
+      "gdp_usd": 2615230634906.0,
+      "policy_density": 6.57,
+      "sectors": {
+        "CF": 114,
+        "FPD": 89,
+        "EEF": 85,
+        "RE": 81,
+        "GRT": 79,
+        "CPM": 5,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Germany",
+      "iso3": "DEU",
+      "co2_per_capita": 6.769,
+      "co2_per_gdp": 0.171,
+      "total_policies": 448,
+      "active_policies": 337,
+      "top_sector": "FPD",
+      "population": 84552234.0,
+      "gdp_usd": 3909612753939.0,
+      "policy_density": 5.3,
+      "sectors": {
+        "FPD": 103,
+        "RE": 102,
+        "EEF": 92,
+        "CF": 92,
+        "GRT": 59
+      }
+    },
+    {
+      "country": "India",
+      "iso3": "IND",
+      "co2_per_capita": 2.201,
+      "co2_per_gdp": 0.27,
+      "total_policies": 369,
+      "active_policies": 306,
+      "top_sector": "RE",
+      "population": 1450935785.0,
+      "gdp_usd": 10476248645535.0,
+      "policy_density": 0.25,
+      "sectors": {
+        "RE": 106,
+        "CF": 98,
+        "EEF": 72,
+        "FPD": 54,
+        "GRT": 37,
+        "CPM": 1,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Spain",
+      "iso3": "ESP",
+      "co2_per_capita": 4.599,
+      "co2_per_gdp": 0.144,
+      "total_policies": 362,
+      "active_policies": 250,
+      "top_sector": "RE",
+      "population": 47910533.0,
+      "gdp_usd": 1625139888517.0,
+      "policy_density": 7.56,
+      "sectors": {
+        "RE": 115,
+        "CF": 84,
+        "EEF": 64,
+        "GRT": 52,
+        "FPD": 40,
+        "CPM": 5,
+        "LU": 2
+      }
+    },
+    {
+      "country": "Italy",
+      "iso3": "ITA",
+      "co2_per_capita": 5.088,
+      "co2_per_gdp": 0.159,
+      "total_policies": 336,
+      "active_policies": 239,
+      "top_sector": "RE",
+      "population": 59342870.0,
+      "gdp_usd": 2136009300257.0,
+      "policy_density": 5.66,
+      "sectors": {
+        "RE": 107,
+        "EEF": 74,
+        "CF": 68,
+        "GRT": 44,
+        "FPD": 34,
+        "CPM": 5,
+        "LU": 4
+      }
+    },
+    {
+      "country": "France",
+      "iso3": "FRA",
+      "co2_per_capita": 3.969,
+      "co2_per_gdp": 0.111,
+      "total_policies": 317,
+      "active_policies": 242,
+      "top_sector": "RE",
+      "population": 66548532.0,
+      "gdp_usd": 2671568767031.0,
+      "policy_density": 4.76,
+      "sectors": {
+        "RE": 91,
+        "GRT": 77,
+        "CF": 53,
+        "EEF": 49,
+        "FPD": 44,
+        "LU": 2,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Japan",
+      "iso3": "JPN",
+      "co2_per_capita": 7.772,
+      "co2_per_gdp": 0.216,
+      "total_policies": 302,
+      "active_policies": 222,
+      "top_sector": "RE",
+      "population": 123753041.0,
+      "gdp_usd": 4774494846664.0,
+      "policy_density": 2.44,
+      "sectors": {
+        "RE": 84,
+        "EEF": 63,
+        "FPD": 56,
+        "CF": 55,
+        "GRT": 42,
+        "LU": 2
+      }
+    },
+    {
+      "country": "Mexico",
+      "iso3": "MEX",
+      "co2_per_capita": 3.523,
+      "co2_per_gdp": 0.223,
+      "total_policies": 267,
+      "active_policies": 198,
+      "top_sector": "EEF",
+      "population": 130861001.0,
+      "gdp_usd": 2033437602787.0,
+      "policy_density": 2.04,
+      "sectors": {
+        "EEF": 95,
+        "RE": 75,
+        "FPD": 34,
+        "CF": 33,
+        "GRT": 27,
+        "CPM": 3
+      }
+    },
+    {
+      "country": "Netherlands",
+      "iso3": "NLD",
+      "co2_per_capita": 6.297,
+      "co2_per_gdp": 0.145,
+      "total_policies": 265,
+      "active_policies": 184,
+      "top_sector": "CF",
+      "population": 18228740.0,
+      "gdp_usd": 879609110665.0,
+      "policy_density": 14.54,
+      "sectors": {
+        "CF": 67,
+        "EEF": 57,
+        "FPD": 56,
+        "RE": 51,
+        "GRT": 27,
+        "CPM": 5,
+        "LU": 2
+      }
+    },
+    {
+      "country": "Portugal",
+      "iso3": "PRT",
+      "co2_per_capita": 3.409,
+      "co2_per_gdp": 0.138,
+      "total_policies": 261,
+      "active_policies": 189,
+      "top_sector": "RE",
+      "population": 10425291.0,
+      "gdp_usd": 295712910456.0,
+      "policy_density": 25.04,
+      "sectors": {
+        "RE": 70,
+        "EEF": 62,
+        "CF": 58,
+        "GRT": 44,
+        "FPD": 22,
+        "CPM": 4,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Korea",
+      "iso3": "KOR",
+      "co2_per_capita": 11.286,
+      "co2_per_gdp": 0.284,
+      "total_policies": 247,
+      "active_policies": 186,
+      "top_sector": "RE",
+      "population": 51717587.0,
+      "gdp_usd": 2137558645699.0,
+      "policy_density": 4.78,
+      "sectors": {
+        "RE": 74,
+        "EEF": 50,
+        "CF": 49,
+        "GRT": 38,
+        "FPD": 36
+      }
+    },
+    {
+      "country": "Austria",
+      "iso3": "AUT",
+      "co2_per_capita": 6.18,
+      "co2_per_gdp": 0.154,
+      "total_policies": 240,
+      "active_policies": 166,
+      "top_sector": "CF",
+      "population": 9120815.0,
+      "gdp_usd": 398815419150.0,
+      "policy_density": 26.31,
+      "sectors": {
+        "CF": 73,
+        "RE": 63,
+        "EEF": 52,
+        "FPD": 30,
+        "GRT": 20,
+        "CPM": 1,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Norway",
+      "iso3": "NOR",
+      "co2_per_capita": 6.668,
+      "co2_per_gdp": 0.085,
+      "total_policies": 232,
+      "active_policies": 181,
+      "top_sector": "RE",
+      "population": 5576656.0,
+      "gdp_usd": 482328451592.0,
+      "policy_density": 41.6,
+      "sectors": {
+        "RE": 84,
+        "CF": 45,
+        "FPD": 41,
+        "EEF": 31,
+        "GRT": 30,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Indonesia",
+      "iso3": "IDN",
+      "co2_per_capita": 2.865,
+      "co2_per_gdp": 0.217,
+      "total_policies": 223,
+      "active_policies": 186,
+      "top_sector": "RE",
+      "population": 283487933.0,
+      "gdp_usd": 3500093638879.0,
+      "policy_density": 0.79,
+      "sectors": {
+        "RE": 65,
+        "CF": 58,
+        "GRT": 37,
+        "FPD": 31,
+        "EEF": 30,
+        "LU": 1,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Sweden",
+      "iso3": "SWE",
+      "co2_per_capita": 3.592,
+      "co2_per_gdp": 0.074,
+      "total_policies": 221,
+      "active_policies": 152,
+      "top_sector": "RE",
+      "population": 10606993.0,
+      "gdp_usd": 494214521158.0,
+      "policy_density": 20.84,
+      "sectors": {
+        "RE": 56,
+        "CF": 50,
+        "EEF": 49,
+        "GRT": 41,
+        "FPD": 22,
+        "CPM": 2,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Brazil",
+      "iso3": "BRA",
+      "co2_per_capita": 2.278,
+      "co2_per_gdp": 0.151,
+      "total_policies": 216,
+      "active_policies": 177,
+      "top_sector": "RE",
+      "population": 211998565.0,
+      "gdp_usd": 3187412907763.0,
+      "policy_density": 1.02,
+      "sectors": {
+        "RE": 60,
+        "CF": 49,
+        "EEF": 47,
+        "FPD": 32,
+        "GRT": 28
+      }
+    },
+    {
+      "country": "Poland",
+      "iso3": "POL",
+      "co2_per_capita": 7.08,
+      "co2_per_gdp": 0.256,
+      "total_policies": 205,
+      "active_policies": 144,
+      "top_sector": "RE",
+      "population": 38539209.0,
+      "gdp_usd": 1231021338216.0,
+      "policy_density": 5.32,
+      "sectors": {
+        "RE": 54,
+        "CF": 49,
+        "EEF": 44,
+        "FPD": 31,
+        "GRT": 25,
+        "LU": 2
+      }
+    },
+    {
+      "country": "Denmark",
+      "iso3": "DNK",
+      "co2_per_capita": 4.746,
+      "co2_per_gdp": 0.097,
+      "total_policies": 195,
+      "active_policies": 139,
+      "top_sector": "CF",
+      "population": 5977417.0,
+      "gdp_usd": 299429011832.0,
+      "policy_density": 32.62,
+      "sectors": {
+        "CF": 49,
+        "EEF": 47,
+        "RE": 44,
+        "FPD": 31,
+        "GRT": 19,
+        "LU": 3,
+        "CPM": 2
+      }
+    },
+    {
+      "country": "Belgium",
+      "iso3": "BEL",
+      "co2_per_capita": 7.28,
+      "co2_per_gdp": 0.182,
+      "total_policies": 187,
+      "active_policies": 133,
+      "top_sector": "CF",
+      "population": 11738761.0,
+      "gdp_usd": 489678394377.0,
+      "policy_density": 15.93,
+      "sectors": {
+        "CF": 52,
+        "EEF": 49,
+        "RE": 48,
+        "GRT": 17,
+        "FPD": 17,
+        "LU": 3,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Ireland",
+      "iso3": "IRL",
+      "co2_per_capita": 6.339,
+      "co2_per_gdp": 0.119,
+      "total_policies": 183,
+      "active_policies": 140,
+      "top_sector": "RE",
+      "population": 5255016.0,
+      "gdp_usd": 308390920561.0,
+      "policy_density": 34.82,
+      "sectors": {
+        "RE": 58,
+        "EEF": 51,
+        "CF": 39,
+        "GRT": 20,
+        "FPD": 12,
+        "CPM": 2,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Finland",
+      "iso3": "FIN",
+      "co2_per_capita": 5.301,
+      "co2_per_gdp": 0.161,
+      "total_policies": 179,
+      "active_policies": 118,
+      "top_sector": "CF",
+      "population": 5617311.0,
+      "gdp_usd": 226154847456.0,
+      "policy_density": 31.87,
+      "sectors": {
+        "CF": 45,
+        "RE": 39,
+        "EEF": 35,
+        "GRT": 34,
+        "FPD": 19,
+        "LU": 4,
+        "CPM": 3
+      }
+    },
+    {
+      "country": "Colombia",
+      "iso3": "COL",
+      "co2_per_capita": 1.752,
+      "co2_per_gdp": 0.12,
+      "total_policies": 174,
+      "active_policies": 133,
+      "top_sector": "FPD",
+      "population": 52886360.0,
+      "gdp_usd": 742716953392.0,
+      "policy_density": 3.29,
+      "sectors": {
+        "FPD": 49,
+        "RE": 47,
+        "CF": 35,
+        "GRT": 26,
+        "EEF": 17
+      }
+    },
+    {
+      "country": "South Africa",
+      "iso3": "ZAF",
+      "co2_per_capita": 6.872,
+      "co2_per_gdp": 0.593,
+      "total_policies": 164,
+      "active_policies": 148,
+      "top_sector": "CF",
+      "population": 64007187.0,
+      "gdp_usd": 723559323969.0,
+      "policy_density": 2.56,
+      "sectors": {
+        "CF": 57,
+        "RE": 45,
+        "EEF": 33,
+        "GRT": 15,
+        "FPD": 11,
+        "LU": 2,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Chile",
+      "iso3": "CHL",
+      "co2_per_capita": 3.983,
+      "co2_per_gdp": 0.191,
+      "total_policies": 160,
+      "active_policies": 128,
+      "top_sector": "RE",
+      "population": 19764774.0,
+      "gdp_usd": 448338105532.0,
+      "policy_density": 8.1,
+      "sectors": {
+        "RE": 62,
+        "CF": 26,
+        "FPD": 25,
+        "EEF": 24,
+        "GRT": 21,
+        "LU": 1,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "New Zealand",
+      "iso3": "NZL",
+      "co2_per_capita": 6.229,
+      "co2_per_gdp": 0.159,
+      "total_policies": 159,
+      "active_policies": 107,
+      "top_sector": "EEF",
+      "population": 5213942.0,
+      "gdp_usd": 200602760076.0,
+      "policy_density": 30.5,
+      "sectors": {
+        "EEF": 48,
+        "RE": 41,
+        "GRT": 25,
+        "CF": 22,
+        "FPD": 20,
+        "CPM": 3
+      }
+    },
+    {
+      "country": "Hungary",
+      "iso3": "HUN",
+      "co2_per_capita": 4.136,
+      "co2_per_gdp": 0.159,
+      "total_policies": 156,
+      "active_policies": 111,
+      "top_sector": "RE",
+      "population": 9676135.0,
+      "gdp_usd": 285385229433.0,
+      "policy_density": 16.12,
+      "sectors": {
+        "RE": 51,
+        "EEF": 49,
+        "CF": 27,
+        "GRT": 19,
+        "FPD": 9,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Slovak Republic",
+      "iso3": "SVK",
+      "co2_per_capita": 5.283,
+      "co2_per_gdp": 0.21,
+      "total_policies": 156,
+      "active_policies": 121,
+      "top_sector": "EEF",
+      "population": 5506759.0,
+      "gdp_usd": 150360426456.0,
+      "policy_density": 28.33,
+      "sectors": {
+        "EEF": 50,
+        "RE": 40,
+        "CF": 37,
+        "GRT": 13,
+        "FPD": 12,
+        "LU": 3,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Switzerland",
+      "iso3": "CHE",
+      "co2_per_capita": 3.595,
+      "co2_per_gdp": 0.059,
+      "total_policies": 148,
+      "active_policies": 115,
+      "top_sector": "RE",
+      "population": 8921979.0,
+      "gdp_usd": 559384947989.0,
+      "policy_density": 16.59,
+      "sectors": {
+        "RE": 64,
+        "CF": 35,
+        "EEF": 22,
+        "FPD": 18,
+        "GRT": 7,
+        "CPM": 2
+      }
+    },
+    {
+      "country": "Republic of Turkiye",
+      "iso3": "TUR",
+      "co2_per_capita": 5.865,
+      "co2_per_gdp": 0.186,
+      "total_policies": 146,
+      "active_policies": 118,
+      "top_sector": "RE",
+      "population": 87473800.0,
+      "gdp_usd": 2385996374127.0,
+      "policy_density": 1.67,
+      "sectors": {
+        "RE": 57,
+        "EEF": 35,
+        "CF": 29,
+        "GRT": 18,
+        "FPD": 5,
+        "LU": 2
+      }
+    },
+    {
+      "country": "Greece",
+      "iso3": "GRC",
+      "co2_per_capita": 5.311,
+      "co2_per_gdp": 0.218,
+      "total_policies": 134,
+      "active_policies": 106,
+      "top_sector": "RE",
+      "population": 10047813.0,
+      "gdp_usd": 263892672733.0,
+      "policy_density": 13.34,
+      "sectors": {
+        "RE": 45,
+        "CF": 34,
+        "EEF": 29,
+        "FPD": 15,
+        "GRT": 11
+      }
+    },
+    {
+      "country": "Luxembourg",
+      "iso3": "LUX",
+      "co2_per_capita": 10.46,
+      "co2_per_gdp": 0.201,
+      "total_policies": 130,
+      "active_policies": 107,
+      "top_sector": "EEF",
+      "population": 673042.0,
+      "gdp_usd": 36128358732.0,
+      "policy_density": 193.15,
+      "sectors": {
+        "EEF": 34,
+        "RE": 34,
+        "CF": 32,
+        "GRT": 17,
+        "FPD": 13
+      }
+    },
+    {
+      "country": "Singapore",
+      "iso3": "SGP",
+      "co2_per_capita": 9.245,
+      "co2_per_gdp": 0.106,
+      "total_policies": 129,
+      "active_policies": 103,
+      "top_sector": "RE",
+      "population": 5832387.0,
+      "gdp_usd": 461801118473.0,
+      "policy_density": 22.12,
+      "sectors": {
+        "RE": 50,
+        "EEF": 31,
+        "CF": 21,
+        "GRT": 13,
+        "FPD": 13,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Czech Republic",
+      "iso3": "CZE",
+      "co2_per_capita": 7.044,
+      "co2_per_gdp": 0.277,
+      "total_policies": 127,
+      "active_policies": 95,
+      "top_sector": "CF",
+      "population": 10735857.0,
+      "gdp_usd": 342966849621.0,
+      "policy_density": 11.83,
+      "sectors": {
+        "CF": 42,
+        "EEF": 28,
+        "RE": 22,
+        "FPD": 20,
+        "GRT": 14,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Argentina",
+      "iso3": "ARG",
+      "co2_per_capita": 3.743,
+      "co2_per_gdp": 0.215,
+      "total_policies": 121,
+      "active_policies": 94,
+      "top_sector": "RE",
+      "population": 45696153.0,
+      "gdp_usd": 854914363923.0,
+      "policy_density": 2.65,
+      "sectors": {
+        "RE": 47,
+        "EEF": 27,
+        "CF": 19,
+        "GRT": 14,
+        "FPD": 13,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Estonia",
+      "iso3": "EST",
+      "co2_per_capita": 6.105,
+      "co2_per_gdp": 0.299,
+      "total_policies": 117,
+      "active_policies": 74,
+      "top_sector": "RE",
+      "population": 1360548.0,
+      "gdp_usd": 39999856613.0,
+      "policy_density": 85.99,
+      "sectors": {
+        "RE": 31,
+        "CF": 31,
+        "EEF": 28,
+        "GRT": 14,
+        "FPD": 13
+      }
+    },
+    {
+      "country": "Lithuania",
+      "iso3": "LTU",
+      "co2_per_capita": 4.387,
+      "co2_per_gdp": 0.152,
+      "total_policies": 107,
+      "active_policies": 75,
+      "top_sector": "RE",
+      "population": 2859112.0,
+      "gdp_usd": 84814257826.0,
+      "policy_density": 37.42,
+      "sectors": {
+        "RE": 29,
+        "EEF": 27,
+        "FPD": 21,
+        "CF": 20,
+        "GRT": 8,
+        "CPM": 1,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Viet Nam",
+      "iso3": "VNM",
+      "co2_per_capita": 3.673,
+      "co2_per_gdp": 0.387,
+      "total_policies": 104,
+      "active_policies": 78,
+      "top_sector": "EEF",
+      "population": 100987685.0,
+      "gdp_usd": 833803909046.0,
+      "policy_density": 1.03,
+      "sectors": {
+        "EEF": 45,
+        "RE": 25,
+        "CF": 15,
+        "FPD": 14,
+        "GRT": 5
+      }
+    },
+    {
+      "country": "Latvia",
+      "iso3": "LVA",
+      "co2_per_capita": 3.452,
+      "co2_per_gdp": 0.129,
+      "total_policies": 87,
+      "active_policies": 55,
+      "top_sector": "EEF",
+      "population": 1871874.0,
+      "gdp_usd": 51248480035.0,
+      "policy_density": 46.48,
+      "sectors": {
+        "EEF": 24,
+        "CF": 22,
+        "RE": 20,
+        "GRT": 11,
+        "FPD": 9,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Malaysia",
+      "iso3": "MYS",
+      "co2_per_capita": 8.162,
+      "co2_per_gdp": 0.321,
+      "total_policies": 87,
+      "active_policies": 73,
+      "top_sector": "CF",
+      "population": 35557670.0,
+      "gdp_usd": 877584198429.0,
+      "policy_density": 2.45,
+      "sectors": {
+        "CF": 24,
+        "RE": 21,
+        "EEF": 17,
+        "FPD": 17,
+        "GRT": 8
+      }
+    },
+    {
+      "country": "Israel",
+      "iso3": "ISR",
+      "co2_per_capita": 5.607,
+      "co2_per_gdp": 0.185,
+      "total_policies": 86,
+      "active_policies": 60,
+      "top_sector": "RE",
+      "population": 9387015.0,
+      "gdp_usd": 336722563455.0,
+      "policy_density": 9.16,
+      "sectors": {
+        "RE": 31,
+        "EEF": 21,
+        "CF": 15,
+        "FPD": 10,
+        "GRT": 9
+      }
+    },
+    {
+      "country": "Ukraine",
+      "iso3": "UKR",
+      "co2_per_capita": 3.764,
+      "co2_per_gdp": 0.463,
+      "total_policies": 85,
+      "active_policies": 73,
+      "top_sector": "RE",
+      "population": 37860221.0,
+      "gdp_usd": 309166674673.0,
+      "policy_density": 2.25,
+      "sectors": {
+        "RE": 34,
+        "EEF": 22,
+        "CF": 11,
+        "FPD": 10,
+        "GRT": 8
+      }
+    },
+    {
+      "country": "Peru",
+      "iso3": "PER",
+      "co2_per_capita": 2.053,
+      "co2_per_gdp": 0.19,
+      "total_policies": 83,
+      "active_policies": 72,
+      "top_sector": "RE",
+      "population": 34217850.0,
+      "gdp_usd": 341677633395.0,
+      "policy_density": 2.43,
+      "sectors": {
+        "RE": 32,
+        "CF": 19,
+        "FPD": 12,
+        "GRT": 10,
+        "EEF": 10
+      }
+    },
+    {
+      "country": "Russian Federation",
+      "iso3": "RUS",
+      "co2_per_capita": 12.295,
+      "co2_per_gdp": 0.449,
+      "total_policies": 82,
+      "active_policies": 67,
+      "top_sector": "EEF",
+      "population": 144820421.0,
+      "gdp_usd": 3731440829579.0,
+      "policy_density": 0.57,
+      "sectors": {
+        "EEF": 35,
+        "RE": 19,
+        "FPD": 14,
+        "CF": 13,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Croatia",
+      "iso3": "HRV",
+      "co2_per_capita": 4.765,
+      "co2_per_gdp": 0.172,
+      "total_policies": 81,
+      "active_policies": 51,
+      "top_sector": "RE",
+      "population": 3875325.0,
+      "gdp_usd": 102284645672.0,
+      "policy_density": 20.9,
+      "sectors": {
+        "RE": 22,
+        "EEF": 21,
+        "CF": 19,
+        "FPD": 11,
+        "GRT": 8
+      }
+    },
+    {
+      "country": "Philippines",
+      "iso3": "PHL",
+      "co2_per_capita": 1.51,
+      "co2_per_gdp": 0.149,
+      "total_policies": 79,
+      "active_policies": 64,
+      "top_sector": "RE",
+      "population": 115843663.0,
+      "gdp_usd": 1014811024029.0,
+      "policy_density": 0.68,
+      "sectors": {
+        "RE": 29,
+        "CF": 21,
+        "GRT": 13,
+        "EEF": 9,
+        "FPD": 6,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Thailand",
+      "iso3": "THA",
+      "co2_per_capita": 3.736,
+      "co2_per_gdp": 0.242,
+      "total_policies": 78,
+      "active_policies": 48,
+      "top_sector": "RE",
+      "population": 71668010.0,
+      "gdp_usd": 1124143758569.0,
+      "policy_density": 1.09,
+      "sectors": {
+        "RE": 26,
+        "CF": 18,
+        "EEF": 16,
+        "FPD": 10,
+        "GRT": 7,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Malta",
+      "iso3": "MLT",
+      "co2_per_capita": 3.204,
+      "co2_per_gdp": 0.097,
+      "total_policies": 75,
+      "active_policies": 57,
+      "top_sector": "RE",
+      "population": 539612.0,
+      "gdp_usd": 18295132993.0,
+      "policy_density": 138.99,
+      "sectors": {
+        "RE": 20,
+        "EEF": 19,
+        "CF": 18,
+        "GRT": 14,
+        "FPD": 4
+      }
+    },
+    {
+      "country": "Nigeria",
+      "iso3": "NGA",
+      "co2_per_capita": 0.584,
+      "co2_per_gdp": 0.116,
+      "total_policies": 75,
+      "active_policies": 58,
+      "top_sector": "FPD",
+      "population": 232679482.0,
+      "gdp_usd": 1134448580250.0,
+      "policy_density": 0.32,
+      "sectors": {
+        "FPD": 29,
+        "CF": 15,
+        "RE": 12,
+        "EEF": 12,
+        "GRT": 7
+      }
+    },
+    {
+      "country": "Egypt",
+      "iso3": "EGY",
+      "co2_per_capita": 2.217,
+      "co2_per_gdp": 0.171,
+      "total_policies": 74,
+      "active_policies": 60,
+      "top_sector": "FPD",
+      "population": 116538256.0,
+      "gdp_usd": 1460427350416.0,
+      "policy_density": 0.63,
+      "sectors": {
+        "FPD": 24,
+        "RE": 22,
+        "EEF": 14,
+        "CF": 10,
+        "GRT": 3,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Morocco",
+      "iso3": "MAR",
+      "co2_per_capita": 1.814,
+      "co2_per_gdp": 0.224,
+      "total_policies": 73,
+      "active_policies": 55,
+      "top_sector": "RE",
+      "population": 38081176.0,
+      "gdp_usd": 311654947615.0,
+      "policy_density": 1.92,
+      "sectors": {
+        "RE": 31,
+        "CF": 15,
+        "EEF": 15,
+        "FPD": 7,
+        "GRT": 4,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Romania",
+      "iso3": "ROU",
+      "co2_per_capita": 3.605,
+      "co2_per_gdp": 0.145,
+      "total_policies": 73,
+      "active_policies": 51,
+      "top_sector": "CF",
+      "population": 19015096.0,
+      "gdp_usd": 504741667296.0,
+      "policy_density": 3.84,
+      "sectors": {
+        "CF": 21,
+        "EEF": 18,
+        "FPD": 13,
+        "RE": 12,
+        "GRT": 9
+      }
+    },
+    {
+      "country": "Iceland",
+      "iso3": "ISL",
+      "co2_per_capita": 9.667,
+      "co2_per_gdp": 0.225,
+      "total_policies": 66,
+      "active_policies": 53,
+      "top_sector": "RE",
+      "population": 393404.0,
+      "gdp_usd": 16019540441.0,
+      "policy_density": 167.77,
+      "sectors": {
+        "RE": 32,
+        "CF": 16,
+        "GRT": 8,
+        "EEF": 8,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "United Arab Emirates",
+      "iso3": "ARE",
+      "co2_per_capita": 20.131,
+      "co2_per_gdp": 0.266,
+      "total_policies": 65,
+      "active_policies": 53,
+      "top_sector": "RE",
+      "population": 11027135.0,
+      "gdp_usd": 779701520404.0,
+      "policy_density": 5.89,
+      "sectors": {
+        "RE": 20,
+        "FPD": 14,
+        "CF": 13,
+        "EEF": 12,
+        "GRT": 5,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Costa Rica",
+      "iso3": "CRI",
+      "co2_per_capita": 1.708,
+      "co2_per_gdp": 0.1,
+      "total_policies": 65,
+      "active_policies": 47,
+      "top_sector": "RE",
+      "population": 5129909.0,
+      "gdp_usd": 80345898158.0,
+      "policy_density": 12.67,
+      "sectors": {
+        "RE": 29,
+        "EEF": 14,
+        "CF": 10,
+        "FPD": 6,
+        "GRT": 4,
+        "CPM": 1,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Bulgaria",
+      "iso3": "BGR",
+      "co2_per_capita": 4.679,
+      "co2_per_gdp": 0.339,
+      "total_policies": 64,
+      "active_policies": 40,
+      "top_sector": "EEF",
+      "population": 6757686.0,
+      "gdp_usd": 138390156500.0,
+      "policy_density": 9.47,
+      "sectors": {
+        "EEF": 18,
+        "CF": 14,
+        "RE": 12,
+        "FPD": 12,
+        "GRT": 8
+      }
+    },
+    {
+      "country": "Kazakhstan",
+      "iso3": "KAZ",
+      "co2_per_capita": 13.937,
+      "co2_per_gdp": 0.545,
+      "total_policies": 64,
+      "active_policies": 50,
+      "top_sector": "FPD",
+      "population": 20592574.0,
+      "gdp_usd": 503634062609.0,
+      "policy_density": 3.11,
+      "sectors": {
+        "FPD": 20,
+        "RE": 19,
+        "EEF": 14,
+        "CF": 9,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Slovenia",
+      "iso3": "SVN",
+      "co2_per_capita": 6.018,
+      "co2_per_gdp": 0.183,
+      "total_policies": 64,
+      "active_policies": 44,
+      "top_sector": "EEF",
+      "population": 2118692.0,
+      "gdp_usd": 69385349463.0,
+      "policy_density": 30.21,
+      "sectors": {
+        "EEF": 21,
+        "CF": 18,
+        "RE": 10,
+        "GRT": 8,
+        "FPD": 7
+      }
+    },
+    {
+      "country": "Cyprus",
+      "iso3": "CYP",
+      "co2_per_capita": 5.374,
+      "co2_per_gdp": 0.206,
+      "total_policies": 63,
+      "active_policies": 41,
+      "top_sector": "RE",
+      "population": 1358287.0,
+      "gdp_usd": 34255009922.0,
+      "policy_density": 46.38,
+      "sectors": {
+        "RE": 20,
+        "EEF": 17,
+        "CF": 15,
+        "GRT": 7,
+        "FPD": 4
+      }
+    },
+    {
+      "country": "Saudi Arabia",
+      "iso3": "SAU",
+      "co2_per_capita": 20.379,
+      "co2_per_gdp": 0.366,
+      "total_policies": 57,
+      "active_policies": 38,
+      "top_sector": "EEF",
+      "population": 33962751.0,
+      "gdp_usd": 1823886192336.0,
+      "policy_density": 1.68,
+      "sectors": {
+        "EEF": 18,
+        "RE": 16,
+        "FPD": 9,
+        "CF": 7,
+        "GRT": 7
+      }
+    },
+    {
+      "country": "Uruguay",
+      "iso3": "URY",
+      "co2_per_capita": 2.354,
+      "co2_per_gdp": 0.109,
+      "total_policies": 57,
+      "active_policies": 47,
+      "top_sector": "RE",
+      "population": 3386583.0,
+      "gdp_usd": 69066228178.0,
+      "policy_density": 16.83,
+      "sectors": {
+        "RE": 27,
+        "CF": 12,
+        "EEF": 7,
+        "FPD": 6,
+        "GRT": 3,
+        "CPM": 2
+      }
+    },
+    {
+      "country": "Ecuador",
+      "iso3": "ECU",
+      "co2_per_capita": 2.535,
+      "co2_per_gdp": 0.24,
+      "total_policies": 56,
+      "active_policies": 38,
+      "top_sector": "CF",
+      "population": 18135478.0,
+      "gdp_usd": 175028884708.0,
+      "policy_density": 3.09,
+      "sectors": {
+        "CF": 16,
+        "RE": 12,
+        "FPD": 10,
+        "EEF": 10,
+        "GRT": 8
+      }
+    },
+    {
+      "country": "Chinese Taipei",
+      "iso3": "TWN",
+      "co2_per_capita": 11.301,
+      "co2_per_gdp": 0.22,
+      "total_policies": 55,
+      "active_policies": 42,
+      "top_sector": "RE",
+      "population": 23213964.0,
+      "gdp_usd": 1247874288934.0,
+      "policy_density": 2.37,
+      "sectors": {
+        "RE": 13,
+        "GRT": 13,
+        "EEF": 11,
+        "CF": 10,
+        "FPD": 8
+      }
+    },
+    {
+      "country": "Kenya",
+      "iso3": "KEN",
+      "co2_per_capita": 0.376,
+      "co2_per_gdp": 0.108,
+      "total_policies": 53,
+      "active_policies": 34,
+      "top_sector": "RE",
+      "population": 56432946.0,
+      "gdp_usd": 190362153076.0,
+      "policy_density": 0.94,
+      "sectors": {
+        "RE": 19,
+        "CF": 13,
+        "EEF": 13,
+        "FPD": 5,
+        "GRT": 3
+      }
+    },
+    {
+      "country": "Azerbaijan",
+      "iso3": "AZE",
+      "co2_per_capita": 3.853,
+      "co2_per_gdp": 0.235,
+      "total_policies": 51,
+      "active_policies": 40,
+      "top_sector": "RE",
+      "population": 10336577.0,
+      "gdp_usd": 175370552026.0,
+      "policy_density": 4.93,
+      "sectors": {
+        "RE": 14,
+        "FPD": 14,
+        "CF": 13,
+        "EEF": 9,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Tunisia",
+      "iso3": "TUN",
+      "co2_per_capita": 2.661,
+      "co2_per_gdp": 0.238,
+      "total_policies": 48,
+      "active_policies": 32,
+      "top_sector": "RE",
+      "population": 12277103.0,
+      "gdp_usd": 129457959410.0,
+      "policy_density": 3.91,
+      "sectors": {
+        "RE": 28,
+        "CF": 10,
+        "EEF": 8,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Republic of Moldova",
+      "iso3": "MDA",
+      "co2_per_capita": 1.755,
+      "co2_per_gdp": 0.217,
+      "total_policies": 47,
+      "active_policies": 35,
+      "top_sector": "EEF",
+      "population": 3034967.0,
+      "gdp_usd": 23827554273.0,
+      "policy_density": 15.49,
+      "sectors": {
+        "EEF": 27,
+        "CF": 10,
+        "RE": 9,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Angola",
+      "iso3": "AGO",
+      "co2_per_capita": 0.589,
+      "co2_per_gdp": 0.133,
+      "total_policies": 44,
+      "active_policies": 36,
+      "top_sector": "RE",
+      "population": 37885854.0,
+      "gdp_usd": 158346237030.0,
+      "policy_density": 1.16,
+      "sectors": {
+        "RE": 14,
+        "CF": 11,
+        "FPD": 8,
+        "EEF": 8,
+        "GRT": 2,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Belarus",
+      "iso3": "BLR",
+      "co2_per_capita": 6.163,
+      "co2_per_gdp": 0.325,
+      "total_policies": 44,
+      "active_policies": 32,
+      "top_sector": "RE",
+      "population": 9056696.0,
+      "gdp_usd": 175773799265.0,
+      "policy_density": 4.86,
+      "sectors": {
+        "RE": 14,
+        "EEF": 12,
+        "FPD": 9,
+        "CF": 7,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Namibia",
+      "iso3": "NAM",
+      "co2_per_capita": 1.145,
+      "co2_per_gdp": 0.156,
+      "total_policies": 43,
+      "active_policies": 32,
+      "top_sector": "RE",
+      "population": 3030127.0,
+      "gdp_usd": 21858730428.0,
+      "policy_density": 14.19,
+      "sectors": {
+        "RE": 18,
+        "FPD": 8,
+        "EEF": 7,
+        "CF": 6,
+        "GRT": 4
+      }
+    },
+    {
+      "country": "Panama",
+      "iso3": "PAN",
+      "co2_per_capita": 2.805,
+      "co2_per_gdp": 0.124,
+      "total_policies": 42,
+      "active_policies": 30,
+      "top_sector": "RE",
+      "population": 4515576.0,
+      "gdp_usd": 94762119668.0,
+      "policy_density": 9.3,
+      "sectors": {
+        "RE": 20,
+        "CF": 11,
+        "EEF": 7,
+        "FPD": 2,
+        "CPM": 1,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Georgia",
+      "iso3": "GEO",
+      "co2_per_capita": 3.095,
+      "co2_per_gdp": 0.17,
+      "total_policies": 41,
+      "active_policies": 33,
+      "top_sector": "CF",
+      "population": 3807668.0,
+      "gdp_usd": 70528605169.0,
+      "policy_density": 10.77,
+      "sectors": {
+        "CF": 13,
+        "RE": 13,
+        "EEF": 9,
+        "FPD": 4,
+        "LU": 1,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Jordan",
+      "iso3": "JOR",
+      "co2_per_capita": 2.01,
+      "co2_per_gdp": 0.226,
+      "total_policies": 41,
+      "active_policies": 28,
+      "top_sector": "RE",
+      "population": 11552885.0,
+      "gdp_usd": 99281825499.0,
+      "policy_density": 3.55,
+      "sectors": {
+        "RE": 19,
+        "EEF": 9,
+        "CF": 7,
+        "FPD": 6
+      }
+    },
+    {
+      "country": "Pakistan",
+      "iso3": "PAK",
+      "co2_per_capita": 0.716,
+      "co2_per_gdp": 0.161,
+      "total_policies": 41,
+      "active_policies": 33,
+      "top_sector": "RE",
+      "population": 251269160.0,
+      "gdp_usd": 1318834969356.0,
+      "policy_density": 0.16,
+      "sectors": {
+        "RE": 14,
+        "EEF": 11,
+        "CF": 7,
+        "FPD": 4,
+        "GRT": 3,
+        "CPM": 2
+      }
+    },
+    {
+      "country": "Uzbekistan",
+      "iso3": "UZB",
+      "co2_per_capita": 3.829,
+      "co2_per_gdp": 0.303,
+      "total_policies": 41,
+      "active_policies": 33,
+      "top_sector": "FPD",
+      "population": 36361859.0,
+      "gdp_usd": 393572464308.0,
+      "policy_density": 1.13,
+      "sectors": {
+        "FPD": 15,
+        "RE": 13,
+        "EEF": 7,
+        "CF": 6
+      }
+    },
+    {
+      "country": "Algeria",
+      "iso3": "DZA",
+      "co2_per_capita": 4.234,
+      "co2_per_gdp": 0.324,
+      "total_policies": 40,
+      "active_policies": 31,
+      "top_sector": "CF",
+      "population": 46814302.0,
+      "gdp_usd": 595820067103.0,
+      "policy_density": 0.85,
+      "sectors": {
+        "CF": 10,
+        "RE": 10,
+        "FPD": 9,
+        "EEF": 8,
+        "GRT": 2,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Oman",
+      "iso3": "OMN",
+      "co2_per_capita": 15.651,
+      "co2_per_gdp": 0.44,
+      "total_policies": 40,
+      "active_policies": 29,
+      "top_sector": "FPD",
+      "population": 5281542.0,
+      "gdp_usd": 177355008173.0,
+      "policy_density": 7.57,
+      "sectors": {
+        "FPD": 17,
+        "CF": 8,
+        "RE": 8,
+        "EEF": 7
+      }
+    },
+    {
+      "country": "Serbia",
+      "iso3": "SRB",
+      "co2_per_capita": 6.238,
+      "co2_per_gdp": 0.381,
+      "total_policies": 40,
+      "active_policies": 25,
+      "top_sector": "RE",
+      "population": 6736217.0,
+      "gdp_usd": 116834638171.0,
+      "policy_density": 5.94,
+      "sectors": {
+        "RE": 14,
+        "EEF": 11,
+        "CF": 8,
+        "FPD": 5,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Bangladesh",
+      "iso3": "BGD",
+      "co2_per_capita": 0.624,
+      "co2_per_gdp": 0.119,
+      "total_policies": 39,
+      "active_policies": 30,
+      "top_sector": "CF",
+      "population": 173562366.0,
+      "gdp_usd": 858143907016.0,
+      "policy_density": 0.22,
+      "sectors": {
+        "CF": 14,
+        "EEF": 11,
+        "RE": 8,
+        "FPD": 4,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Ghana",
+      "iso3": "GHA",
+      "co2_per_capita": 0.611,
+      "co2_per_gdp": 0.143,
+      "total_policies": 39,
+      "active_policies": 30,
+      "top_sector": "RE",
+      "population": 34427417.0,
+      "gdp_usd": 145431875240.0,
+      "policy_density": 1.13,
+      "sectors": {
+        "RE": 16,
+        "FPD": 10,
+        "EEF": 8,
+        "CF": 3,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "United Republic of Tanzania",
+      "iso3": "TZA",
+      "co2_per_capita": 0.292,
+      "co2_per_gdp": 0.099,
+      "total_policies": 39,
+      "active_policies": 29,
+      "top_sector": "RE",
+      "population": 68560162.0,
+      "gdp_usd": 198220407805.0,
+      "policy_density": 0.57,
+      "sectors": {
+        "RE": 12,
+        "CF": 12,
+        "EEF": 7,
+        "GRT": 4,
+        "FPD": 4
+      }
+    },
+    {
+      "country": "Nicaragua",
+      "iso3": "NIC",
+      "co2_per_capita": 0.814,
+      "co2_per_gdp": 0.157,
+      "total_policies": 37,
+      "active_policies": 24,
+      "top_sector": "RE",
+      "population": 6916136.0,
+      "gdp_usd": 32764782125.0,
+      "policy_density": 5.35,
+      "sectors": {
+        "RE": 16,
+        "CF": 11,
+        "EEF": 9,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Honduras",
+      "iso3": "HND",
+      "co2_per_capita": 1.187,
+      "co2_per_gdp": 0.236,
+      "total_policies": 35,
+      "active_policies": 24,
+      "top_sector": "RE",
+      "population": 10825704.0,
+      "gdp_usd": 49738252980.0,
+      "policy_density": 3.23,
+      "sectors": {
+        "RE": 16,
+        "CF": 9,
+        "EEF": 9,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Mozambique",
+      "iso3": "MOZ",
+      "co2_per_capita": 0.249,
+      "co2_per_gdp": 0.296,
+      "total_policies": 35,
+      "active_policies": 25,
+      "top_sector": "RE",
+      "population": 34631767.0,
+      "gdp_usd": 31441725629.0,
+      "policy_density": 1.01,
+      "sectors": {
+        "RE": 12,
+        "CF": 9,
+        "EEF": 9,
+        "FPD": 3,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Paraguay",
+      "iso3": "PRY",
+      "co2_per_capita": 1.145,
+      "co2_per_gdp": 0.116,
+      "total_policies": 35,
+      "active_policies": 25,
+      "top_sector": "RE",
+      "population": 6929152.0,
+      "gdp_usd": 65127634644.0,
+      "policy_density": 5.05,
+      "sectors": {
+        "RE": 14,
+        "CF": 11,
+        "EEF": 7,
+        "LU": 1,
+        "GRT": 1,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Plurinational State of Bolivia",
+      "iso3": "BOL",
+      "co2_per_capita": 2.313,
+      "co2_per_gdp": 0.3,
+      "total_policies": 34,
+      "active_policies": 27,
+      "top_sector": "RE",
+      "population": 12413318.0,
+      "gdp_usd": 78165311428.0,
+      "policy_density": 2.74,
+      "sectors": {
+        "RE": 19,
+        "EEF": 6,
+        "CF": 4,
+        "GRT": 4,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Cote D'ivoire",
+      "iso3": "CIV",
+      "co2_per_capita": 0.464,
+      "co2_per_gdp": 0.119,
+      "total_policies": 34,
+      "active_policies": 23,
+      "top_sector": "RE",
+      "population": 31934229.0,
+      "gdp_usd": 121471995793.0,
+      "policy_density": 1.06,
+      "sectors": {
+        "RE": 9,
+        "EEF": 9,
+        "FPD": 8,
+        "CF": 7,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Guatemala",
+      "iso3": "GTM",
+      "co2_per_capita": 1.08,
+      "co2_per_gdp": 0.129,
+      "total_policies": 34,
+      "active_policies": 25,
+      "top_sector": "RE",
+      "population": 18406366.0,
+      "gdp_usd": 146224632616.0,
+      "policy_density": 1.85,
+      "sectors": {
+        "RE": 16,
+        "EEF": 9,
+        "CF": 7,
+        "LU": 1,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Islamic Republic of Iran",
+      "iso3": "IRN",
+      "co2_per_capita": 8.656,
+      "co2_per_gdp": 0.488,
+      "total_policies": 34,
+      "active_policies": 27,
+      "top_sector": "RE",
+      "population": 91567737.0,
+      "gdp_usd": 1572209055082.0,
+      "policy_density": 0.37,
+      "sectors": {
+        "RE": 10,
+        "EEF": 10,
+        "CF": 9,
+        "FPD": 5
+      }
+    },
+    {
+      "country": "Bolivarian Republic of Venezuela",
+      "iso3": "VEN",
+      "co2_per_capita": 4.085,
+      "co2_per_gdp": 0.724,
+      "total_policies": 34,
+      "active_policies": 23,
+      "top_sector": "RE",
+      "population": 28405544.0,
+      "gdp_usd": 149682062815.0,
+      "policy_density": 1.2,
+      "sectors": {
+        "RE": 13,
+        "CF": 9,
+        "FPD": 6,
+        "EEF": 6
+      }
+    },
+    {
+      "country": "Albania",
+      "iso3": "ALB",
+      "co2_per_capita": 1.592,
+      "co2_per_gdp": 0.124,
+      "total_policies": 32,
+      "active_policies": 20,
+      "top_sector": "CF",
+      "population": 2791756.0,
+      "gdp_usd": 36171005594.0,
+      "policy_density": 11.46,
+      "sectors": {
+        "CF": 11,
+        "EEF": 8,
+        "RE": 8,
+        "FPD": 4,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Senegal",
+      "iso3": "SEN",
+      "co2_per_capita": 0.762,
+      "co2_per_gdp": 0.272,
+      "total_policies": 32,
+      "active_policies": 21,
+      "top_sector": "RE",
+      "population": 18501988.0,
+      "gdp_usd": 51913993763.0,
+      "policy_density": 1.73,
+      "sectors": {
+        "RE": 12,
+        "EEF": 7,
+        "FPD": 6,
+        "CF": 5,
+        "LU": 1,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Uganda",
+      "iso3": "UGA",
+      "co2_per_capita": 0.127,
+      "co2_per_gdp": 0.06,
+      "total_policies": 32,
+      "active_policies": 16,
+      "top_sector": "RE",
+      "population": 50015091.0,
+      "gdp_usd": 101995416951.0,
+      "policy_density": 0.64,
+      "sectors": {
+        "RE": 16,
+        "EEF": 7,
+        "CF": 5,
+        "GRT": 4
+      }
+    },
+    {
+      "country": "Armenia",
+      "iso3": "ARM",
+      "co2_per_capita": 2.499,
+      "co2_per_gdp": 0.194,
+      "total_policies": 31,
+      "active_policies": 20,
+      "top_sector": "RE",
+      "population": 2973843.0,
+      "gdp_usd": 39721734780.0,
+      "policy_density": 10.42,
+      "sectors": {
+        "RE": 13,
+        "EEF": 10,
+        "CF": 5,
+        "FPD": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Qatar",
+      "iso3": "QAT",
+      "co2_per_capita": 41.271,
+      "co2_per_gdp": 0.287,
+      "total_policies": 31,
+      "active_policies": 23,
+      "top_sector": "FPD",
+      "population": 3048429.0,
+      "gdp_usd": 381778107010.0,
+      "policy_density": 10.17,
+      "sectors": {
+        "FPD": 13,
+        "EEF": 7,
+        "CF": 5,
+        "RE": 5,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Democratic Republic of the Congo",
+      "iso3": "COD",
+      "co2_per_capita": 0.054,
+      "co2_per_gdp": 0.065,
+      "total_policies": 30,
+      "active_policies": 21,
+      "top_sector": "RE",
+      "population": 109276264.0,
+      "gdp_usd": 91314988450.0,
+      "policy_density": 0.27,
+      "sectors": {
+        "RE": 10,
+        "GRT": 7,
+        "EEF": 7,
+        "CF": 4,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Ethiopia",
+      "iso3": "ETH",
+      "co2_per_capita": 0.135,
+      "co2_per_gdp": 0.063,
+      "total_policies": 29,
+      "active_policies": 14,
+      "top_sector": "RE",
+      "population": 132059770.0,
+      "gdp_usd": 269977225159.0,
+      "policy_density": 0.22,
+      "sectors": {
+        "RE": 10,
+        "CF": 8,
+        "EEF": 6,
+        "GRT": 3,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Zambia",
+      "iso3": "ZMB",
+      "co2_per_capita": 0.565,
+      "co2_per_gdp": 0.16,
+      "total_policies": 29,
+      "active_policies": 19,
+      "top_sector": "RE",
+      "population": 21314962.0,
+      "gdp_usd": 68469600029.0,
+      "policy_density": 1.36,
+      "sectors": {
+        "RE": 14,
+        "EEF": 7,
+        "GRT": 5,
+        "CF": 3
+      }
+    },
+    {
+      "country": "Kuwait",
+      "iso3": "KWT",
+      "co2_per_capita": 26.248,
+      "co2_per_gdp": 0.529,
+      "total_policies": 28,
+      "active_policies": 21,
+      "top_sector": "FPD",
+      "population": 4934508.0,
+      "gdp_usd": 218961227193.0,
+      "policy_density": 5.67,
+      "sectors": {
+        "FPD": 11,
+        "RE": 9,
+        "EEF": 6,
+        "CF": 2
+      }
+    },
+    {
+      "country": "El Salvador",
+      "iso3": "SLV",
+      "co2_per_capita": 1.416,
+      "co2_per_gdp": 0.134,
+      "total_policies": 28,
+      "active_policies": 19,
+      "top_sector": "RE",
+      "population": 6338197.0,
+      "gdp_usd": 59270934820.0,
+      "policy_density": 4.42,
+      "sectors": {
+        "RE": 14,
+        "CF": 7,
+        "EEF": 6,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Zimbabwe",
+      "iso3": "ZWE",
+      "co2_per_capita": 0.824,
+      "co2_per_gdp": 0.472,
+      "total_policies": 28,
+      "active_policies": 19,
+      "top_sector": "RE",
+      "population": 16634366.0,
+      "gdp_usd": 25901585881.0,
+      "policy_density": 1.68,
+      "sectors": {
+        "RE": 9,
+        "CF": 7,
+        "EEF": 7,
+        "GRT": 5
+      }
+    },
+    {
+      "country": "Kyrgyzstan",
+      "iso3": "KGZ",
+      "co2_per_capita": 1.638,
+      "co2_per_gdp": 0.363,
+      "total_policies": 27,
+      "active_policies": 16,
+      "top_sector": "RE",
+      "population": 7186014.0,
+      "gdp_usd": 31703003147.0,
+      "policy_density": 3.76,
+      "sectors": {
+        "RE": 11,
+        "EEF": 8,
+        "CF": 5,
+        "GRT": 2,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "iso3": "BIH",
+      "co2_per_capita": 6.139,
+      "co2_per_gdp": 0.441,
+      "total_policies": 26,
+      "active_policies": 17,
+      "top_sector": "RE",
+      "population": 3164256.0,
+      "gdp_usd": 47069138435.0,
+      "policy_density": 8.22,
+      "sectors": {
+        "RE": 9,
+        "CF": 8,
+        "EEF": 8,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Botswana",
+      "iso3": "BWA",
+      "co2_per_capita": 2.96,
+      "co2_per_gdp": 0.188,
+      "total_policies": 26,
+      "active_policies": 16,
+      "top_sector": "RE",
+      "population": 2521145.0,
+      "gdp_usd": 39293967463.0,
+      "policy_density": 10.31,
+      "sectors": {
+        "RE": 16,
+        "EEF": 7,
+        "CF": 3
+      }
+    },
+    {
+      "country": "Lesotho",
+      "iso3": "LSO",
+      "co2_per_capita": 1.1,
+      "co2_per_gdp": 0.536,
+      "total_policies": 25,
+      "active_policies": 16,
+      "top_sector": "RE",
+      "population": 2337428.0,
+      "gdp_usd": 4761723180.0,
+      "policy_density": 10.7,
+      "sectors": {
+        "RE": 14,
+        "EEF": 7,
+        "CF": 4
+      }
+    },
+    {
+      "country": "Mauritania",
+      "iso3": "MRT",
+      "co2_per_capita": 1.013,
+      "co2_per_gdp": 0.336,
+      "total_policies": 25,
+      "active_policies": 17,
+      "top_sector": "FPD",
+      "population": 5169403.0,
+      "gdp_usd": 15674544913.0,
+      "policy_density": 4.84,
+      "sectors": {
+        "FPD": 11,
+        "RE": 5,
+        "EEF": 5,
+        "CF": 3,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Mauritius",
+      "iso3": "MUS",
+      "co2_per_capita": 3.677,
+      "co2_per_gdp": 0.16,
+      "total_policies": 25,
+      "active_policies": 14,
+      "top_sector": "RE",
+      "population": 1271171.0,
+      "gdp_usd": 26988574640.0,
+      "policy_density": 19.67,
+      "sectors": {
+        "RE": 14,
+        "EEF": 7,
+        "CF": 3,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Cambodia",
+      "iso3": "KHM",
+      "co2_per_capita": 1.241,
+      "co2_per_gdp": 0.32,
+      "total_policies": 23,
+      "active_policies": 15,
+      "top_sector": "RE",
+      "population": 17638804.0,
+      "gdp_usd": 65136593996.0,
+      "policy_density": 1.3,
+      "sectors": {
+        "RE": 11,
+        "EEF": 7,
+        "CF": 4,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Lao People's Democratic Republic",
+      "iso3": "LAO",
+      "co2_per_capita": 3.14,
+      "co2_per_gdp": 0.41,
+      "total_policies": 23,
+      "active_policies": 16,
+      "top_sector": "RE",
+      "population": 7769823.0,
+      "gdp_usd": 54953902901.0,
+      "policy_density": 2.96,
+      "sectors": {
+        "RE": 10,
+        "EEF": 6,
+        "CF": 5,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Malawi",
+      "iso3": "MWI",
+      "co2_per_capita": 0.087,
+      "co2_per_gdp": 0.068,
+      "total_policies": 23,
+      "active_policies": 15,
+      "top_sector": "RE",
+      "population": 21655288.0,
+      "gdp_usd": 26465351444.0,
+      "policy_density": 1.06,
+      "sectors": {
+        "RE": 12,
+        "EEF": 7,
+        "CF": 2,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Myanmar",
+      "iso3": "MMR",
+      "co2_per_capita": 0.58,
+      "co2_per_gdp": 0.109,
+      "total_policies": 22,
+      "active_policies": 12,
+      "top_sector": "RE",
+      "population": 54500086.0,
+      "gdp_usd": 291025085135.0,
+      "policy_density": 0.4,
+      "sectors": {
+        "RE": 10,
+        "CF": 6,
+        "EEF": 5,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Rwanda",
+      "iso3": "RWA",
+      "co2_per_capita": 0.143,
+      "co2_per_gdp": 0.069,
+      "total_policies": 22,
+      "active_policies": 14,
+      "top_sector": "EEF",
+      "population": 14256573.0,
+      "gdp_usd": 28466253314.0,
+      "policy_density": 1.54,
+      "sectors": {
+        "EEF": 11,
+        "RE": 6,
+        "CF": 4,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Turkmenistan",
+      "iso3": "TKM",
+      "co2_per_capita": 10.809,
+      "co2_per_gdp": 1.047,
+      "total_policies": 22,
+      "active_policies": 13,
+      "top_sector": "FPD",
+      "population": 7494494.0,
+      "gdp_usd": 97502944727.0,
+      "policy_density": 2.94,
+      "sectors": {
+        "FPD": 8,
+        "EEF": 6,
+        "CF": 4,
+        "RE": 4
+      }
+    },
+    {
+      "country": "Burkina Faso",
+      "iso3": "BFA",
+      "co2_per_capita": 0.276,
+      "co2_per_gdp": 0.175,
+      "total_policies": 21,
+      "active_policies": 12,
+      "top_sector": "RE",
+      "population": 23548782.0,
+      "gdp_usd": 37320442404.0,
+      "policy_density": 0.89,
+      "sectors": {
+        "RE": 8,
+        "EEF": 6,
+        "CF": 5,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Montenegro",
+      "iso3": "MNE",
+      "co2_per_capita": 3.722,
+      "co2_per_gdp": 0.195,
+      "total_policies": 21,
+      "active_policies": 13,
+      "top_sector": "RE",
+      "population": 638481.0,
+      "gdp_usd": 12774399882.0,
+      "policy_density": 32.89,
+      "sectors": {
+        "RE": 8,
+        "EEF": 7,
+        "CF": 5,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Mongolia",
+      "iso3": "MNG",
+      "co2_per_capita": 12.86,
+      "co2_per_gdp": 0.903,
+      "total_policies": 21,
+      "active_policies": 11,
+      "top_sector": "RE",
+      "population": 3475541.0,
+      "gdp_usd": 44809463232.0,
+      "policy_density": 6.04,
+      "sectors": {
+        "RE": 10,
+        "EEF": 6,
+        "CF": 2,
+        "GRT": 2,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Dominican Republic",
+      "iso3": "DOM",
+      "co2_per_capita": 2.899,
+      "co2_per_gdp": 0.163,
+      "total_policies": 20,
+      "active_policies": 11,
+      "top_sector": "GRT",
+      "population": 11427558.0,
+      "gdp_usd": 191182362267.0,
+      "policy_density": 1.75,
+      "sectors": {
+        "GRT": 6,
+        "EEF": 6,
+        "RE": 4,
+        "CF": 3,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Jamaica",
+      "iso3": "JAM",
+      "co2_per_capita": 2.959,
+      "co2_per_gdp": 0.395,
+      "total_policies": 20,
+      "active_policies": 12,
+      "top_sector": "RE",
+      "population": 2839182.0,
+      "gdp_usd": 20019224153.0,
+      "policy_density": 7.04,
+      "sectors": {
+        "RE": 9,
+        "EEF": 6,
+        "CF": 4,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Sri Lanka",
+      "iso3": "LKA",
+      "co2_per_capita": 0.901,
+      "co2_per_gdp": 0.072,
+      "total_policies": 20,
+      "active_policies": 10,
+      "top_sector": "RE",
+      "population": 23103561.0,
+      "gdp_usd": 254748598293.0,
+      "policy_density": 0.87,
+      "sectors": {
+        "RE": 8,
+        "EEF": 7,
+        "CF": 3,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Mali",
+      "iso3": "MLI",
+      "co2_per_capita": 0.285,
+      "co2_per_gdp": 0.23,
+      "total_policies": 20,
+      "active_policies": 10,
+      "top_sector": "RE",
+      "population": 24478597.0,
+      "gdp_usd": 30551085997.0,
+      "policy_density": 0.82,
+      "sectors": {
+        "RE": 10,
+        "EEF": 6,
+        "CF": 3,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Seychelles",
+      "iso3": "SYC",
+      "co2_per_capita": 5.003,
+      "co2_per_gdp": 0.206,
+      "total_policies": 20,
+      "active_policies": 9,
+      "top_sector": "RE",
+      "population": 130436.0,
+      "gdp_usd": 3053368129.0,
+      "policy_density": 153.33,
+      "sectors": {
+        "RE": 8,
+        "EEF": 7,
+        "CF": 4,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Cameroon",
+      "iso3": "CMR",
+      "co2_per_capita": 0.331,
+      "co2_per_gdp": 0.118,
+      "total_policies": 19,
+      "active_policies": 11,
+      "top_sector": "EEF",
+      "population": 29123748.0,
+      "gdp_usd": 82727797383.0,
+      "policy_density": 0.65,
+      "sectors": {
+        "EEF": 6,
+        "FPD": 4,
+        "CF": 4,
+        "RE": 4,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Iraq",
+      "iso3": "IRQ",
+      "co2_per_capita": 5.074,
+      "co2_per_gdp": 0.412,
+      "total_policies": 19,
+      "active_policies": 12,
+      "top_sector": "RE",
+      "population": 46042015.0,
+      "gdp_usd": 527639326800.0,
+      "policy_density": 0.41,
+      "sectors": {
+        "RE": 5,
+        "FPD": 5,
+        "EEF": 5,
+        "CF": 3,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Eswatini",
+      "iso3": "SWZ",
+      "co2_per_capita": 0.841,
+      "co2_per_gdp": 0.107,
+      "total_policies": 19,
+      "active_policies": 11,
+      "top_sector": "RE",
+      "population": 1242829.0,
+      "gdp_usd": 9594910875.0,
+      "policy_density": 15.29,
+      "sectors": {
+        "RE": 8,
+        "EEF": 7,
+        "CF": 4
+      }
+    },
+    {
+      "country": "Burundi",
+      "iso3": "BDI",
+      "co2_per_capita": 0.065,
+      "co2_per_gdp": 0.096,
+      "total_policies": 18,
+      "active_policies": 8,
+      "top_sector": "RE",
+      "population": 14047788.0,
+      "gdp_usd": 9177077459.0,
+      "policy_density": 1.28,
+      "sectors": {
+        "RE": 10,
+        "EEF": 6,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Bahrain",
+      "iso3": "BHR",
+      "co2_per_capita": 24.27,
+      "co2_per_gdp": 0.644,
+      "total_policies": 18,
+      "active_policies": 12,
+      "top_sector": "EEF",
+      "population": 1607059.0,
+      "gdp_usd": 58769760175.0,
+      "policy_density": 11.2,
+      "sectors": {
+        "EEF": 7,
+        "RE": 6,
+        "CF": 4,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Republic of the Congo",
+      "iso3": "COG",
+      "co2_per_capita": 1.396,
+      "co2_per_gdp": 0.369,
+      "total_policies": 18,
+      "active_policies": 10,
+      "top_sector": "EEF",
+      "population": 6332969.0,
+      "gdp_usd": 23679011891.0,
+      "policy_density": 2.84,
+      "sectors": {
+        "EEF": 6,
+        "FPD": 5,
+        "RE": 4,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Cuba",
+      "iso3": "CUB",
+      "co2_per_capita": 2.226,
+      "co2_per_gdp": 0.276,
+      "total_policies": 18,
+      "active_policies": 10,
+      "top_sector": "EEF",
+      "population": 10979781.0,
+      "gdp_usd": 84154971449.0,
+      "policy_density": 1.64,
+      "sectors": {
+        "EEF": 8,
+        "CF": 7,
+        "RE": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Lebanon",
+      "iso3": "LBN",
+      "co2_per_capita": 2.696,
+      "co2_per_gdp": 0.315,
+      "total_policies": 18,
+      "active_policies": 10,
+      "top_sector": "RE",
+      "population": 5805962.0,
+      "gdp_usd": 48741710654.0,
+      "policy_density": 3.1,
+      "sectors": {
+        "RE": 8,
+        "EEF": 8,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Madagascar",
+      "iso3": "MDG",
+      "co2_per_capita": 0.142,
+      "co2_per_gdp": 0.109,
+      "total_policies": 18,
+      "active_policies": 11,
+      "top_sector": "RE",
+      "population": 31964960.0,
+      "gdp_usd": 38602188321.0,
+      "policy_density": 0.56,
+      "sectors": {
+        "RE": 7,
+        "EEF": 6,
+        "CF": 3,
+        "FPD": 1,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Nepal",
+      "iso3": "NPL",
+      "co2_per_capita": 0.633,
+      "co2_per_gdp": 0.183,
+      "total_policies": 18,
+      "active_policies": 10,
+      "top_sector": "RE",
+      "population": 29651054.0,
+      "gdp_usd": 95965910597.0,
+      "policy_density": 0.61,
+      "sectors": {
+        "RE": 8,
+        "EEF": 5,
+        "CF": 4,
+        "FPD": 1
+      }
+    },
+    {
+      "country": "Gabon",
+      "iso3": "GAB",
+      "co2_per_capita": 2.126,
+      "co2_per_gdp": 0.16,
+      "total_policies": 17,
+      "active_policies": 9,
+      "top_sector": "EEF",
+      "population": 2538953.0,
+      "gdp_usd": 36035291983.0,
+      "policy_density": 6.7,
+      "sectors": {
+        "EEF": 6,
+        "FPD": 5,
+        "RE": 3,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Guinea",
+      "iso3": "GIN",
+      "co2_per_capita": 0.273,
+      "co2_per_gdp": 0.171,
+      "total_policies": 16,
+      "active_policies": 8,
+      "top_sector": "RE",
+      "population": 14754779.0,
+      "gdp_usd": 23678257190.0,
+      "policy_density": 1.08,
+      "sectors": {
+        "RE": 6,
+        "EEF": 6,
+        "CF": 3,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Niger",
+      "iso3": "NER",
+      "co2_per_capita": 0.117,
+      "co2_per_gdp": 0.129,
+      "total_policies": 16,
+      "active_policies": 8,
+      "top_sector": "RE",
+      "population": 27032417.0,
+      "gdp_usd": 24776754234.0,
+      "policy_density": 0.59,
+      "sectors": {
+        "RE": 6,
+        "EEF": 6,
+        "CF": 2,
+        "FPD": 1,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Sierra Leone",
+      "iso3": "SLE",
+      "co2_per_capita": 0.166,
+      "co2_per_gdp": 0.124,
+      "total_policies": 16,
+      "active_policies": 8,
+      "top_sector": "EEF",
+      "population": 8642029.0,
+      "gdp_usd": 11681270534.0,
+      "policy_density": 1.85,
+      "sectors": {
+        "EEF": 6,
+        "RE": 5,
+        "CF": 3,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Hong Kong (China)",
+      "iso3": "HKG",
+      "co2_per_capita": 4.494,
+      "co2_per_gdp": 0.086,
+      "total_policies": 15,
+      "active_policies": 13,
+      "top_sector": "RE",
+      "population": 7414914.0,
+      "gdp_usd": 356690492875.0,
+      "policy_density": 2.02,
+      "sectors": {
+        "RE": 8,
+        "GRT": 3,
+        "FPD": 2,
+        "EEF": 1,
+        "CF": 1
+      }
+    },
+    {
+      "country": "Libya",
+      "iso3": "LBY",
+      "co2_per_capita": 8.842,
+      "co2_per_gdp": 0.645,
+      "total_policies": 15,
+      "active_policies": 10,
+      "top_sector": "FPD",
+      "population": 7381029.0,
+      "gdp_usd": 91444480945.0,
+      "policy_density": 2.03,
+      "sectors": {
+        "FPD": 5,
+        "EEF": 5,
+        "RE": 4,
+        "CF": 1
+      }
+    },
+    {
+      "country": "Barbados",
+      "iso3": "BRB",
+      "co2_per_capita": 4.833,
+      "co2_per_gdp": 0.386,
+      "total_policies": 14,
+      "active_policies": 6,
+      "top_sector": "EEF",
+      "population": 282476.0,
+      "gdp_usd": 3408005977.0,
+      "policy_density": 49.56,
+      "sectors": {
+        "EEF": 6,
+        "RE": 5,
+        "CF": 3
+      }
+    },
+    {
+      "country": "Comoros",
+      "iso3": "COM",
+      "co2_per_capita": 0.637,
+      "co2_per_gdp": 0.316,
+      "total_policies": 14,
+      "active_policies": 6,
+      "top_sector": "EEF",
+      "population": 866632.0,
+      "gdp_usd": 1682076951.0,
+      "policy_density": 16.15,
+      "sectors": {
+        "EEF": 7,
+        "RE": 5,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Cabo Verde",
+      "iso3": "CPV",
+      "co2_per_capita": 1.131,
+      "co2_per_gdp": 0.141,
+      "total_policies": 14,
+      "active_policies": 6,
+      "top_sector": "RE",
+      "population": 524878.0,
+      "gdp_usd": 4251154554.0,
+      "policy_density": 26.67,
+      "sectors": {
+        "RE": 6,
+        "EEF": 6,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Guinea-Bissau",
+      "iso3": "GNB",
+      "co2_per_capita": 0.155,
+      "co2_per_gdp": 0.106,
+      "total_policies": 14,
+      "active_policies": 6,
+      "top_sector": "RE",
+      "population": 2201360.0,
+      "gdp_usd": 3259313986.0,
+      "policy_density": 6.36,
+      "sectors": {
+        "RE": 6,
+        "EEF": 6,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Liberia",
+      "iso3": "LBR",
+      "co2_per_capita": 0.153,
+      "co2_per_gdp": 0.204,
+      "total_policies": 14,
+      "active_policies": 6,
+      "top_sector": "EEF",
+      "population": 5612813.0,
+      "gdp_usd": 4231561135.0,
+      "policy_density": 2.49,
+      "sectors": {
+        "EEF": 6,
+        "RE": 5,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Togo",
+      "iso3": "TGO",
+      "co2_per_capita": 0.289,
+      "co2_per_gdp": 0.192,
+      "total_policies": 14,
+      "active_policies": 6,
+      "top_sector": "EEF",
+      "population": 9515238.0,
+      "gdp_usd": 14265660408.0,
+      "policy_density": 1.47,
+      "sectors": {
+        "EEF": 6,
+        "RE": 5,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Benin",
+      "iso3": "BEN",
+      "co2_per_capita": 0.419,
+      "co2_per_gdp": 0.183,
+      "total_policies": 13,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 14462721.0,
+      "gdp_usd": 33290362034.0,
+      "policy_density": 0.9,
+      "sectors": {
+        "EEF": 6,
+        "RE": 4,
+        "CF": 3
+      }
+    },
+    {
+      "country": "Gambia",
+      "iso3": "GMB",
+      "co2_per_capita": 0.291,
+      "co2_per_gdp": 0.174,
+      "total_policies": 13,
+      "active_policies": 6,
+      "top_sector": "EEF",
+      "population": 2759999.0,
+      "gdp_usd": 4656793663.0,
+      "policy_density": 4.71,
+      "sectors": {
+        "EEF": 6,
+        "RE": 5,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Former Yugoslav Republic Of Macedonia",
+      "iso3": "MKD",
+      "co2_per_capita": 3.631,
+      "co2_per_gdp": 0.256,
+      "total_policies": 13,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 1823011.0,
+      "gdp_usd": 28770256385.0,
+      "policy_density": 7.13,
+      "sectors": {
+        "EEF": 6,
+        "RE": 4,
+        "CF": 3
+      }
+    },
+    {
+      "country": "Sao Tome And Principe",
+      "iso3": "STP",
+      "co2_per_capita": 0.602,
+      "co2_per_gdp": 0.164,
+      "total_policies": 13,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 235548.0,
+      "gdp_usd": 825238400.0,
+      "policy_density": 55.19,
+      "sectors": {
+        "EEF": 6,
+        "RE": 4,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Chad",
+      "iso3": "TCD",
+      "co2_per_capita": 0.139,
+      "co2_per_gdp": 0.116,
+      "total_policies": 13,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 20299131.0,
+      "gdp_usd": 24118013870.0,
+      "policy_density": 0.64,
+      "sectors": {
+        "EEF": 6,
+        "RE": 4,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Afghanistan",
+      "iso3": "AFG",
+      "co2_per_capita": 0.254,
+      "co2_per_gdp": 0.191,
+      "total_policies": 12,
+      "active_policies": 4,
+      "top_sector": "EEF",
+      "population": 42647502.0,
+      "gdp_usd": 53303471617.0,
+      "policy_density": 0.28,
+      "sectors": {
+        "EEF": 5,
+        "RE": 4,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Central African Republic",
+      "iso3": "CAF",
+      "co2_per_capita": 0.074,
+      "co2_per_gdp": 0.101,
+      "total_policies": 12,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 5330691.0,
+      "gdp_usd": 3752056621.0,
+      "policy_density": 2.25,
+      "sectors": {
+        "EEF": 5,
+        "RE": 4,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Saint Lucia",
+      "iso3": "LCA",
+      "co2_per_capita": 2.987,
+      "co2_per_gdp": 0.296,
+      "total_policies": 12,
+      "active_policies": 4,
+      "top_sector": "EEF",
+      "population": 179751.0,
+      "gdp_usd": 1749086152.0,
+      "policy_density": 66.76,
+      "sectors": {
+        "EEF": 6,
+        "CF": 3,
+        "RE": 3
+      }
+    },
+    {
+      "country": "Syrian Arab Republic",
+      "iso3": "SYR",
+      "co2_per_capita": 1.288,
+      "co2_per_gdp": 0.6,
+      "total_policies": 12,
+      "active_policies": 6,
+      "top_sector": "EEF",
+      "population": 24672758.0,
+      "gdp_usd": 52353139385.0,
+      "policy_density": 0.49,
+      "sectors": {
+        "EEF": 6,
+        "RE": 5,
+        "CF": 1
+      }
+    },
+    {
+      "country": "Tajikistan",
+      "iso3": "TJK",
+      "co2_per_capita": 1.014,
+      "co2_per_gdp": 0.208,
+      "total_policies": 12,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 10590930.0,
+      "gdp_usd": 50544013546.0,
+      "policy_density": 1.13,
+      "sectors": {
+        "EEF": 6,
+        "RE": 3,
+        "CF": 2,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Djibouti",
+      "iso3": "DJI",
+      "co2_per_capita": 0.483,
+      "co2_per_gdp": 0.162,
+      "total_policies": 11,
+      "active_policies": 4,
+      "top_sector": "EEF",
+      "population": 1168726.0,
+      "gdp_usd": 3395681646.0,
+      "policy_density": 9.41,
+      "sectors": {
+        "EEF": 6,
+        "RE": 4,
+        "CF": 1
+      }
+    },
+    {
+      "country": "Equatorial Guinea",
+      "iso3": "GNQ",
+      "co2_per_capita": 3.704,
+      "co2_per_gdp": 0.371,
+      "total_policies": 11,
+      "active_policies": 5,
+      "top_sector": "EEF",
+      "population": 1892523.0,
+      "gdp_usd": 20191378731.0,
+      "policy_density": 5.81,
+      "sectors": {
+        "EEF": 5,
+        "FPD": 3,
+        "CF": 2,
+        "RE": 1
+      }
+    },
+    {
+      "country": "Haiti",
+      "iso3": "HTI",
+      "co2_per_capita": 0.252,
+      "co2_per_gdp": 0.164,
+      "total_policies": 11,
+      "active_policies": 4,
+      "top_sector": "EEF",
+      "population": 11772562.0,
+      "gdp_usd": 17550916862.0,
+      "policy_density": 0.93,
+      "sectors": {
+        "EEF": 5,
+        "RE": 4,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Dominica",
+      "iso3": "DMA",
+      "co2_per_capita": 2.58,
+      "co2_per_gdp": 0.244,
+      "total_policies": 10,
+      "active_policies": 3,
+      "top_sector": "EEF",
+      "population": 66226.0,
+      "gdp_usd": 675098029.0,
+      "policy_density": 151.0,
+      "sectors": {
+        "EEF": 5,
+        "RE": 3,
+        "CF": 2
+      }
+    },
+    {
+      "country": "Democratic People's Republic Of Korea",
+      "iso3": "PRK",
+      "co2_per_capita": 2.36,
+      "co2_per_gdp": 1.39,
+      "total_policies": 10,
+      "active_policies": 3,
+      "top_sector": "EEF",
+      "population": 26498832.0,
+      "gdp_usd": 40488847458.0,
+      "policy_density": 0.38,
+      "sectors": {
+        "EEF": 6,
+        "CF": 3,
+        "RE": 1
+      }
+    },
+    {
+      "country": "Trinidad And Tobago",
+      "iso3": "TTO",
+      "co2_per_capita": 22.932,
+      "co2_per_gdp": 0.999,
+      "total_policies": 10,
+      "active_policies": 4,
+      "top_sector": "EEF",
+      "population": 1507778.0,
+      "gdp_usd": 37513383973.0,
+      "policy_density": 6.63,
+      "sectors": {
+        "EEF": 6,
+        "CF": 2,
+        "GRT": 1,
+        "RE": 1
+      }
+    },
+    {
+      "country": "Yemen",
+      "iso3": "YEM",
+      "co2_per_capita": 0.249,
+      "co2_per_gdp": 0.171,
+      "total_policies": 10,
+      "active_policies": 4,
+      "top_sector": "RE",
+      "population": 40583173.0,
+      "gdp_usd": 60852995288.0,
+      "policy_density": 0.25,
+      "sectors": {
+        "RE": 5,
+        "EEF": 5
+      }
+    },
+    {
+      "country": "State of Palestine",
+      "iso3": "PSE",
+      "co2_per_capita": 0.87,
+      "co2_per_gdp": 0.195,
+      "total_policies": 5,
+      "active_policies": 4,
+      "top_sector": "RE",
+      "population": 5495447.0,
+      "gdp_usd": 24076501614.0,
+      "policy_density": 0.91,
+      "sectors": {
+        "RE": 3,
+        "CF": 1,
+        "EEF": 1
+      }
+    }
+  ],
+  "top_performers": [
+    {
+      "country": "Switzerland",
+      "iso3": "CHE",
+      "co2_per_capita": 3.595,
+      "co2_per_gdp": 0.059,
+      "total_policies": 148,
+      "active_policies": 115,
+      "top_sector": "RE",
+      "population": 8921979.0,
+      "gdp_usd": 559384947989.0,
+      "policy_density": 16.59,
+      "sectors": {
+        "RE": 64,
+        "CF": 35,
+        "EEF": 22,
+        "FPD": 18,
+        "GRT": 7,
+        "CPM": 2
+      }
+    },
+    {
+      "country": "Uganda",
+      "iso3": "UGA",
+      "co2_per_capita": 0.127,
+      "co2_per_gdp": 0.06,
+      "total_policies": 32,
+      "active_policies": 16,
+      "top_sector": "RE",
+      "population": 50015091.0,
+      "gdp_usd": 101995416951.0,
+      "policy_density": 0.64,
+      "sectors": {
+        "RE": 16,
+        "EEF": 7,
+        "CF": 5,
+        "GRT": 4
+      }
+    },
+    {
+      "country": "Ethiopia",
+      "iso3": "ETH",
+      "co2_per_capita": 0.135,
+      "co2_per_gdp": 0.063,
+      "total_policies": 29,
+      "active_policies": 14,
+      "top_sector": "RE",
+      "population": 132059770.0,
+      "gdp_usd": 269977225159.0,
+      "policy_density": 0.22,
+      "sectors": {
+        "RE": 10,
+        "CF": 8,
+        "EEF": 6,
+        "GRT": 3,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Democratic Republic of the Congo",
+      "iso3": "COD",
+      "co2_per_capita": 0.054,
+      "co2_per_gdp": 0.065,
+      "total_policies": 30,
+      "active_policies": 21,
+      "top_sector": "RE",
+      "population": 109276264.0,
+      "gdp_usd": 91314988450.0,
+      "policy_density": 0.27,
+      "sectors": {
+        "RE": 10,
+        "GRT": 7,
+        "EEF": 7,
+        "CF": 4,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Malawi",
+      "iso3": "MWI",
+      "co2_per_capita": 0.087,
+      "co2_per_gdp": 0.068,
+      "total_policies": 23,
+      "active_policies": 15,
+      "top_sector": "RE",
+      "population": 21655288.0,
+      "gdp_usd": 26465351444.0,
+      "policy_density": 1.06,
+      "sectors": {
+        "RE": 12,
+        "EEF": 7,
+        "CF": 2,
+        "GRT": 2
+      }
+    },
+    {
+      "country": "Rwanda",
+      "iso3": "RWA",
+      "co2_per_capita": 0.143,
+      "co2_per_gdp": 0.069,
+      "total_policies": 22,
+      "active_policies": 14,
+      "top_sector": "EEF",
+      "population": 14256573.0,
+      "gdp_usd": 28466253314.0,
+      "policy_density": 1.54,
+      "sectors": {
+        "EEF": 11,
+        "RE": 6,
+        "CF": 4,
+        "GRT": 1
+      }
+    },
+    {
+      "country": "Sri Lanka",
+      "iso3": "LKA",
+      "co2_per_capita": 0.901,
+      "co2_per_gdp": 0.072,
+      "total_policies": 20,
+      "active_policies": 10,
+      "top_sector": "RE",
+      "population": 23103561.0,
+      "gdp_usd": 254748598293.0,
+      "policy_density": 0.87,
+      "sectors": {
+        "RE": 8,
+        "EEF": 7,
+        "CF": 3,
+        "FPD": 2
+      }
+    },
+    {
+      "country": "Sweden",
+      "iso3": "SWE",
+      "co2_per_capita": 3.592,
+      "co2_per_gdp": 0.074,
+      "total_policies": 221,
+      "active_policies": 152,
+      "top_sector": "RE",
+      "population": 10606993.0,
+      "gdp_usd": 494214521158.0,
+      "policy_density": 20.84,
+      "sectors": {
+        "RE": 56,
+        "CF": 50,
+        "EEF": 49,
+        "GRT": 41,
+        "FPD": 22,
+        "CPM": 2,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Norway",
+      "iso3": "NOR",
+      "co2_per_capita": 6.668,
+      "co2_per_gdp": 0.085,
+      "total_policies": 232,
+      "active_policies": 181,
+      "top_sector": "RE",
+      "population": 5576656.0,
+      "gdp_usd": 482328451592.0,
+      "policy_density": 41.6,
+      "sectors": {
+        "RE": 84,
+        "CF": 45,
+        "FPD": 41,
+        "EEF": 31,
+        "GRT": 30,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Denmark",
+      "iso3": "DNK",
+      "co2_per_capita": 4.746,
+      "co2_per_gdp": 0.097,
+      "total_policies": 195,
+      "active_policies": 139,
+      "top_sector": "CF",
+      "population": 5977417.0,
+      "gdp_usd": 299429011832.0,
+      "policy_density": 32.62,
+      "sectors": {
+        "CF": 49,
+        "EEF": 47,
+        "RE": 44,
+        "FPD": 31,
+        "GRT": 19,
+        "LU": 3,
+        "CPM": 2
+      }
+    },
+    {
+      "country": "Malta",
+      "iso3": "MLT",
+      "co2_per_capita": 3.204,
+      "co2_per_gdp": 0.097,
+      "total_policies": 75,
+      "active_policies": 57,
+      "top_sector": "RE",
+      "population": 539612.0,
+      "gdp_usd": 18295132993.0,
+      "policy_density": 138.99,
+      "sectors": {
+        "RE": 20,
+        "EEF": 19,
+        "CF": 18,
+        "GRT": 14,
+        "FPD": 4
+      }
+    },
+    {
+      "country": "United Republic of Tanzania",
+      "iso3": "TZA",
+      "co2_per_capita": 0.292,
+      "co2_per_gdp": 0.099,
+      "total_policies": 39,
+      "active_policies": 29,
+      "top_sector": "RE",
+      "population": 68560162.0,
+      "gdp_usd": 198220407805.0,
+      "policy_density": 0.57,
+      "sectors": {
+        "RE": 12,
+        "CF": 12,
+        "EEF": 7,
+        "GRT": 4,
+        "FPD": 4
+      }
+    },
+    {
+      "country": "Costa Rica",
+      "iso3": "CRI",
+      "co2_per_capita": 1.708,
+      "co2_per_gdp": 0.1,
+      "total_policies": 65,
+      "active_policies": 47,
+      "top_sector": "RE",
+      "population": 5129909.0,
+      "gdp_usd": 80345898158.0,
+      "policy_density": 12.67,
+      "sectors": {
+        "RE": 29,
+        "EEF": 14,
+        "CF": 10,
+        "FPD": 6,
+        "GRT": 4,
+        "CPM": 1,
+        "LU": 1
+      }
+    },
+    {
+      "country": "Singapore",
+      "iso3": "SGP",
+      "co2_per_capita": 9.245,
+      "co2_per_gdp": 0.106,
+      "total_policies": 129,
+      "active_policies": 103,
+      "top_sector": "RE",
+      "population": 5832387.0,
+      "gdp_usd": 461801118473.0,
+      "policy_density": 22.12,
+      "sectors": {
+        "RE": 50,
+        "EEF": 31,
+        "CF": 21,
+        "GRT": 13,
+        "FPD": 13,
+        "CPM": 1
+      }
+    },
+    {
+      "country": "Kenya",
+      "iso3": "KEN",
+      "co2_per_capita": 0.376,
+      "co2_per_gdp": 0.108,
+      "total_policies": 53,
+      "active_policies": 34,
+      "top_sector": "RE",
+      "population": 56432946.0,
+      "gdp_usd": 190362153076.0,
+      "policy_density": 0.94,
+      "sectors": {
+        "RE": 19,
+        "CF": 13,
+        "EEF": 13,
+        "FPD": 5,
+        "GRT": 3
+      }
+    }
+  ],
+  "sector_names": {
+    "RE": "Renewable Energy",
+    "CF": "Cross-cutting / Framework",
+    "EEF": "Energy Efficiency",
+    "FPD": "Fossil Phase-Down",
+    "GRT": "Green Transport",
+    "CPM": "Carbon Pricing",
+    "LU": "Land Use"
+  },
+  "instrument_names": {
+    "subsidy": "Subsidy/Grant",
+    "framework_legislation": "Framework Legislation",
+    "standard": "Standard/Regulation",
+    "mandate": "Mandate",
+    "voluntary_agreement": "Voluntary Agreement",
+    "feed_in_tariff": "Feed-in Tariff",
+    "tax_credit": "Tax Credit",
+    "labeling": "Labeling",
+    "ban": "Ban/Phase-out",
+    "carbon_tax": "Carbon Tax",
+    "cap_and_trade": "Cap and Trade",
+    "reporting": "Reporting Requirement",
+    "other": "Other"
+  }
+}
