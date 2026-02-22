@@ -3708,5 +3708,147 @@
     "cap_and_trade": "Cap and Trade",
     "reporting": "Reporting Requirement",
     "other": "Other"
+  },
+  "lift_scores": {
+    "sector_lifts": [
+      {
+        "bucket_id": "CPM",
+        "bucket_name": "Carbon Pricing & Markets",
+        "lift": 1.26,
+        "top_in_sector": 11,
+        "total_in_sector": 35
+      },
+      {
+        "bucket_id": "CF",
+        "bucket_name": "Cross-cutting / Framework",
+        "lift": 1.19,
+        "top_in_sector": 23,
+        "total_in_sector": 77
+      },
+      {
+        "bucket_id": "RE",
+        "bucket_name": "Renewable Energy",
+        "lift": 1.15,
+        "top_in_sector": 23,
+        "total_in_sector": 80
+      },
+      {
+        "bucket_id": "LU",
+        "bucket_name": "Land Use",
+        "lift": 1.1,
+        "top_in_sector": 11,
+        "total_in_sector": 40
+      },
+      {
+        "bucket_id": "GRT",
+        "bucket_name": "Green Transport",
+        "lift": 1.0,
+        "top_in_sector": 20,
+        "total_in_sector": 80
+      },
+      {
+        "bucket_id": "FPD",
+        "bucket_name": "Fossil Phase-Down",
+        "lift": 0.89,
+        "top_in_sector": 18,
+        "total_in_sector": 81
+      },
+      {
+        "bucket_id": "EEF",
+        "bucket_name": "Energy Efficiency",
+        "lift": 0.84,
+        "top_in_sector": 17,
+        "total_in_sector": 81
+      }
+    ],
+    "instrument_lifts": [
+      {
+        "instrument_id": "tax_credit",
+        "instrument_name": "Tax Credit",
+        "lift": 1.08,
+        "top_in_instrument": 13,
+        "total_with_instrument": 48
+      },
+      {
+        "instrument_id": "subsidy",
+        "instrument_name": "Subsidy/Grant",
+        "lift": 1.03,
+        "top_in_instrument": 41,
+        "total_with_instrument": 159
+      },
+      {
+        "instrument_id": "carbon_tax",
+        "instrument_name": "Carbon Tax",
+        "lift": 1.0,
+        "top_in_instrument": 11,
+        "total_with_instrument": 44
+      },
+      {
+        "instrument_id": "framework_legislation",
+        "instrument_name": "Framework Legislation",
+        "lift": 0.99,
+        "top_in_instrument": 40,
+        "total_with_instrument": 161
+      },
+      {
+        "instrument_id": "ban",
+        "instrument_name": "Ban/Phase-out",
+        "lift": 0.99,
+        "top_in_instrument": 40,
+        "total_with_instrument": 162
+      },
+      {
+        "instrument_id": "mandate",
+        "instrument_name": "Mandate",
+        "lift": 0.98,
+        "top_in_instrument": 40,
+        "total_with_instrument": 163
+      },
+      {
+        "instrument_id": "labeling",
+        "instrument_name": "Labeling",
+        "lift": 0.96,
+        "top_in_instrument": 11,
+        "total_with_instrument": 46
+      },
+      {
+        "instrument_id": "standard",
+        "instrument_name": "Standard/Regulation",
+        "lift": 0.9,
+        "top_in_instrument": 25,
+        "total_with_instrument": 111
+      },
+      {
+        "instrument_id": "cap_and_trade",
+        "instrument_name": "Cap and Trade",
+        "lift": 0.83,
+        "top_in_instrument": 11,
+        "total_with_instrument": 53
+      },
+      {
+        "instrument_id": "voluntary_agreement",
+        "instrument_name": "Voluntary Agreement",
+        "lift": 0.81,
+        "top_in_instrument": 16,
+        "total_with_instrument": 79
+      },
+      {
+        "instrument_id": "reporting",
+        "instrument_name": "Reporting Requirement",
+        "lift": 0.8,
+        "top_in_instrument": 7,
+        "total_with_instrument": 35
+      },
+      {
+        "instrument_id": "feed_in_tariff",
+        "instrument_name": "Feed-in Tariff",
+        "lift": 0.79,
+        "top_in_instrument": 14,
+        "total_with_instrument": 71
+      }
+    ],
+    "method": "Lift = P(top-quartile CO2/GDP | above-median sector share) / P(top-quartile CO2/GDP)",
+    "n_countries": 164,
+    "n_top_quartile": 41
   }
 }
