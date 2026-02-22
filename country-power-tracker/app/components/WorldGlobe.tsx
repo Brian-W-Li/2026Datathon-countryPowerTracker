@@ -29,6 +29,7 @@ const NUMERIC_TO_ISO3: Record<number, string> = {
 };
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
 import { useRouter } from "next/navigation";
@@ -78,7 +79,7 @@ export default function WorldGlobe({ countries }: Props) {
       .range(["#dc2626", "#ef4444", "#eab308", "#22c55e", "#16a34a"])
       .clamp(true);
 
-    const scoreMap = new Map(countries.map(c => [c.iso3, c]));
+    const scoreMap = new Map(countries.map((c) => [c.iso3, c]));
 
     // Defs
     const defs = svg.append("defs");
@@ -141,7 +142,9 @@ export default function WorldGlobe({ countries }: Props) {
             }
         })
         .on("mousemove", function (event: MouseEvent) {
-            setTooltip(prev => prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null);
+          setTooltip((prev) =>
+            prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null
+          );
         })
         .on("mouseout", function () {
             d3.select(this).attr("stroke-width", 0.4).attr("stroke", "#94a3b830");
@@ -227,6 +230,9 @@ export default function WorldGlobe({ countries }: Props) {
           <span className="font-bold text-emerald-400">{tooltip.score}</span>
         </div>
       )}
+      <div className="absolute bottom-4 right-4 text-gray-400 text-xs">
+        Click a country for details
+      </div>
     </div>
   );
 }

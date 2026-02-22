@@ -6,6 +6,7 @@ import GlobalStats from "./components/GlobalStats";
 import ColorLegend from "./components/ColorLegend";
 import countries from "../public/data/countries.json";
 import recommendations from "../public/data/recommendations.json";
+import overviewStats from "../public/data/overview_stats.json";
 
 export default function Home() {
   return (

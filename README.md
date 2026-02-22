@@ -1,14 +1,16 @@
-# 🌍 Country Power Tracker — Frontend
+# 🌍 Global Environmental Policy Impact (GEPI)
 
-A dashboard for visualizing country-level climate policy data and recommendations.
+A dashboard for visualising country-level climate policy data and GEPI scores across 180+ countries.
 
-All data is precomputed by a separate Python pipeline. The frontend only reads JSON.
+All data is precomputed by a Python pipeline (`generate_data.py`). The frontend only reads JSON.
 
 ---
+
 ## 🚀 Running Locally
 
 ### Prerequisites
 - Node.js 18+
+- Python 3.9+ (for data generation only)
 - Git
 
 ### Steps
@@ -17,43 +19,43 @@ All data is precomputed by a separate Python pipeline. The frontend only reads J
 # 1. Clone the repo
 git clone https://github.com/your-org/2026Datathon-countryPowerTracker.git
 
-# 2. Go into the Next.js app folder
+# 2. (Optional) Regenerate JSON data from raw CSVs
+python3 generate_data.py
+
+# 3. Go into the Next.js app folder
 cd country-power-tracker
 
-# 3. Install dependencies
+# 4. Install dependencies
 npm install
 
-# 4. Start the dev server
+# 5. Start the dev server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-> ⚠️ Make sure you `cd country-power-tracker` first — running `npm run dev` from the repo root will throw an error.
-
-## 📥 JSON Inputs
-
-Place these files in `public/data/` before running the app.
+> ⚠️ Run `npm` commands from inside `country-power-tracker/`, not the repo root.
 
 ---
 
-### `countries.json`
-One entry per country. Used to color the map and populate country cards.
+## 📥 Data Pipeline Inputs
 
-```json
-{
-  "iso3": "USA",
-  "name": "United States",
-  "region": "North America",
-  "green_score": 72.4,
-  "data_year": 2022
-}
-```
+`generate_data.py` reads the following raw files from the repo root:
+
+| File | Description |
+|---|---|
+| `policies_clean.csv` | All climate policies (~16 K rows) with topic, family, country, and status |
+| `public/data/countries.json` | 214 countries with GEPI score and region |
+| `public/data/country_deep_dive.json` | CO₂/capita and CO₂/GDP time series per country (1990–2024) |
 
 ---
+
+## 📤 Data Pipeline Outputs
+
+All written to `country-power-tracker/public/data/`:
 
 ### `policy_buckets.json`
-One entry per policy. Each policy belongs to one sector (bucket). Used to show what policies a country has.
+Active policies per country, each assigned to one of 7 policy sectors.
 
 ```json
 {
@@ -75,134 +77,66 @@ One entry per policy. Each policy belongs to one sector (bucket). Used to show w
   }
 ```
 
-**Bucket (sector) options:**
-
-| `bucket_id` | `bucket_name` |
-|---|---|
-| `RE` | Renewable Energy Incentives |
-| `FPD` | Fossil Fuel Phase-Down |
-| `CPM` | Carbon Pricing & Markets |
-| `EEF` | Energy Efficiency |
-| `GRT` | Grid & Transport Decarbonisation |
-| `LU` | Land Use, Forests & Agriculture |
-| `CF` | Climate Finance & Governance |
-
-**Attribute options:**
-
-- `instrument_type`: `carbon_tax` · `cap_and_trade` · `subsidy` · `tax_credit` · `feed_in_tariff` · `mandate` · `ban` · `standard` · `voluntary_agreement` · `labeling` · `reporting` · `framework_legislation` · `other`
-- `legally_binding`: `true` or `false`
-- `has_quantified_target`: `true` or `false`
-- `scope`: `national` · `international` · `state` · `provisional`
+**Sector IDs:** `RE` · `FPD` · `CPM` · `EEF` · `GRT` · `LU` · `CF`
 
 ---
 
 ### `lift_by_bucket.json`
-One entry per sector. Answers: which sectors do the top-performing countries tend to have?
+Lift scores for all 7 sectors.
 
-Lift = % of top countries with this sector / % of all countries with this sector. A lift > 1 means the sector is more common among top performers.
+Lift = P(sector | top-25% GEPI country) / P(sector | all countries).
+A lift > 1 means the sector is over-represented among high-GEPI performers.
 
 ```json
-{
-  "bucket_id": "CPM",
-  "bucket_name": "Carbon Pricing & Markets",
-  "lift": 1.84
-}
+{ "bucket_id": "CPM", "bucket_name": "Carbon Pricing & Markets", "lift": 1.52, "pct_all": 0.117, "pct_top": 0.178 }
 ```
 
 ---
 
 ### `recommendations.json`
-The top 3 sectors globally — the sectors most associated with top-performing countries.
+Top 3 sectors by lift score — the policy areas most associated with top performers.
 
 ```json
 [
-  {
-    "bucket_id": "CPM",
-    "bucket_name": "Carbon Pricing & Markets",
-    "lift": 1.84
-  },
-  {
-    "bucket_id": "RE",
-    "bucket_name": "Renewable Energy Incentives",
-    "lift": 1.72
-  },
-  {
-    "bucket_id": "FPD",
-    "bucket_name": "Fossil Fuel Phase-Down",
-    "lift": 1.45
-  }
+  { "bucket_id": "CPM", "bucket_name": "Carbon Pricing & Markets", "lift": 1.52 },
+  { "bucket_id": "FPD", "bucket_name": "Fossil Fuel Phase-Down",   "lift": 1.33 },
+  { "bucket_id": "EEF", "bucket_name": "Energy Efficiency",        "lift": 1.29 }
 ]
 ```
 
 ---
 
-### `sparklines.json`
-One entry per country. Used for the trend chart inside a country card.
-
-```json
-{
-  "iso3": "CHN",
-  "series": [
-    { "year": 1990, "value": 2.1 },
-    { "year": 2000, "value": 3.4 },
-    { "year": 2021, "value": 7.4 }
-  ]
-}
-```
+### `overview_stats.json`
+Aggregated stats for the homepage overview section:
+- `scatter_data` — policy count and GEPI score per country (for scatter chart)
+- `co2_gdp_changes` — CO₂/GDP % change over the last 10 years per country
+- `policy_mix_top_performers` — % of top-25% GEPI countries with policies in each sector
 
 ---
 
-## 📤 Frontend Views
+### Pre-existing inputs (not regenerated by the pipeline)
 
-| View | What it shows | Driven by |
+| File | Description |
+|---|---|
+| `countries.json` | 214 countries with `iso3`, `name`, `region`, `green_score`, `data_year` |
+| `clean_energy.json` | Renewable energy capacity time series per country (2006–2022) |
+| `country_deep_dive.json` | CO₂/capita and CO₂/GDP per year per country (1990–2024) |
+
+---
+
+## 📊 Frontend Views
+
+| View | What it shows | Data source |
 |---|---|---|
-| **World Map** | Countries colored by green score | `countries.json` |
-| **Country Card** | Trend chart + policies grouped by sector | `sparklines.json` + `policy_buckets.json` + `clean_energy.json` + 'country_deep_dive.json'|
-| **Lift Chart** | Sectors ranked by lift score | `lift_by_bucket.json` |
-| **Recommendations** | Top 3 global sectors | `recommendations.json` |
+| **Globe** | Countries coloured by GEPI score (red → green). Click any country for its detail page. | `countries.json` |
+| **Overview** | Policy count vs GEPI scatter · CO₂/GDP % change · top-performer policy mix | `overview_stats.json` |
+| **Recommendations** | Top 3 global policy sectors by lift score | `recommendations.json` |
+| **Country page** | GEPI score · CO₂/GDP trend · clean energy share · checkbox-filtered policy list | `policy_buckets.json` · `country_deep_dive.json` · `clean_energy.json` |
 
 ---
 
-### `clean_energy.json`
-One entry per country. Used for the renewable energy chart inside a country card.
-
-```json
-[
-{
-    "iso3": "ABW",
-    "series": [
-      {
-        "year": 2006,
-        "clean_capacity_mw": 0.0,
-        "total_capacity_mw": 23.4,
-        "clean_share": 0.0
-},
-```
-### 'country_deep_dive.json'
-One entry per country. Two CO₂ metrics over time (1990–2024) for trend charts. 
-```json
-{
-  "iso3": "USA",
-  "series": [
-    { "year": 1990, "co2_per_capita": 20.25, "co2_per_gdp": 519.2 },
-    { "year": 2000, "co2_per_capita": 21.4,  "co2_per_gdp": 442.29 },
-    { "year": 2024, "co2_per_capita": 14.2,  "co2_per_gdp": 213.96 }
-  ]
-}
-```
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js · TypeScript · D3.js · Recharts
-- **Backend (separate):** Python · pandas · sentence-transformers
+- **Frontend:** Next.js · TypeScript · Tailwind CSS · D3.js · Recharts
+- **Data pipeline:** Python · pandas
 - **Deploy:** Vercel
-
----
-
-## 🚀 Running Locally
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000). Requires the 5 JSON files to be present in `public/data/`.

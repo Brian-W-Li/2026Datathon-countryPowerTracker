@@ -1,0 +1,51 @@
+[
+  {
+    "bucket_id": "CPM",
+    "bucket_name": "Carbon Pricing & Markets",
+    "lift": 1.52,
+    "pct_all": 0.1167,
+    "pct_top": 0.1778
+  },
+  {
+    "bucket_id": "FPD",
+    "bucket_name": "Fossil Fuel Phase-Down",
+    "lift": 1.33,
+    "pct_all": 0.6833,
+    "pct_top": 0.9111
+  },
+  {
+    "bucket_id": "EEF",
+    "bucket_name": "Energy Efficiency",
+    "lift": 1.29,
+    "pct_all": 0.7056,
+    "pct_top": 0.9111
+  },
+  {
+    "bucket_id": "GRT",
+    "bucket_name": "Grid & Transport Decarbonisation",
+    "lift": 1.19,
+    "pct_all": 0.7667,
+    "pct_top": 0.9111
+  },
+  {
+    "bucket_id": "RE",
+    "bucket_name": "Renewable Energy Incentives",
+    "lift": 1.01,
+    "pct_all": 0.9944,
+    "pct_top": 1.0
+  },
+  {
+    "bucket_id": "CF",
+    "bucket_name": "Climate Finance & Governance",
+    "lift": 1.0,
+    "pct_all": 1.0,
+    "pct_top": 1.0
+  },
+  {
+    "bucket_id": "LU",
+    "bucket_name": "Land Use, Forests & Agriculture",
+    "lift": 0.0,
+    "pct_all": 0.0,
+    "pct_top": 0.0
+  }
+]
