@@ -3,6 +3,7 @@ import countriesData from "../../../public/data/countries.json";
 import deepDiveData from "../../../public/data/country_deep_dive.json";
 import cleanEnergyData from "../../../public/data/clean_energy.json";
 import policyData from "../../../public/data/country_policies.json";
+import policyListData from "../../../public/data/country_policy_list.json";
 
 type DeepDiveEntry = {
   iso3: string;
@@ -25,11 +26,24 @@ type TopicSummary = {
   active: number;
 };
 
-type PolicyEntry = {
+type PolicySummaryEntry = {
   iso3: string;
   topic_summary: TopicSummary[];
   total_policies: number;
   active_policies: number;
+};
+
+type PolicyRecord = {
+  title: string;
+  topic: string;
+  family: string | null;
+  year: number | null;
+  status: string;
+};
+
+type PolicyListEntry = {
+  iso3: string;
+  active_policies: PolicyRecord[];
 };
 
 type CountryEntry = {
@@ -57,7 +71,10 @@ export default async function CountryPage({ params }: Props) {
   const cleanEnergy = (cleanEnergyData as CleanEnergyEntry[]).find(
     (d) => d.iso3 === upper
   );
-  const policies = (policyData as PolicyEntry[]).find(
+  const policySummary = (policyData as PolicySummaryEntry[]).find(
+    (d) => d.iso3 === upper
+  );
+  const policyList = (policyListData as PolicyListEntry[]).find(
     (d) => d.iso3 === upper
   );
 
@@ -65,9 +82,10 @@ export default async function CountryPage({ params }: Props) {
   const region = country?.region ?? "Unknown";
   const co2Series = deepDive?.series ?? [];
   const energySeries = cleanEnergy?.series ?? [];
-  const topicSummary = policies?.topic_summary ?? [];
-  const totalPolicies = policies?.total_policies ?? 0;
-  const activePolicies = policies?.active_policies ?? 0;
+  const topicSummary = policySummary?.topic_summary ?? [];
+  const totalPolicies = policySummary?.total_policies ?? 0;
+  const activePolicies = policySummary?.active_policies ?? 0;
+  const activePolicyList = policyList?.active_policies ?? [];
 
   return (
     <CountryDeepDive
@@ -79,6 +97,7 @@ export default async function CountryPage({ params }: Props) {
       topicSummary={topicSummary}
       totalPolicies={totalPolicies}
       activePolicies={activePolicies}
+      activePolicyList={activePolicyList}
     />
   );
 }
