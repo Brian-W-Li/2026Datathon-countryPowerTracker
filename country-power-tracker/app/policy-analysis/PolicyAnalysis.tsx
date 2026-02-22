@@ -652,7 +652,7 @@ export default function PolicyAnalysis({
             <span>&larr;</span> Back to Globe
           </button>
           <h1 className="text-2xl font-bold mb-1">
-            Policy Impact on CO2 Emissions
+            Global Policy & Environmental Outcomes
           </h1>
           <p className="text-gray-300 text-sm mb-5">
             Cross-sectional analysis of {data.scatter_data.length} countries with
