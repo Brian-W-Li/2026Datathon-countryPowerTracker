@@ -54,7 +54,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All written to `country-power-tracker/public/data/`:
 
-### `policy_buckets.json`
+### `policies.json`
 Active policies per country, each assigned to one of 7 policy sectors.
 
 ```json
