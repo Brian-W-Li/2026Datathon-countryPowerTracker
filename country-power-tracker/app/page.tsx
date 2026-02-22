@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero */}
       <div className="text-center mb-8">
         <h1 className="text-white text-3xl font-bold tracking-tight mb-2">
-          Country Power Tracker
+          Global Environmental Policy Impact Dashboard
         </h1>
         <p className="text-gray-300 text-sm max-w-lg mx-auto mb-5">
           Explore environmental performance, clean energy capacity, and climate
