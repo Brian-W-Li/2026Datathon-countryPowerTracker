@@ -32,9 +32,9 @@ const BUCKET_COLORS: Record<string, string> = {
 
 export default function Recommendations({ data }: Props) {
   return (
-    <div className="w-full max-w-3xl mx-auto mt-10 mb-4">
+      <div className="w-full max-w-3xl mx-auto mt-10 mb-4">
       <h2 className="text-xl font-bold text-white mb-1">Top Policy Sectors by Lift Score</h2>
-      <p className="text-gray-500 text-sm mb-6">
+      <p className="text-gray-300 text-sm mb-6">
         Policy sectors most over-represented among countries with the lowest carbon intensity (top quartile CO2/GDP).
       </p>
 
@@ -61,14 +61,14 @@ export default function Recommendations({ data }: Props) {
 
               {/* Name */}
               <div className="font-semibold text-white text-sm mb-1">{rec.bucket_name}</div>
-              <div className="text-xs text-gray-500 mb-3">{rec.bucket_id}</div>
+              <div className="text-xs text-gray-400 mb-3">{rec.bucket_id}</div>
 
               {/* Lift */}
               <div className="flex items-baseline gap-1">
                 <span className="text-2xl font-bold" style={{ color }}>
                   {rec.lift.toFixed(2)}x
                 </span>
-                <span className="text-xs text-gray-500">lift</span>
+                <span className="text-xs text-gray-400">lift</span>
               </div>
 
               {rec.top_in_sector !== undefined && rec.total_in_sector !== undefined && (
@@ -82,7 +82,7 @@ export default function Recommendations({ data }: Props) {
                       }}
                     />
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-gray-400 mt-1">
                     {rec.top_in_sector} of {rec.total_in_sector} in top quartile
                   </div>
                 </div>

@@ -30,14 +30,14 @@ export default function EpiRankings({ countries }: Props) {
     : ranked;
 
   const getScoreColor = (score: number) => {
-    if (score >= 60) return "text-green-400";
-    if (score >= 40) return "text-yellow-400";
+    if (score >= 65) return "text-emerald-400";
+    if (score >= 50) return "text-amber-400";
     return "text-red-400";
   };
 
   const getBarColor = (score: number) => {
-    if (score >= 60) return "bg-green-600";
-    if (score >= 40) return "bg-yellow-500";
+    if (score >= 65) return "bg-emerald-600";
+    if (score >= 50) return "bg-amber-500";
     return "bg-red-600";
   };
 
@@ -64,7 +64,7 @@ export default function EpiRankings({ countries }: Props) {
               onClick={() => router.push(`/country/${country.iso3}`)}
               className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-800/60 transition-colors text-left group"
             >
-              <span className="text-gray-600 text-xs font-mono w-6 text-right shrink-0 group-hover:text-gray-400 transition-colors">
+              <span className="text-gray-400 text-xs font-mono w-6 text-right shrink-0 group-hover:text-gray-300 transition-colors">
                 {rank}
               </span>
               <div className="flex-1 min-w-0">
@@ -87,7 +87,7 @@ export default function EpiRankings({ countries }: Props) {
           );
         })}
         {filtered.length === 0 && (
-          <p className="text-gray-500 text-sm text-center py-4">
+          <p className="text-gray-300 text-sm text-center py-4">
             No countries found
           </p>
         )}

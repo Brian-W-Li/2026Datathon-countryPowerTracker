@@ -233,7 +233,7 @@ export default function CountryDeepDive({
                     color: "#fff",
                   }}
                   labelStyle={{ color: "#9CA3AF" }}
-                  formatter={((value: number) => [`${(value ?? 0).toFixed(1)}%`, "Clean Share"]) as any}
+                  formatter={((value: number) => [`${(value ?? 0).toFixed(1)}%`, "Clean Share"]) as never}
                 />
                 <Area
                   type="monotone"
@@ -281,7 +281,7 @@ export default function CountryDeepDive({
                   formatter={((value: number, name: string) => {
                     const label = name === "clean_mw" ? "Clean" : "Fossil";
                     return [`${(value ?? 0).toFixed(0)} MW`, label];
-                  }) as any}
+                  }) as never}
                 />
                 <Legend
                   formatter={(value: string) =>
@@ -429,7 +429,7 @@ export default function CountryDeepDive({
                   formatter={((value: number, name: string) => {
                     const label = name === "active" ? "Active" : "Inactive";
                     return [value ?? 0, label];
-                  }) as any}
+                  }) as never}
                 />
                 <Legend
                   formatter={(value: string) =>

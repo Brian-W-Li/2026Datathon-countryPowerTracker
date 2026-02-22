@@ -1,0 +1,1714 @@
+{
+  "ABW": {
+    "country": "Aruba",
+    "end_value": 8.518487,
+    "end_year": 2024,
+    "pct_change": 9.6796,
+    "start_value": 7.766699,
+    "start_year": 2019
+  },
+  "AFG": {
+    "country": "Afghanistan",
+    "end_value": 0.253848,
+    "end_year": 2024,
+    "pct_change": -7.5999,
+    "start_value": 0.274727,
+    "start_year": 2019
+  },
+  "AGO": {
+    "country": "Angola",
+    "end_value": 0.589497,
+    "end_year": 2024,
+    "pct_change": -14.0691,
+    "start_value": 0.686012,
+    "start_year": 2019
+  },
+  "AIA": {
+    "country": "Anguilla",
+    "end_value": 10.126855,
+    "end_year": 2024,
+    "pct_change": 5.2046,
+    "start_value": 9.625867,
+    "start_year": 2019
+  },
+  "ALB": {
+    "country": "Albania",
+    "end_value": 1.59199,
+    "end_year": 2024,
+    "pct_change": -7.0361,
+    "start_value": 1.712481,
+    "start_year": 2019
+  },
+  "AND": {
+    "country": "Andorra",
+    "end_value": 5.181661,
+    "end_year": 2024,
+    "pct_change": -19.2719,
+    "start_value": 6.418658,
+    "start_year": 2019
+  },
+  "ARE": {
+    "country": "United Arab Emirates",
+    "end_value": 20.131075,
+    "end_year": 2024,
+    "pct_change": -7.484,
+    "start_value": 21.75957,
+    "start_year": 2019
+  },
+  "ARG": {
+    "country": "Argentina",
+    "end_value": 3.743406,
+    "end_year": 2024,
+    "pct_change": -6.6917,
+    "start_value": 4.011869,
+    "start_year": 2019
+  },
+  "ARM": {
+    "country": "Armenia",
+    "end_value": 2.498691,
+    "end_year": 2024,
+    "pct_change": 15.468,
+    "start_value": 2.163968,
+    "start_year": 2019
+  },
+  "ATG": {
+    "country": "Antigua and Barbuda",
+    "end_value": 7.092406,
+    "end_year": 2024,
+    "pct_change": 1.6543,
+    "start_value": 6.976985,
+    "start_year": 2019
+  },
+  "AUS": {
+    "country": "Australia",
+    "end_value": 14.477199,
+    "end_year": 2024,
+    "pct_change": -11.088,
+    "start_value": 16.28262,
+    "start_year": 2019
+  },
+  "AUT": {
+    "country": "Austria",
+    "end_value": 6.180112,
+    "end_year": 2024,
+    "pct_change": -19.2291,
+    "start_value": 7.651411,
+    "start_year": 2019
+  },
+  "AZE": {
+    "country": "Azerbaijan",
+    "end_value": 3.85332,
+    "end_year": 2024,
+    "pct_change": 3.1955,
+    "start_value": 3.734001,
+    "start_year": 2019
+  },
+  "BDI": {
+    "country": "Burundi",
+    "end_value": 0.065253,
+    "end_year": 2024,
+    "pct_change": 16.716,
+    "start_value": 0.055908,
+    "start_year": 2019
+  },
+  "BEL": {
+    "country": "Belgium",
+    "end_value": 7.279831,
+    "end_year": 2024,
+    "pct_change": -16.1815,
+    "start_value": 8.685232,
+    "start_year": 2019
+  },
+  "BEN": {
+    "country": "Benin",
+    "end_value": 0.419447,
+    "end_year": 2024,
+    "pct_change": 1.2441,
+    "start_value": 0.414292,
+    "start_year": 2019
+  },
+  "BES": {
+    "country": "Bonaire Sint Eustatius and Saba",
+    "end_value": 4.947458,
+    "end_year": 2024,
+    "pct_change": -8.8484,
+    "start_value": 5.427725,
+    "start_year": 2019
+  },
+  "BFA": {
+    "country": "Burkina Faso",
+    "end_value": 0.276348,
+    "end_year": 2024,
+    "pct_change": 3.111,
+    "start_value": 0.26801,
+    "start_year": 2019
+  },
+  "BGD": {
+    "country": "Bangladesh",
+    "end_value": 0.624086,
+    "end_year": 2024,
+    "pct_change": 8.5566,
+    "start_value": 0.574895,
+    "start_year": 2019
+  },
+  "BGR": {
+    "country": "Bulgaria",
+    "end_value": 4.679387,
+    "end_year": 2024,
+    "pct_change": -22.6427,
+    "start_value": 6.049056,
+    "start_year": 2019
+  },
+  "BHR": {
+    "country": "Bahrain",
+    "end_value": 24.270082,
+    "end_year": 2024,
+    "pct_change": -4.1437,
+    "start_value": 25.319227,
+    "start_year": 2019
+  },
+  "BHS": {
+    "country": "Bahamas",
+    "end_value": 7.64968,
+    "end_year": 2024,
+    "pct_change": 19.7702,
+    "start_value": 6.386963,
+    "start_year": 2019
+  },
+  "BIH": {
+    "country": "Bosnia and Herzegovina",
+    "end_value": 6.139178,
+    "end_year": 2024,
+    "pct_change": -1.3049,
+    "start_value": 6.220349,
+    "start_year": 2019
+  },
+  "BLR": {
+    "country": "Belarus",
+    "end_value": 6.163221,
+    "end_year": 2024,
+    "pct_change": -6.463,
+    "start_value": 6.589073,
+    "start_year": 2019
+  },
+  "BLZ": {
+    "country": "Belize",
+    "end_value": 1.908585,
+    "end_year": 2024,
+    "pct_change": -4.2947,
+    "start_value": 1.994231,
+    "start_year": 2019
+  },
+  "BMU": {
+    "country": "Bermuda",
+    "end_value": 8.506047,
+    "end_year": 2024,
+    "pct_change": -8.0994,
+    "start_value": 9.255699,
+    "start_year": 2019
+  },
+  "BOL": {
+    "country": "Bolivia",
+    "end_value": 2.312731,
+    "end_year": 2024,
+    "pct_change": 19.3882,
+    "start_value": 1.937153,
+    "start_year": 2019
+  },
+  "BRA": {
+    "country": "Brazil",
+    "end_value": 2.278372,
+    "end_year": 2024,
+    "pct_change": -0.8523,
+    "start_value": 2.297957,
+    "start_year": 2019
+  },
+  "BRB": {
+    "country": "Barbados",
+    "end_value": 4.832874,
+    "end_year": 2024,
+    "pct_change": -2.3589,
+    "start_value": 4.949633,
+    "start_year": 2019
+  },
+  "BRN": {
+    "country": "Brunei",
+    "end_value": 26.046202,
+    "end_year": 2024,
+    "pct_change": 20.558,
+    "start_value": 21.60471,
+    "start_year": 2019
+  },
+  "BTN": {
+    "country": "Bhutan",
+    "end_value": 2.093939,
+    "end_year": 2024,
+    "pct_change": 2.3405,
+    "start_value": 2.046051,
+    "start_year": 2019
+  },
+  "BWA": {
+    "country": "Botswana",
+    "end_value": 2.959607,
+    "end_year": 2024,
+    "pct_change": -7.7951,
+    "start_value": 3.209815,
+    "start_year": 2019
+  },
+  "CAF": {
+    "country": "Central African Republic",
+    "end_value": 0.074039,
+    "end_year": 2024,
+    "pct_change": 17.5517,
+    "start_value": 0.062985,
+    "start_year": 2019
+  },
+  "CAN": {
+    "country": "Canada",
+    "end_value": 13.419917,
+    "end_year": 2024,
+    "pct_change": -12.4287,
+    "start_value": 15.324565,
+    "start_year": 2019
+  },
+  "CHE": {
+    "country": "Switzerland",
+    "end_value": 3.594686,
+    "end_year": 2024,
+    "pct_change": -16.2639,
+    "start_value": 4.292875,
+    "start_year": 2019
+  },
+  "CHL": {
+    "country": "Chile",
+    "end_value": 3.983124,
+    "end_year": 2024,
+    "pct_change": -16.8629,
+    "start_value": 4.791033,
+    "start_year": 2019
+  },
+  "CHN": {
+    "country": "China",
+    "end_value": 8.65839,
+    "end_year": 2024,
+    "pct_change": 15.0453,
+    "start_value": 7.526071,
+    "start_year": 2019
+  },
+  "CIV": {
+    "country": "Cote d'Ivoire",
+    "end_value": 0.464348,
+    "end_year": 2024,
+    "pct_change": 24.2212,
+    "start_value": 0.373807,
+    "start_year": 2019
+  },
+  "CMR": {
+    "country": "Cameroon",
+    "end_value": 0.330712,
+    "end_year": 2024,
+    "pct_change": -12.1819,
+    "start_value": 0.376588,
+    "start_year": 2019
+  },
+  "COD": {
+    "country": "Democratic Republic of Congo",
+    "end_value": 0.054032,
+    "end_year": 2024,
+    "pct_change": 21.9537,
+    "start_value": 0.044306,
+    "start_year": 2019
+  },
+  "COG": {
+    "country": "Congo",
+    "end_value": 1.395833,
+    "end_year": 2024,
+    "pct_change": 7.4904,
+    "start_value": 1.298566,
+    "start_year": 2019
+  },
+  "COK": {
+    "country": "Cook Islands",
+    "end_value": 5.824218,
+    "end_year": 2024,
+    "pct_change": 16.6968,
+    "start_value": 4.990899,
+    "start_year": 2019
+  },
+  "COL": {
+    "country": "Colombia",
+    "end_value": 1.752047,
+    "end_year": 2024,
+    "pct_change": -11.6416,
+    "start_value": 1.982887,
+    "start_year": 2019
+  },
+  "COM": {
+    "country": "Comoros",
+    "end_value": 0.636545,
+    "end_year": 2024,
+    "pct_change": 60.7676,
+    "start_value": 0.395941,
+    "start_year": 2019
+  },
+  "CPV": {
+    "country": "Cape Verde",
+    "end_value": 1.131284,
+    "end_year": 2024,
+    "pct_change": -7.7112,
+    "start_value": 1.225809,
+    "start_year": 2019
+  },
+  "CRI": {
+    "country": "Costa Rica",
+    "end_value": 1.70772,
+    "end_year": 2024,
+    "pct_change": 11.4542,
+    "start_value": 1.532217,
+    "start_year": 2019
+  },
+  "CUB": {
+    "country": "Cuba",
+    "end_value": 2.225931,
+    "end_year": 2024,
+    "pct_change": 10.8946,
+    "start_value": 2.00725,
+    "start_year": 2019
+  },
+  "CUW": {
+    "country": "Curacao",
+    "end_value": 12.344206,
+    "end_year": 2024,
+    "pct_change": -2.3516,
+    "start_value": 12.641481,
+    "start_year": 2019
+  },
+  "CYP": {
+    "country": "Cyprus",
+    "end_value": 5.373922,
+    "end_year": 2024,
+    "pct_change": -5.598,
+    "start_value": 5.692592,
+    "start_year": 2019
+  },
+  "CZE": {
+    "country": "Czechia",
+    "end_value": 7.043965,
+    "end_year": 2024,
+    "pct_change": -26.3862,
+    "start_value": 9.568804,
+    "start_year": 2019
+  },
+  "DEU": {
+    "country": "Germany",
+    "end_value": 6.768824,
+    "end_year": 2024,
+    "pct_change": -20.1865,
+    "start_value": 8.480803,
+    "start_year": 2019
+  },
+  "DJI": {
+    "country": "Djibouti",
+    "end_value": 0.482649,
+    "end_year": 2024,
+    "pct_change": -2.7309,
+    "start_value": 0.496199,
+    "start_year": 2019
+  },
+  "DMA": {
+    "country": "Dominica",
+    "end_value": 2.579923,
+    "end_year": 2024,
+    "pct_change": 1.7255,
+    "start_value": 2.536163,
+    "start_year": 2019
+  },
+  "DNK": {
+    "country": "Denmark",
+    "end_value": 4.746057,
+    "end_year": 2024,
+    "pct_change": -10.836,
+    "start_value": 5.322841,
+    "start_year": 2019
+  },
+  "DOM": {
+    "country": "Dominican Republic",
+    "end_value": 2.899204,
+    "end_year": 2024,
+    "pct_change": 10.9337,
+    "start_value": 2.613456,
+    "start_year": 2019
+  },
+  "DZA": {
+    "country": "Algeria",
+    "end_value": 4.233817,
+    "end_year": 2024,
+    "pct_change": 0.4803,
+    "start_value": 4.213579,
+    "start_year": 2019
+  },
+  "ECU": {
+    "country": "Ecuador",
+    "end_value": 2.535337,
+    "end_year": 2024,
+    "pct_change": 9.6804,
+    "start_value": 2.311568,
+    "start_year": 2019
+  },
+  "EGY": {
+    "country": "Egypt",
+    "end_value": 2.217022,
+    "end_year": 2024,
+    "pct_change": 1.8745,
+    "start_value": 2.176228,
+    "start_year": 2019
+  },
+  "ERI": {
+    "country": "Eritrea",
+    "end_value": 0.210048,
+    "end_year": 2024,
+    "pct_change": 5.5874,
+    "start_value": 0.198933,
+    "start_year": 2019
+  },
+  "ESP": {
+    "country": "Spain",
+    "end_value": 4.599015,
+    "end_year": 2024,
+    "pct_change": -12.9726,
+    "start_value": 5.284558,
+    "start_year": 2019
+  },
+  "EST": {
+    "country": "Estonia",
+    "end_value": 6.105464,
+    "end_year": 2024,
+    "pct_change": -34.0755,
+    "start_value": 9.261298,
+    "start_year": 2019
+  },
+  "ETH": {
+    "country": "Ethiopia",
+    "end_value": 0.13507,
+    "end_year": 2024,
+    "pct_change": -8.9917,
+    "start_value": 0.148415,
+    "start_year": 2019
+  },
+  "FIN": {
+    "country": "Finland",
+    "end_value": 5.300579,
+    "end_year": 2024,
+    "pct_change": -31.0421,
+    "start_value": 7.686688,
+    "start_year": 2019
+  },
+  "FJI": {
+    "country": "Fiji",
+    "end_value": 1.556111,
+    "end_year": 2024,
+    "pct_change": -5.6816,
+    "start_value": 1.649848,
+    "start_year": 2019
+  },
+  "FRA": {
+    "country": "France",
+    "end_value": 3.969368,
+    "end_year": 2024,
+    "pct_change": -17.519,
+    "start_value": 4.812466,
+    "start_year": 2019
+  },
+  "FRO": {
+    "country": "Faroe Islands",
+    "end_value": 13.089157,
+    "end_year": 2024,
+    "pct_change": -8.2715,
+    "start_value": 14.269453,
+    "start_year": 2019
+  },
+  "FSM": {
+    "country": "Micronesia (country)",
+    "end_value": 1.330959,
+    "end_year": 2024,
+    "pct_change": 2.7289,
+    "start_value": 1.295603,
+    "start_year": 2019
+  },
+  "GAB": {
+    "country": "Gabon",
+    "end_value": 2.126386,
+    "end_year": 2024,
+    "pct_change": -14.004,
+    "start_value": 2.472657,
+    "start_year": 2019
+  },
+  "GBR": {
+    "country": "United Kingdom",
+    "end_value": 4.525799,
+    "end_year": 2024,
+    "pct_change": -16.7298,
+    "start_value": 5.435078,
+    "start_year": 2019
+  },
+  "GEO": {
+    "country": "Georgia",
+    "end_value": 3.094875,
+    "end_year": 2024,
+    "pct_change": 11.7266,
+    "start_value": 2.770044,
+    "start_year": 2019
+  },
+  "GHA": {
+    "country": "Ghana",
+    "end_value": 0.610614,
+    "end_year": 2024,
+    "pct_change": 16.2774,
+    "start_value": 0.525136,
+    "start_year": 2019
+  },
+  "GIN": {
+    "country": "Guinea",
+    "end_value": 0.272873,
+    "end_year": 2024,
+    "pct_change": -13.3386,
+    "start_value": 0.314873,
+    "start_year": 2019
+  },
+  "GMB": {
+    "country": "Gambia",
+    "end_value": 0.29086,
+    "end_year": 2024,
+    "pct_change": 0.5322,
+    "start_value": 0.28932,
+    "start_year": 2019
+  },
+  "GNB": {
+    "country": "Guinea-Bissau",
+    "end_value": 0.155444,
+    "end_year": 2024,
+    "pct_change": 19.2563,
+    "start_value": 0.130345,
+    "start_year": 2019
+  },
+  "GNQ": {
+    "country": "Equatorial Guinea",
+    "end_value": 3.704236,
+    "end_year": 2024,
+    "pct_change": 12.2076,
+    "start_value": 3.301236,
+    "start_year": 2019
+  },
+  "GRC": {
+    "country": "Greece",
+    "end_value": 5.310692,
+    "end_year": 2024,
+    "pct_change": -13.407,
+    "start_value": 6.132932,
+    "start_year": 2019
+  },
+  "GRD": {
+    "country": "Grenada",
+    "end_value": 3.215982,
+    "end_year": 2024,
+    "pct_change": 11.8809,
+    "start_value": 2.874469,
+    "start_year": 2019
+  },
+  "GRL": {
+    "country": "Greenland",
+    "end_value": 11.079819,
+    "end_year": 2024,
+    "pct_change": 18.1604,
+    "start_value": 9.376927,
+    "start_year": 2019
+  },
+  "GTM": {
+    "country": "Guatemala",
+    "end_value": 1.080084,
+    "end_year": 2024,
+    "pct_change": -4.0776,
+    "start_value": 1.125998,
+    "start_year": 2019
+  },
+  "GUY": {
+    "country": "Guyana",
+    "end_value": 5.426992,
+    "end_year": 2024,
+    "pct_change": 65.7038,
+    "start_value": 3.275116,
+    "start_year": 2019
+  },
+  "HKG": {
+    "country": "Hong Kong",
+    "end_value": 4.494174,
+    "end_year": 2024,
+    "pct_change": -19.7009,
+    "start_value": 5.596796,
+    "start_year": 2019
+  },
+  "HND": {
+    "country": "Honduras",
+    "end_value": 1.187437,
+    "end_year": 2024,
+    "pct_change": 7.7072,
+    "start_value": 1.102468,
+    "start_year": 2019
+  },
+  "HRV": {
+    "country": "Croatia",
+    "end_value": 4.764723,
+    "end_year": 2024,
+    "pct_change": 6.5844,
+    "start_value": 4.470374,
+    "start_year": 2019
+  },
+  "HTI": {
+    "country": "Haiti",
+    "end_value": 0.25234,
+    "end_year": 2024,
+    "pct_change": -10.1495,
+    "start_value": 0.280845,
+    "start_year": 2019
+  },
+  "HUN": {
+    "country": "Hungary",
+    "end_value": 4.135669,
+    "end_year": 2024,
+    "pct_change": -17.8035,
+    "start_value": 5.031445,
+    "start_year": 2019
+  },
+  "IDN": {
+    "country": "Indonesia",
+    "end_value": 2.865096,
+    "end_year": 2024,
+    "pct_change": 17.391,
+    "start_value": 2.440643,
+    "start_year": 2019
+  },
+  "IND": {
+    "country": "India",
+    "end_value": 2.200978,
+    "end_year": 2024,
+    "pct_change": 17.0824,
+    "start_value": 1.879854,
+    "start_year": 2019
+  },
+  "IRL": {
+    "country": "Ireland",
+    "end_value": 6.338824,
+    "end_year": 2024,
+    "pct_change": -15.9336,
+    "start_value": 7.540263,
+    "start_year": 2019
+  },
+  "IRN": {
+    "country": "Iran",
+    "end_value": 8.656227,
+    "end_year": 2024,
+    "pct_change": 3.6122,
+    "start_value": 8.354448,
+    "start_year": 2019
+  },
+  "IRQ": {
+    "country": "Iraq",
+    "end_value": 5.074398,
+    "end_year": 2024,
+    "pct_change": 8.9937,
+    "start_value": 4.655681,
+    "start_year": 2019
+  },
+  "ISL": {
+    "country": "Iceland",
+    "end_value": 9.666935,
+    "end_year": 2024,
+    "pct_change": -1.849,
+    "start_value": 9.849048,
+    "start_year": 2019
+  },
+  "ISR": {
+    "country": "Israel",
+    "end_value": 5.607441,
+    "end_year": 2024,
+    "pct_change": -17.6487,
+    "start_value": 6.809169,
+    "start_year": 2019
+  },
+  "ITA": {
+    "country": "Italy",
+    "end_value": 5.087886,
+    "end_year": 2024,
+    "pct_change": -9.9231,
+    "start_value": 5.648382,
+    "start_year": 2019
+  },
+  "JAM": {
+    "country": "Jamaica",
+    "end_value": 2.95922,
+    "end_year": 2024,
+    "pct_change": -11.4921,
+    "start_value": 3.343452,
+    "start_year": 2019
+  },
+  "JOR": {
+    "country": "Jordan",
+    "end_value": 2.009813,
+    "end_year": 2024,
+    "pct_change": -12.7037,
+    "start_value": 2.302289,
+    "start_year": 2019
+  },
+  "JPN": {
+    "country": "Japan",
+    "end_value": 7.772474,
+    "end_year": 2024,
+    "pct_change": -10.6432,
+    "start_value": 8.698248,
+    "start_year": 2019
+  },
+  "KAZ": {
+    "country": "Kazakhstan",
+    "end_value": 13.937352,
+    "end_year": 2024,
+    "pct_change": -9.5627,
+    "start_value": 15.411059,
+    "start_year": 2019
+  },
+  "KEN": {
+    "country": "Kenya",
+    "end_value": 0.376118,
+    "end_year": 2024,
+    "pct_change": 6.0544,
+    "start_value": 0.354646,
+    "start_year": 2019
+  },
+  "KGZ": {
+    "country": "Kyrgyzstan",
+    "end_value": 1.637926,
+    "end_year": 2024,
+    "pct_change": 17.5765,
+    "start_value": 1.393072,
+    "start_year": 2019
+  },
+  "KHM": {
+    "country": "Cambodia",
+    "end_value": 1.240599,
+    "end_year": 2024,
+    "pct_change": 9.7734,
+    "start_value": 1.130146,
+    "start_year": 2019
+  },
+  "KIR": {
+    "country": "Kiribati",
+    "end_value": 0.538622,
+    "end_year": 2024,
+    "pct_change": -4.1163,
+    "start_value": 0.561746,
+    "start_year": 2019
+  },
+  "KNA": {
+    "country": "Saint Kitts and Nevis",
+    "end_value": 5.542429,
+    "end_year": 2024,
+    "pct_change": 0.0835,
+    "start_value": 5.537807,
+    "start_year": 2019
+  },
+  "KOR": {
+    "country": "South Korea",
+    "end_value": 11.285893,
+    "end_year": 2024,
+    "pct_change": -9.5737,
+    "start_value": 12.480763,
+    "start_year": 2019
+  },
+  "KWT": {
+    "country": "Kuwait",
+    "end_value": 26.24753,
+    "end_year": 2024,
+    "pct_change": 11.4115,
+    "start_value": 23.559092,
+    "start_year": 2019
+  },
+  "LAO": {
+    "country": "Laos",
+    "end_value": 3.140345,
+    "end_year": 2024,
+    "pct_change": 23.9304,
+    "start_value": 2.533959,
+    "start_year": 2019
+  },
+  "LBN": {
+    "country": "Lebanon",
+    "end_value": 2.6955,
+    "end_year": 2024,
+    "pct_change": -37.8732,
+    "start_value": 4.338706,
+    "start_year": 2019
+  },
+  "LBR": {
+    "country": "Liberia",
+    "end_value": 0.153108,
+    "end_year": 2024,
+    "pct_change": -17.112,
+    "start_value": 0.184717,
+    "start_year": 2019
+  },
+  "LBY": {
+    "country": "Libya",
+    "end_value": 8.841596,
+    "end_year": 2024,
+    "pct_change": -16.6987,
+    "start_value": 10.613997,
+    "start_year": 2019
+  },
+  "LCA": {
+    "country": "Saint Lucia",
+    "end_value": 2.98696,
+    "end_year": 2024,
+    "pct_change": 5.7255,
+    "start_value": 2.825203,
+    "start_year": 2019
+  },
+  "LIE": {
+    "country": "Liechtenstein",
+    "end_value": 3.299261,
+    "end_year": 2024,
+    "pct_change": -14.6349,
+    "start_value": 3.864883,
+    "start_year": 2019
+  },
+  "LKA": {
+    "country": "Sri Lanka",
+    "end_value": 0.9014,
+    "end_year": 2024,
+    "pct_change": -4.2866,
+    "start_value": 0.94177,
+    "start_year": 2019
+  },
+  "LSO": {
+    "country": "Lesotho",
+    "end_value": 1.100255,
+    "end_year": 2024,
+    "pct_change": 11.1324,
+    "start_value": 0.99004,
+    "start_year": 2019
+  },
+  "LTU": {
+    "country": "Lithuania",
+    "end_value": 4.386505,
+    "end_year": 2024,
+    "pct_change": -10.1617,
+    "start_value": 4.882669,
+    "start_year": 2019
+  },
+  "LUX": {
+    "country": "Luxembourg",
+    "end_value": 10.459649,
+    "end_year": 2024,
+    "pct_change": -33.4692,
+    "start_value": 15.721521,
+    "start_year": 2019
+  },
+  "LVA": {
+    "country": "Latvia",
+    "end_value": 3.452096,
+    "end_year": 2024,
+    "pct_change": -13.4306,
+    "start_value": 3.987663,
+    "start_year": 2019
+  },
+  "MAC": {
+    "country": "Macao",
+    "end_value": 1.466572,
+    "end_year": 2024,
+    "pct_change": -18.8608,
+    "start_value": 1.807476,
+    "start_year": 2019
+  },
+  "MAR": {
+    "country": "Morocco",
+    "end_value": 1.813556,
+    "end_year": 2024,
+    "pct_change": -4.4702,
+    "start_value": 1.898419,
+    "start_year": 2019
+  },
+  "MDA": {
+    "country": "Moldova",
+    "end_value": 1.755157,
+    "end_year": 2024,
+    "pct_change": 1.5745,
+    "start_value": 1.727951,
+    "start_year": 2019
+  },
+  "MDG": {
+    "country": "Madagascar",
+    "end_value": 0.141667,
+    "end_year": 2024,
+    "pct_change": -3.587,
+    "start_value": 0.146938,
+    "start_year": 2019
+  },
+  "MDV": {
+    "country": "Maldives",
+    "end_value": 4.369469,
+    "end_year": 2024,
+    "pct_change": 6.9203,
+    "start_value": 4.086661,
+    "start_year": 2019
+  },
+  "MEX": {
+    "country": "Mexico",
+    "end_value": 3.522727,
+    "end_year": 2024,
+    "pct_change": -5.3834,
+    "start_value": 3.723161,
+    "start_year": 2019
+  },
+  "MHL": {
+    "country": "Marshall Islands",
+    "end_value": 4.111572,
+    "end_year": 2024,
+    "pct_change": 23.5211,
+    "start_value": 3.328639,
+    "start_year": 2019
+  },
+  "MKD": {
+    "country": "North Macedonia",
+    "end_value": 3.631155,
+    "end_year": 2024,
+    "pct_change": -9.6264,
+    "start_value": 4.017939,
+    "start_year": 2019
+  },
+  "MLI": {
+    "country": "Mali",
+    "end_value": 0.2851,
+    "end_year": 2024,
+    "pct_change": 7.375,
+    "start_value": 0.265518,
+    "start_year": 2019
+  },
+  "MLT": {
+    "country": "Malta",
+    "end_value": 3.203721,
+    "end_year": 2024,
+    "pct_change": -2.0899,
+    "start_value": 3.272104,
+    "start_year": 2019
+  },
+  "MMR": {
+    "country": "Myanmar",
+    "end_value": 0.579879,
+    "end_year": 2024,
+    "pct_change": -9.1968,
+    "start_value": 0.638611,
+    "start_year": 2019
+  },
+  "MNE": {
+    "country": "Montenegro",
+    "end_value": 3.721736,
+    "end_year": 2024,
+    "pct_change": -8.0903,
+    "start_value": 4.04934,
+    "start_year": 2019
+  },
+  "MNG": {
+    "country": "Mongolia",
+    "end_value": 12.859549,
+    "end_year": 2024,
+    "pct_change": -11.7902,
+    "start_value": 14.578362,
+    "start_year": 2019
+  },
+  "MOZ": {
+    "country": "Mozambique",
+    "end_value": 0.248692,
+    "end_year": 2024,
+    "pct_change": 4.7138,
+    "start_value": 0.237496,
+    "start_year": 2019
+  },
+  "MRT": {
+    "country": "Mauritania",
+    "end_value": 1.013401,
+    "end_year": 2024,
+    "pct_change": -1.8575,
+    "start_value": 1.032582,
+    "start_year": 2019
+  },
+  "MSR": {
+    "country": "Montserrat",
+    "end_value": 6.021522,
+    "end_year": 2024,
+    "pct_change": 7.1515,
+    "start_value": 5.619632,
+    "start_year": 2019
+  },
+  "MUS": {
+    "country": "Mauritius",
+    "end_value": 3.676623,
+    "end_year": 2024,
+    "pct_change": 4.5101,
+    "start_value": 3.517958,
+    "start_year": 2019
+  },
+  "MWI": {
+    "country": "Malawi",
+    "end_value": 0.086883,
+    "end_year": 2024,
+    "pct_change": -2.4973,
+    "start_value": 0.089108,
+    "start_year": 2019
+  },
+  "MYS": {
+    "country": "Malaysia",
+    "end_value": 8.16206,
+    "end_year": 2024,
+    "pct_change": -1.703,
+    "start_value": 8.303469,
+    "start_year": 2019
+  },
+  "NAM": {
+    "country": "Namibia",
+    "end_value": 1.144874,
+    "end_year": 2024,
+    "pct_change": -18.6482,
+    "start_value": 1.407311,
+    "start_year": 2019
+  },
+  "NCL": {
+    "country": "New Caledonia",
+    "end_value": 18.0644,
+    "end_year": 2024,
+    "pct_change": -9.6867,
+    "start_value": 20.001928,
+    "start_year": 2019
+  },
+  "NER": {
+    "country": "Niger",
+    "end_value": 0.117265,
+    "end_year": 2024,
+    "pct_change": 7.0665,
+    "start_value": 0.109525,
+    "start_year": 2019
+  },
+  "NGA": {
+    "country": "Nigeria",
+    "end_value": 0.583739,
+    "end_year": 2024,
+    "pct_change": -4.3598,
+    "start_value": 0.610349,
+    "start_year": 2019
+  },
+  "NIC": {
+    "country": "Nicaragua",
+    "end_value": 0.814088,
+    "end_year": 2024,
+    "pct_change": 1.3472,
+    "start_value": 0.803267,
+    "start_year": 2019
+  },
+  "NIU": {
+    "country": "Niue",
+    "end_value": 4.142857,
+    "end_year": 2024,
+    "pct_change": 2.5538,
+    "start_value": 4.039691,
+    "start_year": 2019
+  },
+  "NLD": {
+    "country": "Netherlands",
+    "end_value": 6.29691,
+    "end_year": 2024,
+    "pct_change": -27.6932,
+    "start_value": 8.708599,
+    "start_year": 2019
+  },
+  "NOR": {
+    "country": "Norway",
+    "end_value": 6.667616,
+    "end_year": 2024,
+    "pct_change": -16.8184,
+    "start_value": 8.015733,
+    "start_year": 2019
+  },
+  "NPL": {
+    "country": "Nepal",
+    "end_value": 0.633235,
+    "end_year": 2024,
+    "pct_change": 41.1144,
+    "start_value": 0.448739,
+    "start_year": 2019
+  },
+  "NRU": {
+    "country": "Nauru",
+    "end_value": 5.129512,
+    "end_year": 2024,
+    "pct_change": 16.088,
+    "start_value": 4.418641,
+    "start_year": 2019
+  },
+  "NZL": {
+    "country": "New Zealand",
+    "end_value": 6.229343,
+    "end_year": 2024,
+    "pct_change": -15.3358,
+    "start_value": 7.357706,
+    "start_year": 2019
+  },
+  "OMN": {
+    "country": "Oman",
+    "end_value": 15.651107,
+    "end_year": 2024,
+    "pct_change": -0.2454,
+    "start_value": 15.689613,
+    "start_year": 2019
+  },
+  "PAK": {
+    "country": "Pakistan",
+    "end_value": 0.715569,
+    "end_year": 2024,
+    "pct_change": -13.4531,
+    "start_value": 0.826799,
+    "start_year": 2019
+  },
+  "PAN": {
+    "country": "Panama",
+    "end_value": 2.80461,
+    "end_year": 2024,
+    "pct_change": -4.5956,
+    "start_value": 2.939707,
+    "start_year": 2019
+  },
+  "PER": {
+    "country": "Peru",
+    "end_value": 2.052924,
+    "end_year": 2024,
+    "pct_change": 13.5468,
+    "start_value": 1.807998,
+    "start_year": 2019
+  },
+  "PHL": {
+    "country": "Philippines",
+    "end_value": 1.509604,
+    "end_year": 2024,
+    "pct_change": 17.2999,
+    "start_value": 1.28696,
+    "start_year": 2019
+  },
+  "PLW": {
+    "country": "Palau",
+    "end_value": 12.760258,
+    "end_year": 2024,
+    "pct_change": 5.1923,
+    "start_value": 12.130408,
+    "start_year": 2019
+  },
+  "PNG": {
+    "country": "Papua New Guinea",
+    "end_value": 0.789054,
+    "end_year": 2024,
+    "pct_change": -0.0092,
+    "start_value": 0.789127,
+    "start_year": 2019
+  },
+  "POL": {
+    "country": "Poland",
+    "end_value": 7.08011,
+    "end_year": 2024,
+    "pct_change": -14.7429,
+    "start_value": 8.304427,
+    "start_year": 2019
+  },
+  "PRK": {
+    "country": "North Korea",
+    "end_value": 2.360492,
+    "end_year": 2024,
+    "pct_change": -11.5815,
+    "start_value": 2.669682,
+    "start_year": 2019
+  },
+  "PRT": {
+    "country": "Portugal",
+    "end_value": 3.408907,
+    "end_year": 2024,
+    "pct_change": -25.8999,
+    "start_value": 4.60041,
+    "start_year": 2019
+  },
+  "PRY": {
+    "country": "Paraguay",
+    "end_value": 1.14541,
+    "end_year": 2024,
+    "pct_change": -9.748,
+    "start_value": 1.269123,
+    "start_year": 2019
+  },
+  "PSE": {
+    "country": "Palestine",
+    "end_value": 0.869819,
+    "end_year": 2024,
+    "pct_change": 32.0938,
+    "start_value": 0.658486,
+    "start_year": 2019
+  },
+  "PYF": {
+    "country": "French Polynesia",
+    "end_value": 3.274715,
+    "end_year": 2024,
+    "pct_change": 2.6309,
+    "start_value": 3.190768,
+    "start_year": 2019
+  },
+  "QAT": {
+    "country": "Qatar",
+    "end_value": 41.27118,
+    "end_year": 2024,
+    "pct_change": 13.8462,
+    "start_value": 36.251686,
+    "start_year": 2019
+  },
+  "ROU": {
+    "country": "Romania",
+    "end_value": 3.605104,
+    "end_year": 2024,
+    "pct_change": -8.326,
+    "start_value": 3.932527,
+    "start_year": 2019
+  },
+  "RUS": {
+    "country": "Russia",
+    "end_value": 12.294705,
+    "end_year": 2024,
+    "pct_change": 5.6981,
+    "start_value": 11.631905,
+    "start_year": 2019
+  },
+  "RWA": {
+    "country": "Rwanda",
+    "end_value": 0.142639,
+    "end_year": 2024,
+    "pct_change": 28.9273,
+    "start_value": 0.110636,
+    "start_year": 2019
+  },
+  "SAU": {
+    "country": "Saudi Arabia",
+    "end_value": 20.379194,
+    "end_year": 2024,
+    "pct_change": -12.328,
+    "start_value": 23.244812,
+    "start_year": 2019
+  },
+  "SDN": {
+    "country": "Sudan",
+    "end_value": 0.352729,
+    "end_year": 2024,
+    "pct_change": -26.9953,
+    "start_value": 0.483159,
+    "start_year": 2019
+  },
+  "SEN": {
+    "country": "Senegal",
+    "end_value": 0.76164,
+    "end_year": 2024,
+    "pct_change": -2.0172,
+    "start_value": 0.77732,
+    "start_year": 2019
+  },
+  "SGP": {
+    "country": "Singapore",
+    "end_value": 9.244836,
+    "end_year": 2024,
+    "pct_change": 6.9677,
+    "start_value": 8.642643,
+    "start_year": 2019
+  },
+  "SHN": {
+    "country": "Saint Helena",
+    "end_value": 2.164766,
+    "end_year": 2024,
+    "pct_change": -18.9837,
+    "start_value": 2.672014,
+    "start_year": 2019
+  },
+  "SLB": {
+    "country": "Solomon Islands",
+    "end_value": 0.359675,
+    "end_year": 2024,
+    "pct_change": -11.7541,
+    "start_value": 0.407583,
+    "start_year": 2019
+  },
+  "SLE": {
+    "country": "Sierra Leone",
+    "end_value": 0.165966,
+    "end_year": 2024,
+    "pct_change": 14.83,
+    "start_value": 0.144532,
+    "start_year": 2019
+  },
+  "SLV": {
+    "country": "El Salvador",
+    "end_value": 1.41559,
+    "end_year": 2024,
+    "pct_change": 15.3795,
+    "start_value": 1.226899,
+    "start_year": 2019
+  },
+  "SOM": {
+    "country": "Somalia",
+    "end_value": 0.069397,
+    "end_year": 2024,
+    "pct_change": 3.9835,
+    "start_value": 0.066739,
+    "start_year": 2019
+  },
+  "SPM": {
+    "country": "Saint Pierre and Miquelon",
+    "end_value": 9.788039,
+    "end_year": 2024,
+    "pct_change": -12.452,
+    "start_value": 11.1802,
+    "start_year": 2019
+  },
+  "SRB": {
+    "country": "Serbia",
+    "end_value": 6.237839,
+    "end_year": 2024,
+    "pct_change": -2.2292,
+    "start_value": 6.380064,
+    "start_year": 2019
+  },
+  "SSD": {
+    "country": "South Sudan",
+    "end_value": 0.141965,
+    "end_year": 2024,
+    "pct_change": -16.3841,
+    "start_value": 0.169783,
+    "start_year": 2019
+  },
+  "STP": {
+    "country": "Sao Tome and Principe",
+    "end_value": 0.601911,
+    "end_year": 2024,
+    "pct_change": -12.3561,
+    "start_value": 0.686769,
+    "start_year": 2019
+  },
+  "SUR": {
+    "country": "Suriname",
+    "end_value": 4.709314,
+    "end_year": 2024,
+    "pct_change": 8.3763,
+    "start_value": 4.345336,
+    "start_year": 2019
+  },
+  "SVK": {
+    "country": "Slovakia",
+    "end_value": 5.282773,
+    "end_year": 2024,
+    "pct_change": -14.9432,
+    "start_value": 6.21088,
+    "start_year": 2019
+  },
+  "SVN": {
+    "country": "Slovenia",
+    "end_value": 6.018427,
+    "end_year": 2024,
+    "pct_change": -10.7734,
+    "start_value": 6.745104,
+    "start_year": 2019
+  },
+  "SWE": {
+    "country": "Sweden",
+    "end_value": 3.591654,
+    "end_year": 2024,
+    "pct_change": -9.4511,
+    "start_value": 3.966534,
+    "start_year": 2019
+  },
+  "SWZ": {
+    "country": "Eswatini",
+    "end_value": 0.840537,
+    "end_year": 2024,
+    "pct_change": -9.7765,
+    "start_value": 0.931616,
+    "start_year": 2019
+  },
+  "SXM": {
+    "country": "Sint Maarten (Dutch part)",
+    "end_value": 16.546274,
+    "end_year": 2024,
+    "pct_change": -2.9321,
+    "start_value": 17.046078,
+    "start_year": 2019
+  },
+  "SYC": {
+    "country": "Seychelles",
+    "end_value": 5.002998,
+    "end_year": 2024,
+    "pct_change": -0.2104,
+    "start_value": 5.013547,
+    "start_year": 2019
+  },
+  "SYR": {
+    "country": "Syria",
+    "end_value": 1.287997,
+    "end_year": 2024,
+    "pct_change": -21.7258,
+    "start_value": 1.645493,
+    "start_year": 2019
+  },
+  "TCA": {
+    "country": "Turks and Caicos Islands",
+    "end_value": 8.136117,
+    "end_year": 2024,
+    "pct_change": -3.1232,
+    "start_value": 8.398416,
+    "start_year": 2019
+  },
+  "TCD": {
+    "country": "Chad",
+    "end_value": 0.139484,
+    "end_year": 2024,
+    "pct_change": 1.1972,
+    "start_value": 0.137834,
+    "start_year": 2019
+  },
+  "TGO": {
+    "country": "Togo",
+    "end_value": 0.289387,
+    "end_year": 2024,
+    "pct_change": 3.613,
+    "start_value": 0.279296,
+    "start_year": 2019
+  },
+  "THA": {
+    "country": "Thailand",
+    "end_value": 3.736119,
+    "end_year": 2024,
+    "pct_change": -5.2015,
+    "start_value": 3.941115,
+    "start_year": 2019
+  },
+  "TJK": {
+    "country": "Tajikistan",
+    "end_value": 1.014053,
+    "end_year": 2024,
+    "pct_change": 10.8987,
+    "start_value": 0.914396,
+    "start_year": 2019
+  },
+  "TKM": {
+    "country": "Turkmenistan",
+    "end_value": 10.808675,
+    "end_year": 2024,
+    "pct_change": 18.1311,
+    "start_value": 9.149726,
+    "start_year": 2019
+  },
+  "TLS": {
+    "country": "East Timor",
+    "end_value": 0.477005,
+    "end_year": 2024,
+    "pct_change": -8.1241,
+    "start_value": 0.519185,
+    "start_year": 2019
+  },
+  "TON": {
+    "country": "Tonga",
+    "end_value": 1.464028,
+    "end_year": 2024,
+    "pct_change": -4.0231,
+    "start_value": 1.525395,
+    "start_year": 2019
+  },
+  "TTO": {
+    "country": "Trinidad and Tobago",
+    "end_value": 22.931944,
+    "end_year": 2024,
+    "pct_change": -16.4471,
+    "start_value": 27.446016,
+    "start_year": 2019
+  },
+  "TUN": {
+    "country": "Tunisia",
+    "end_value": 2.660538,
+    "end_year": 2024,
+    "pct_change": 3.3211,
+    "start_value": 2.575019,
+    "start_year": 2019
+  },
+  "TUR": {
+    "country": "Turkey",
+    "end_value": 5.865009,
+    "end_year": 2024,
+    "pct_change": 23.1341,
+    "start_value": 4.763107,
+    "start_year": 2019
+  },
+  "TUV": {
+    "country": "Tuvalu",
+    "end_value": 1.183163,
+    "end_year": 2024,
+    "pct_change": 14.1291,
+    "start_value": 1.036688,
+    "start_year": 2019
+  },
+  "TWN": {
+    "country": "Taiwan",
+    "end_value": 11.301164,
+    "end_year": 2024,
+    "pct_change": -2.606,
+    "start_value": 11.603549,
+    "start_year": 2019
+  },
+  "TZA": {
+    "country": "Tanzania",
+    "end_value": 0.291982,
+    "end_year": 2024,
+    "pct_change": 6.7148,
+    "start_value": 0.27361,
+    "start_year": 2019
+  },
+  "UGA": {
+    "country": "Uganda",
+    "end_value": 0.126638,
+    "end_year": 2024,
+    "pct_change": -5.4823,
+    "start_value": 0.133983,
+    "start_year": 2019
+  },
+  "UKR": {
+    "country": "Ukraine",
+    "end_value": 3.763788,
+    "end_year": 2024,
+    "pct_change": -23.8436,
+    "start_value": 4.942182,
+    "start_year": 2019
+  },
+  "URY": {
+    "country": "Uruguay",
+    "end_value": 2.35437,
+    "end_year": 2024,
+    "pct_change": 24.8078,
+    "start_value": 1.886396,
+    "start_year": 2019
+  },
+  "USA": {
+    "country": "United States",
+    "end_value": 14.197287,
+    "end_year": 2024,
+    "pct_change": -8.4075,
+    "start_value": 15.500492,
+    "start_year": 2019
+  },
+  "UZB": {
+    "country": "Uzbekistan",
+    "end_value": 3.829127,
+    "end_year": 2024,
+    "pct_change": 16.9331,
+    "start_value": 3.27463,
+    "start_year": 2019
+  },
+  "VCT": {
+    "country": "Saint Vincent and the Grenadines",
+    "end_value": 2.540564,
+    "end_year": 2024,
+    "pct_change": 20.3983,
+    "start_value": 2.110133,
+    "start_year": 2019
+  },
+  "VEN": {
+    "country": "Venezuela",
+    "end_value": 4.085203,
+    "end_year": 2024,
+    "pct_change": 12.1289,
+    "start_value": 3.643311,
+    "start_year": 2019
+  },
+  "VGB": {
+    "country": "British Virgin Islands",
+    "end_value": 4.873842,
+    "end_year": 2024,
+    "pct_change": -3.1005,
+    "start_value": 5.029789,
+    "start_year": 2019
+  },
+  "VNM": {
+    "country": "Vietnam",
+    "end_value": 3.673035,
+    "end_year": 2024,
+    "pct_change": 5.19,
+    "start_value": 3.49181,
+    "start_year": 2019
+  },
+  "VUT": {
+    "country": "Vanuatu",
+    "end_value": 0.601243,
+    "end_year": 2024,
+    "pct_change": 6.4774,
+    "start_value": 0.564667,
+    "start_year": 2019
+  },
+  "WLF": {
+    "country": "Wallis and Futuna",
+    "end_value": 2.699107,
+    "end_year": 2024,
+    "pct_change": 23.2425,
+    "start_value": 2.190078,
+    "start_year": 2019
+  },
+  "WSM": {
+    "country": "Samoa",
+    "end_value": 1.126386,
+    "end_year": 2024,
+    "pct_change": -9.1623,
+    "start_value": 1.239997,
+    "start_year": 2019
+  },
+  "XKX": {
+    "country": "Kosovo",
+    "end_value": 4.777991,
+    "end_year": 2024,
+    "pct_change": -0.003,
+    "start_value": 4.778136,
+    "start_year": 2019
+  },
+  "YEM": {
+    "country": "Yemen",
+    "end_value": 0.249441,
+    "end_year": 2024,
+    "pct_change": -25.7009,
+    "start_value": 0.335725,
+    "start_year": 2019
+  },
+  "ZAF": {
+    "country": "South Africa",
+    "end_value": 6.87158,
+    "end_year": 2024,
+    "pct_change": -13.0149,
+    "start_value": 7.899718,
+    "start_year": 2019
+  },
+  "ZMB": {
+    "country": "Zambia",
+    "end_value": 0.565016,
+    "end_year": 2024,
+    "pct_change": 18.2481,
+    "start_value": 0.477823,
+    "start_year": 2019
+  },
+  "ZWE": {
+    "country": "Zimbabwe",
+    "end_value": 0.823666,
+    "end_year": 2024,
+    "pct_change": 22.5164,
+    "start_value": 0.67229,
+    "start_year": 2019
+  }
+}

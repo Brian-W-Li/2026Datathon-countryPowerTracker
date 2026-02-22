@@ -42,35 +42,35 @@ export default function GlobalStats({ countries }: Props) {
       {/* Stats cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
         <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
-          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Countries Scored</div>
+          <div className="text-[10px] text-gray-300 font-medium uppercase tracking-wider mb-1">Countries Scored</div>
           <div className="text-2xl font-bold text-white">{scored.length}</div>
-          <div className="text-[10px] text-gray-600 mt-1">of {countries.length} total</div>
+          <div className="text-[10px] text-gray-400 mt-1">of {countries.length} total</div>
         </div>
         <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
-          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Average EPI</div>
-          <div className="text-2xl font-bold text-yellow-400">{avgEpi.toFixed(1)}</div>
-          <div className="text-[10px] text-gray-600 mt-1">global mean</div>
+          <div className="text-[10px] text-gray-300 font-medium uppercase tracking-wider mb-1">Average EPI</div>
+          <div className="text-2xl font-bold text-amber-400">{avgEpi.toFixed(1)}</div>
+          <div className="text-[10px] text-gray-400 mt-1">global mean</div>
         </div>
         <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
-          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Above Median</div>
+          <div className="text-[10px] text-gray-300 font-medium uppercase tracking-wider mb-1">Above Median</div>
           <div className="text-2xl font-bold text-emerald-400">{aboveMedian}</div>
-          <div className="text-[10px] text-gray-600 mt-1">EPI &ge; {median.toFixed(1)}</div>
+          <div className="text-[10px] text-gray-400 mt-1">EPI &ge; {median.toFixed(1)}</div>
         </div>
         <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
-          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Top Performer</div>
-          <div className="text-2xl font-bold text-green-400">{topCountry.green_score!.toFixed(1)}</div>
-          <div className="text-[10px] text-gray-600 mt-1">{topCountry.name}</div>
+          <div className="text-[10px] text-gray-300 font-medium uppercase tracking-wider mb-1">Top Performer</div>
+          <div className="text-2xl font-bold text-emerald-400">{topCountry.green_score!.toFixed(1)}</div>
+          <div className="text-[10px] text-gray-400 mt-1">{topCountry.name}</div>
         </div>
       </div>
 
       {/* Region averages bar */}
       <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
-        <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-3">Average EPI by Region</div>
+        <div className="text-[10px] text-gray-300 font-medium uppercase tracking-wider mb-3">Average EPI by Region</div>
         <div className="space-y-2">
           {regions.map((r) => {
             const pct = (r.avg / 100) * 100;
             const barColor =
-              r.avg >= 60 ? "bg-green-600" : r.avg >= 40 ? "bg-yellow-500" : "bg-red-600";
+              r.avg >= 65 ? "bg-emerald-600" : r.avg >= 50 ? "bg-amber-500" : "bg-red-600";
             return (
               <div key={r.region} className="flex items-center gap-3">
                 <span className="text-xs text-gray-400 w-28 shrink-0 text-right">
