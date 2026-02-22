@@ -283,6 +283,15 @@ function lerpColor(a: string, b: string, t: number): string {
   );
 }
 
+function sectorCodeFromCorrelation(s: unknown): string | null {
+  if (!s || typeof s !== "object") return null;
+  const record = s as Record<string, unknown>;
+  const v = record.sector ?? record.code;
+  if (typeof v !== "string") return null;
+  const trimmed = v.trim();
+  return trimmed.length > 0 ? trimmed : null;
+}
+
 /* ---------- component ---------- */
 
 export default function PolicyAnalysis({ data, co2PcChange5y }: { data: AnalysisData; co2PcChange5y: Co2PcChange5y }) {
@@ -290,17 +299,22 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
   const [activeTab, setActiveTab] = useState<TabId>("overview");
   const [scatterMetric, setScatterMetric] = useState<"co2_per_capita" | "co2_per_gdp">("co2_per_capita");
   const [scatterColorBy, setScatterColorBy] = useState<"top_sector" | "total_policies">("top_sector");
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   // Sector correlation bar data
-  const sectorBarData = [...data.sector_correlations]
-    .filter((s) => s.r_co2_capita !== null)
-    .sort((a, b) => (a.r_co2_capita ?? 0) - (b.r_co2_capita ?? 0))
-    .map((s) => ({
-      ...s,
-      r_value: s.r_co2_capita!,
-      significant: s.p_co2_capita !== null && s.p_co2_capita < 0.05,
-      fill: correlationFill(s.r_co2_capita ?? 0),
-    }));
+  const sectorBarData = useMemo(
+    () =>
+      [...data.sector_correlations]
+        .filter((s) => s.r_co2_capita !== null)
+        .sort((a, b) => (a.r_co2_capita ?? 0) - (b.r_co2_capita ?? 0))
+        .map((s) => ({
+          ...s,
+          r_value: s.r_co2_capita!,
+          significant: s.p_co2_capita !== null && s.p_co2_capita < 0.05,
+          fill: correlationFill(s.r_co2_capita ?? 0),
+        })),
+    [data.sector_correlations]
+  );
 
   const sectorBarData5y = useMemo(() => {
     const sectorCodes = Object.keys(data.sector_names);
@@ -347,38 +361,121 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
   }, [data.scatter_data, data.sector_names, co2PcChange5y]);
 
   // Instrument comparison
-  const instrumentBarData = data.instrument_effectiveness
-    .filter((ie) => ie.avg_co2_with !== null && ie.avg_co2_without !== null)
-    .map((ie) => ({
-      instrument: ie.instrument,
-      avgWith: ie.avg_co2_with!,
-      avgWithout: ie.avg_co2_without!,
-      diff: ie.difference ?? ie.avg_co2_with! - ie.avg_co2_without!,
-      significant: ie.significant,
-      r: ie.r,
-      p: ie.p,
-    }));
+  const instrumentBarData = useMemo(
+    () =>
+      data.instrument_effectiveness
+        .filter((ie) => ie.avg_co2_with !== null && ie.avg_co2_without !== null)
+        .map((ie) => ({
+          instrument: ie.instrument,
+          avgWith: ie.avg_co2_with!,
+          avgWithout: ie.avg_co2_without!,
+          diff: ie.difference ?? ie.avg_co2_with! - ie.avg_co2_without!,
+          significant: ie.significant,
+          r: ie.r,
+          p: ie.p,
+        })),
+    [data.instrument_effectiveness]
+  );
 
   // Top cocktails
-  const cocktailData = data.policy_cocktails.slice(0, 10).map((c) => ({
-    ...c,
-    label: c.combo.length > 35 ? c.combo.slice(0, 32) + "..." : c.combo,
-  }));
-  const cocktailMin = cocktailData.length > 0 ? Math.min(...cocktailData.map((c) => c.avg_co2_gdp)) : 0;
-  const cocktailMax = cocktailData.length > 0 ? Math.max(...cocktailData.map((c) => c.avg_co2_gdp)) : 1;
+  const { cocktailData, cocktailMin, cocktailMax } = useMemo(() => {
+    const list = data.policy_cocktails.slice(0, 10).map((c) => ({
+      ...c,
+      label: c.combo.length > 35 ? c.combo.slice(0, 32) + "..." : c.combo,
+    }));
+    const min = list.length > 0 ? Math.min(...list.map((c) => c.avg_co2_gdp)) : 0;
+    const max = list.length > 0 ? Math.max(...list.map((c) => c.avg_co2_gdp)) : 1;
+    return { cocktailData: list, cocktailMin: min, cocktailMax: max };
+  }, [data.policy_cocktails]);
 
-  // Radar chart
-  const radarCountries = data.top_performers.slice(0, 5);
-  const allSectorCodes = Object.keys(data.sector_names);
-  const radarData = allSectorCodes.map((code) => {
-    const point: Record<string, string | number> = { sector: data.sector_names[code] };
-    radarCountries.forEach((c) => {
-      const total = c.total_policies || 1;
-      point[c.iso3] = Math.round(((c.sectors[code] || 0) / total) * 100);
-    });
-    return point;
-  });
   const RADAR_COLORS = ["#22c55e", "#3b82f6", "#f59e0b", "#8b5cf6", "#ef4444"];
+  const { radarCountries, radarData } = useMemo(() => {
+    if (!showAdvanced) return { radarCountries: [] as ScatterPoint[], radarData: [] as Array<Record<string, string | number>> };
+    const countries = Array.isArray(data.top_performers) ? data.top_performers.slice(0, 5) : [];
+    const sectorCodes = data?.sector_names && typeof data.sector_names === "object" ? Object.keys(data.sector_names) : [];
+    if (countries.length === 0 || sectorCodes.length === 0) {
+      return { radarCountries: [] as ScatterPoint[], radarData: [] as Array<Record<string, string | number>> };
+    }
+
+    const points = sectorCodes.map((code) => {
+      const point: Record<string, string | number> = { sector: data.sector_names[code] ?? code };
+      for (const c of countries) {
+        const sectors = (c as unknown as { sectors?: Record<string, number> }).sectors;
+        const total = (c as unknown as { total_policies?: number }).total_policies || 1;
+        point[c.iso3] = Math.round((((sectors?.[code] ?? 0) as number) / total) * 100);
+      }
+      return point;
+    });
+
+    return { radarCountries: countries, radarData: points };
+  }, [showAdvanced, data.top_performers, data.sector_names]);
+
+  const decisionSupport = useMemo(() => {
+    const iso3s = Array.isArray(data.scatter_data)
+      ? data.scatter_data
+          .map((d) => d?.iso3)
+          .filter((v): v is string => typeof v === "string" && v.trim().length > 0)
+      : [];
+    const countryCount = new Set(iso3s).size;
+
+    const lifts = Array.isArray(data?.lift_scores?.sector_lifts) ? data.lift_scores.sector_lifts : [];
+    const sectorNames = data?.sector_names ?? {};
+
+    const getSectorName = (code: string, fallback?: string) => sectorNames?.[code] ?? fallback ?? code;
+
+    const mostEffective = [...lifts]
+      .filter((s) => typeof s?.lift === "number" && isFinite(s.lift) && s.lift > 1.05)
+      .sort((a, b) => b.lift - a.lift)
+      .slice(0, 3)
+      .map((s) => ({
+        code: s.bucket_id,
+        name: getSectorName(s.bucket_id, s.bucket_name),
+        lift: s.lift,
+      }));
+
+    const leastEffective = [...lifts]
+      .filter((s) => typeof s?.lift === "number" && isFinite(s.lift))
+      .sort((a, b) => a.lift - b.lift)
+      .slice(0, 3)
+      .map((s) => ({
+        code: s.bucket_id,
+        name: getSectorName(s.bucket_id, s.bucket_name),
+        lift: s.lift,
+      }));
+
+    const correlationMap = new Map<string, { r: number | null; p: number | null }>();
+    if (Array.isArray(data.sector_correlations)) {
+      for (const raw of data.sector_correlations as unknown[]) {
+        const sectorCode = sectorCodeFromCorrelation(raw);
+        if (!sectorCode) continue;
+        const record = raw as Record<string, unknown>;
+        const r = record.r_co2_capita;
+        const p = record.p_co2_capita;
+        const rOk = typeof r === "number" || r === null;
+        const pOk = typeof p === "number" || p === null;
+        if (!rOk || !pOk) continue;
+        correlationMap.set(sectorCode, { r: (r as number | null) ?? null, p: (p as number | null) ?? null });
+      }
+    }
+
+    const sectorSummary = lifts
+      .map((s) => {
+        const sectorCode = s?.bucket_id;
+        if (typeof sectorCode !== "string" || sectorCode.trim().length === 0) return null;
+        const corr = correlationMap.get(sectorCode);
+        if (!corr) return null;
+        if (typeof s.lift !== "number" || !isFinite(s.lift)) return null;
+        const sectorName = getSectorName(sectorCode, s.bucket_name);
+        const significant = corr.p !== null && corr.p < 0.05;
+        return { sectorCode, sectorName, lift: s.lift, r: corr.r, p: corr.p, significant };
+      })
+      .filter(
+        (row): row is { sectorCode: string; sectorName: string; lift: number; r: number | null; p: number | null; significant: boolean } =>
+          row !== null
+      );
+
+    return { countryCount, mostEffective, leastEffective, sectorSummary };
+  }, [data.scatter_data, data.lift_scores, data.sector_correlations, data.sector_names]);
 
   // Scatter data
   const scatterPoints = data.scatter_data
@@ -709,26 +806,62 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
             </div>
 
             {/* Radar Chart */}
-            {radarCountries.length > 0 && (
-              <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
-                <h2 className="text-lg font-semibold mb-0.5">Policy Mix of Top Performers</h2>
-                <p className="text-xs text-gray-300 mb-5">
-                  Sector distribution (% of portfolio) for the 5 countries with lowest CO2/GDP and 20+ policies.
-                </p>
-                <ResponsiveContainer width="100%" height={420}>
-                  <RadarChart data={radarData}>
-                    <PolarGrid stroke="#1f2937" />
-                    <PolarAngleAxis dataKey="sector" stroke={AXIS_STROKE} tick={{ fontSize: 11, fill: AXIS_STROKE }} />
-                    <PolarRadiusAxis stroke="#374151" tick={{ fontSize: 10 }} />
-                    {radarCountries.map((c, i) => (
-                      <Radar key={c.iso3} name={c.country} dataKey={c.iso3} stroke={RADAR_COLORS[i]} fill={RADAR_COLORS[i]} fillOpacity={0.1} strokeWidth={2} />
-                    ))}
-                    <Legend />
-                    <Tooltip contentStyle={TOOLTIP_STYLE} />
-                  </RadarChart>
-                </ResponsiveContainer>
+            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <h2 className="text-lg font-semibold mb-0.5">Advanced charts (optional)</h2>
+                  <p className="text-xs text-gray-300">
+                    Show the radar chart comparing sector policy mix for the 5 lowest CO2/GDP countries (20+ policies).
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowAdvanced((v) => !v)}
+                  className={`px-3 py-2 rounded-lg border text-sm transition-colors ${
+                    showAdvanced
+                      ? "bg-gray-800/70 border-gray-700/60 text-white hover:bg-gray-800"
+                      : "bg-gray-900/40 border-gray-800/60 text-gray-300 hover:text-white hover:bg-gray-900/60"
+                  }`}
+                >
+                  {showAdvanced ? "Hide" : "Show"}
+                </button>
               </div>
-            )}
+
+              {showAdvanced && (
+                <div className="mt-5">
+                  {radarCountries.length === 0 || radarData.length === 0 ? (
+                    <div className="text-sm text-gray-300">No data</div>
+                  ) : (
+                    <>
+                      <div className="text-sm font-semibold text-white mb-1">Policy Mix of Top Performers</div>
+                      <p className="text-xs text-gray-300 mb-5">
+                        Sector distribution (% of portfolio) for the 5 countries with lowest CO2/GDP and 20+ policies.
+                      </p>
+                      <ResponsiveContainer width="100%" height={420}>
+                        <RadarChart data={radarData}>
+                          <PolarGrid stroke="#1f2937" />
+                          <PolarAngleAxis dataKey="sector" stroke={AXIS_STROKE} tick={{ fontSize: 11, fill: AXIS_STROKE }} />
+                          <PolarRadiusAxis stroke="#374151" tick={{ fontSize: 10 }} />
+                          {radarCountries.map((c, i) => (
+                            <Radar
+                              key={c.iso3}
+                              name={c.country}
+                              dataKey={c.iso3}
+                              stroke={RADAR_COLORS[i % RADAR_COLORS.length]}
+                              fill={RADAR_COLORS[i % RADAR_COLORS.length]}
+                              fillOpacity={0.1}
+                              strokeWidth={2}
+                            />
+                          ))}
+                          <Legend />
+                          <Tooltip contentStyle={TOOLTIP_STYLE} />
+                        </RadarChart>
+                      </ResponsiveContainer>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         )}
 
@@ -807,6 +940,103 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
         {/* =================== LIFT SCORES TAB =================== */}
         {activeTab === "lift" && (
           <div className="space-y-6">
+            {/* Decision Support */}
+            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-5">
+                <div>
+                  <h2 className="text-lg font-semibold mb-0.5">Decision Support</h2>
+                  <p className="text-xs text-gray-300">
+                    Global recommendations based on lift scores and sector correlations across{" "}
+                    {Number.isFinite(decisionSupport.countryCount) && decisionSupport.countryCount > 0 ? decisionSupport.countryCount : "No data"} countries.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-gray-800/40 rounded-xl border border-gray-700/40 p-5">
+                  <div className="text-sm font-semibold text-white mb-1">Most Effective Sectors</div>
+                  <p className="text-xs text-gray-300 mb-3">Top 3 sectors with lift &gt; 1.05.</p>
+                  {decisionSupport.mostEffective.length === 0 ? (
+                    <div className="text-sm text-gray-300">No data</div>
+                  ) : (
+                    <ul className="space-y-2">
+                      {decisionSupport.mostEffective.map((s) => (
+                        <li key={s.code} className="flex items-center justify-between gap-3">
+                          <span className="text-sm text-gray-300 truncate">{s.name}</span>
+                          <span className="text-sm font-mono font-semibold text-emerald-400">{s.lift.toFixed(2)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                <div className="bg-gray-800/40 rounded-xl border border-gray-700/40 p-5">
+                  <div className="text-sm font-semibold text-white mb-1">Least Effective Sectors</div>
+                  <p className="text-xs text-gray-300 mb-3">Bottom 3 sectors by lift.</p>
+                  {decisionSupport.leastEffective.length === 0 ? (
+                    <div className="text-sm text-gray-300">No data</div>
+                  ) : (
+                    <ul className="space-y-2">
+                      {decisionSupport.leastEffective.map((s) => (
+                        <li key={s.code} className="flex items-center justify-between gap-3">
+                          <span className="text-sm text-gray-300 truncate">{s.name}</span>
+                          <span className="text-sm font-mono font-semibold text-red-400">{s.lift.toFixed(2)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <div className="flex items-end justify-between gap-3 mb-3">
+                  <div>
+                    <div className="text-sm font-semibold text-white mb-0.5">Sector Summary</div>
+                    <p className="text-xs text-gray-300">
+                      Lift joined with CO2/capita correlation (r) and significance (p &lt; 0.05). Missing joins are skipped.
+                    </p>
+                  </div>
+                </div>
+
+                {decisionSupport.sectorSummary.length === 0 ? (
+                  <div className="text-sm text-gray-300">No data</div>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-gray-800">
+                          <th className="text-left py-2.5 px-3 text-gray-300 font-medium text-xs">Sector Name</th>
+                          <th className="text-right py-2.5 px-3 text-gray-300 font-medium text-xs">Lift</th>
+                          <th className="text-right py-2.5 px-3 text-gray-300 font-medium text-xs">Correlation (r)</th>
+                          <th className="text-left py-2.5 px-3 text-gray-300 font-medium text-xs">Significant?</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {decisionSupport.sectorSummary.map((row) => (
+                          <tr key={row.sectorCode} className="border-b border-gray-800/40 hover:bg-gray-800/40 transition-colors">
+                            <td className="py-2.5 px-3 text-gray-300 font-medium">{row.sectorName}</td>
+                            <td className="py-2.5 px-3 text-right text-gray-300 font-mono text-xs">{row.lift.toFixed(2)}</td>
+                            <td className="py-2.5 px-3 text-right text-gray-300 font-mono text-xs">
+                              {row.r === null ? "No data" : row.r.toFixed(3)}
+                            </td>
+                            <td className="py-2.5 px-3 text-xs">
+                              {row.p === null ? (
+                                <span className="text-gray-300">No data</span>
+                              ) : row.significant ? (
+                                <span className="text-emerald-400 font-semibold">Yes</span>
+                              ) : (
+                                <span className="text-gray-300">No</span>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            </div>
+
             <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
               <h2 className="text-lg font-semibold mb-0.5">Sector Lift Scores</h2>
               <p className="text-xs text-gray-300 mb-2">

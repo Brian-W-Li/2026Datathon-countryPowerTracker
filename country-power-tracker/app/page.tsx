@@ -1,11 +1,8 @@
 import Link from "next/link";
 import WorldGlobe from "./components/WorldGlobe";
-import Recommendations from "./components/Recommendations";
 import EpiRankings from "./components/EpiRankings";
-import GlobalStats from "./components/GlobalStats";
 import ColorLegend from "./components/ColorLegend";
 import countries from "../public/data/countries.json";
-import recommendations from "../public/data/recommendations.json";
 
 export default function Home() {
   return (
@@ -35,8 +32,6 @@ export default function Home() {
         </div>
       </div>
 
-      <GlobalStats countries={countries} />
-
       <div className="flex flex-col lg:flex-row items-start justify-center gap-8">
         <div className="flex flex-col items-center gap-3">
           <WorldGlobe countries={countries} />
@@ -44,8 +39,6 @@ export default function Home() {
         </div>
         <EpiRankings countries={countries} />
       </div>
-
-      <Recommendations data={recommendations} />
 
       <footer className="mt-12 text-center text-xs text-gray-400 max-w-2xl mx-auto space-y-0.5 pb-4">
         <p>

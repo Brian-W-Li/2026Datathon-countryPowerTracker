@@ -23,6 +23,8 @@ export default function EpiRankings({ countries }: Props) {
     .filter((c) => c.green_score !== null)
     .sort((a, b) => (b.green_score ?? 0) - (a.green_score ?? 0));
 
+  const rankByIso3 = new Map(ranked.map((c, i) => [c.iso3, i + 1]));
+
   const filtered = search
     ? ranked.filter((c) =>
         c.name.toLowerCase().includes(search.toLowerCase())
@@ -57,7 +59,7 @@ export default function EpiRankings({ countries }: Props) {
       </div>
       <div className="overflow-y-auto flex-1 p-2">
         {filtered.map((country) => {
-          const rank = ranked.indexOf(country) + 1;
+          const rank = rankByIso3.get(country.iso3) ?? 0;
           return (
             <button
               key={country.iso3}

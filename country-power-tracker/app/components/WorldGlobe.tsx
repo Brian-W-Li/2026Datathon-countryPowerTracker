@@ -38,7 +38,7 @@ import type { GeometryObject, Topology } from "topojson-specification";
 type Country = {
   iso3: string;
   name: string;
-  green_score: number | null;
+  green_score: number | null; // EPI score 0..100
   region: string;
   data_year: number;
 };
@@ -50,7 +50,17 @@ type Props = {
 export default function WorldGlobe({ countries }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const router = useRouter();
-  const [tooltip, setTooltip] = useState<{ x: number; y: number; name: string; score: number | null } | null>(null);
+
+  const [tooltip, setTooltip] = useState<{
+    x: number;
+    y: number;
+    name: string;
+    score: number | null;
+  } | null>(null);
+
+  const timerRef = useRef<d3.Timer | null>(null);
+  const pausedRef = useRef(false);
+  const draggingRef = useRef(false);
 
   const epiColorScale = useMemo(
     () =>
@@ -62,8 +72,27 @@ export default function WorldGlobe({ countries }: Props) {
     []
   );
 
+  // Prevent globe re-init on every keystroke if parent recreates `countries` array.
+  // (If you truly change the dataset, this still updates because len/scored changes.)
+  const countriesKey = useMemo(() => {
+    const n = countries.length;
+    const scored = countries.reduce((acc, c) => acc + (c.green_score === null ? 0 : 1), 0);
+    return `${n}:${scored}`;
+  }, [countries]);
+
   useEffect(() => {
     if (!svgRef.current) return;
+
+    let cancelled = false;
+
+    // stop any old timer (from previous run)
+    if (timerRef.current) {
+      timerRef.current.stop();
+      timerRef.current = null;
+    }
+    pausedRef.current = false;
+    draggingRef.current = false;
+    setTooltip(null);
 
     const width = 600;
     const height = 600;
@@ -71,21 +100,33 @@ export default function WorldGlobe({ countries }: Props) {
     const MIN_SCALE = 1;
     const MAX_SCALE = 3.5;
 
-    const svg = d3.select(svgRef.current)
+    const svg = d3
+      .select(svgRef.current)
       .attr("width", width)
       .attr("height", height);
 
+    // hard reset svg contents + listeners
     svg.selectAll("*").remove();
+    svg.on(".globe", null);
+    svg.on(".zoom", null);
+    svg.on("dblclick.zoom", null);
 
-    const projection = d3.geoOrthographic()
+    const stopAutoRotate = () => {
+      if (pausedRef.current) return;
+      pausedRef.current = true;
+      if (timerRef.current) {
+        timerRef.current.stop();
+        timerRef.current = null;
+      }
+    };
+
+    const projection = d3
+      .geoOrthographic()
       .scale(BASE_SCALE)
       .translate([width / 2, height / 2])
       .clipAngle(90);
 
     const path = d3.geoPath(projection);
-
-    // Color scale
-    const colorScale = epiColorScale;
 
     const scoreMap = new Map(countries.map((c) => [c.iso3, c]));
 
@@ -99,8 +140,8 @@ export default function WorldGlobe({ countries }: Props) {
     glow.append("feGaussianBlur").attr("stdDeviation", "8").attr("result", "blur");
     glow.append("feComposite").attr("in", "SourceGraphic").attr("in2", "blur").attr("operator", "over");
 
-    // Glow ring
-    const glowRing = svg.append("circle")
+    const glowRing = svg
+      .append("circle")
       .attr("cx", width / 2)
       .attr("cy", height / 2)
       .attr("r", BASE_SCALE + 6)
@@ -109,18 +150,24 @@ export default function WorldGlobe({ countries }: Props) {
       .attr("stroke-width", 12)
       .attr("filter", "url(#globe-glow)");
 
-    // Ocean
-    const ocean = svg.append("circle")
+    const ocean = svg
+      .append("circle")
       .attr("cx", width / 2)
       .attr("cy", height / 2)
       .attr("r", BASE_SCALE)
       .attr("fill", "url(#ocean-grad)");
 
-    // Load topology
-    type CountryFeature = GeoJSON.Feature<GeoJSON.GeometryObject, GeoJSON.GeoJsonProperties> & { id?: string | number };
+    type CountryFeature = GeoJSON.Feature<GeoJSON.GeometryObject, GeoJSON.GeoJsonProperties> & {
+      id?: string | number;
+    };
+
+    // locals owned by this effect run
+    let localTimer: d3.Timer | null = null;
 
     d3.json<Topology>("/world-110m.json").then((world) => {
+      if (cancelled) return;
       if (!world) return;
+
       const objects = world.objects as Record<string, GeometryObject>;
       const countriesObject = objects.countries;
       if (!countriesObject) return;
@@ -128,59 +175,58 @@ export default function WorldGlobe({ countries }: Props) {
       const geojson = feature(world, countriesObject) as GeoJSON.FeatureCollection<GeoJSON.GeometryObject>;
       const features = geojson.features as CountryFeature[];
 
-      // Countries
-      const countriesSelection = svg.selectAll<SVGPathElement, CountryFeature>(".country")
+      const countriesSelection = svg
+        .selectAll<SVGPathElement, CountryFeature>(".country")
         .data(features)
         .enter()
         .append("path")
         .attr("class", "country")
         .attr("d", (d) => path(d as unknown as d3.GeoPermissibleObjects) ?? "")
         .attr("fill", (d) => {
-            const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
-            const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
-            const country = iso3 ? scoreMap.get(iso3) : undefined;
-            if (!country || country.green_score === null) return "#334155";
-            return colorScale(country.green_score);
+          const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
+          const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
+          const country = iso3 ? scoreMap.get(iso3) : undefined;
+          if (!country || country.green_score === null) return "#334155";
+          return epiColorScale(country.green_score);
         })
         .attr("stroke", "#94a3b830")
         .attr("stroke-width", 0.4)
         .style("cursor", "pointer")
-        .on("mouseover", (event: MouseEvent, d: CountryFeature) => {
-            const target = event.currentTarget as SVGPathElement | null;
-            if (target) d3.select(target).attr("stroke-width", 1.5).attr("stroke", "#e2e8f0");
-            const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
-            const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
-            const country = iso3 ? scoreMap.get(iso3) : undefined;
-            if (country) {
-                setTooltip({
-                x: event.offsetX,
-                y: event.offsetY,
-                name: country.name,
-                score: country.green_score,
-                });
-            }
+        .on("mouseover.globe", (event: MouseEvent, d: CountryFeature) => {
+          const target = event.currentTarget as SVGPathElement | null;
+          if (target) d3.select(target).attr("stroke-width", 1.5).attr("stroke", "#e2e8f0");
+
+          const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
+          const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
+          const country = iso3 ? scoreMap.get(iso3) : undefined;
+          if (!country) return;
+
+          setTooltip({
+            x: event.offsetX,
+            y: event.offsetY,
+            name: country.name,
+            score: country.green_score,
+          });
         })
-        .on("mousemove", function (event: MouseEvent) {
-          setTooltip((prev) =>
-            prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null
-          );
+        .on("mousemove.globe", (event: MouseEvent) => {
+          if (draggingRef.current) return;
+          setTooltip((prev) => (prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null));
         })
-        .on("mouseout", (event: MouseEvent) => {
-            const target = event.currentTarget as SVGPathElement | null;
-            if (target) d3.select(target).attr("stroke-width", 0.4).attr("stroke", "#94a3b830");
-            setTooltip(null);
+        .on("mouseout.globe", (event: MouseEvent) => {
+          const target = event.currentTarget as SVGPathElement | null;
+          if (target) d3.select(target).attr("stroke-width", 0.4).attr("stroke", "#94a3b830");
+          setTooltip(null);
         })
-        .on("click", (_event: MouseEvent, d: CountryFeature) => {
-            const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
-            const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
-            if (iso3) {
-              router.push(`/country/${iso3}`);
-            }
+        .on("click.globe", (_event: MouseEvent, d: CountryFeature) => {
+          stopAutoRotate();
+          const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
+          const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
+          if (iso3) router.push(`/country/${iso3}`);
         });
 
-      // Graticule
       const graticule = d3.geoGraticule();
-      const graticulePath = svg.append<SVGPathElement>("path")
+      const graticulePath = svg
+        .append<SVGPathElement>("path")
         .datum(graticule())
         .attr("class", "graticule")
         .attr("d", (d) => path(d as unknown as d3.GeoPermissibleObjects) ?? "")
@@ -197,34 +243,49 @@ export default function WorldGlobe({ countries }: Props) {
       let currentScale = 1;
       let rotation = 0;
       const tilt = -20;
-      const timer = d3.timer(() => {
+
+      localTimer = d3.timer(() => {
+        if (cancelled) return;
+        if (pausedRef.current) return;
         rotation += 0.2;
         projection.rotate([rotation, tilt]);
         render();
       });
+      timerRef.current = localTimer;
 
-      // Drag
-      const drag = d3.drag<SVGSVGElement, unknown>()
-        .on("start", () => timer.stop())
-        .on("drag", (event) => {
+      // Drag (rotate)
+      const drag = d3
+        .drag<SVGSVGElement, unknown>()
+        .on("start.globe", (event) => {
+          draggingRef.current = true;
+          if (event.sourceEvent) stopAutoRotate();
+        })
+        .on("drag.globe", (event) => {
           const [rx, ry] = projection.rotate();
           const sensitivity = 0.5 / currentScale;
           const newTilt = Math.max(-60, Math.min(60, ry - event.dy * sensitivity));
           projection.rotate([rx + event.dx * sensitivity, newTilt]);
           render();
+        })
+        .on("end.globe", () => {
+          draggingRef.current = false;
         });
 
       svg.call(drag);
 
-      // Zoom with clamped bounds
-      const zoom = d3.zoom<SVGSVGElement, unknown>()
+      // Zoom (wheel/pinch only, so drag is reserved for rotation)
+      const zoom = d3
+        .zoom<SVGSVGElement, unknown>()
         .scaleExtent([MIN_SCALE, MAX_SCALE])
-        .filter((event) => {
-          // Allow wheel and touch events, block double-click zoom
-          if (event.type === "dblclick") return false;
-          return true;
+        .filter((event: any) => {
+          if (event.type === "wheel") return true;
+          if (event.type?.startsWith?.("touch")) return true;
+          return false;
         })
-        .on("zoom", (event) => {
+        .on("start.globe", (event) => {
+          if (event.sourceEvent) stopAutoRotate();
+        })
+        .on("zoom.globe", (event) => {
           currentScale = event.transform.k;
           const newR = BASE_SCALE * currentScale;
           projection.scale(newR);
@@ -234,11 +295,29 @@ export default function WorldGlobe({ countries }: Props) {
         });
 
       svg.call(zoom);
-
-      // Set initial transform so zoom knows the starting state
+      svg.on("dblclick.zoom", null);
       svg.call(zoom.transform, d3.zoomIdentity);
     });
-  }, [countries, router, epiColorScale]);
+
+    return () => {
+      cancelled = true;
+
+      if (timerRef.current) {
+        timerRef.current.stop();
+        timerRef.current = null;
+      }
+      if (localTimer) {
+        localTimer.stop();
+        localTimer = null;
+      }
+
+      setTooltip(null);
+
+      svg.on(".globe", null);
+      svg.on(".zoom", null);
+      svg.on("dblclick.zoom", null);
+    };
+  }, [countriesKey, router, epiColorScale]);
 
   return (
     <div className="relative flex items-center justify-center">
@@ -250,14 +329,15 @@ export default function WorldGlobe({ countries }: Props) {
         >
           <span className="font-semibold">{tooltip.name}</span>
           <span className="text-gray-300 mx-1.5">&middot;</span>
-          <span className="font-bold" style={{ color: tooltip.score === null ? "#cbd5e1" : epiColorScale(tooltip.score) }}>
+          <span
+            className="font-bold"
+            style={{ color: tooltip.score === null ? "#cbd5e1" : epiColorScale(tooltip.score) }}
+          >
             {tooltip.score === null ? "No data" : tooltip.score.toFixed(1)}
           </span>
         </div>
       )}
-      <div className="absolute bottom-4 right-4 text-gray-400 text-xs">
-        Click a country for details
-      </div>
+      <div className="absolute bottom-4 right-4 text-gray-400 text-xs">Click a country for details</div>
     </div>
   );
 }
