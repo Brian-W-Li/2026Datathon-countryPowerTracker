@@ -28,10 +28,12 @@ const NUMERIC_TO_ISO3: Record<number, string> = {
   858:"URY",860:"UZB",862:"VEN",887:"YEM",894:"ZMB",
 };
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
+import type * as GeoJSON from "geojson";
+import type { GeometryObject, Topology } from "topojson-specification";
 
 type Country = {
   iso3: string;
@@ -48,7 +50,17 @@ type Props = {
 export default function WorldGlobe({ countries }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const router = useRouter();
-  const [tooltip, setTooltip] = useState<{ x: number; y: number; name: string; score: number } | null>(null);
+  const [tooltip, setTooltip] = useState<{ x: number; y: number; name: string; score: number | null } | null>(null);
+
+  const epiColorScale = useMemo(
+    () =>
+      d3
+        .scaleLinear<string>()
+        .domain([0, 35, 50, 65, 100])
+        .range(["#dc2626", "#ef4444", "#eab308", "#22c55e", "#16a34a"])
+        .clamp(true),
+    []
+  );
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -70,13 +82,10 @@ export default function WorldGlobe({ countries }: Props) {
       .translate([width / 2, height / 2])
       .clipAngle(90);
 
-    const path = d3.geoPath().projection(projection);
+    const path = d3.geoPath(projection);
 
     // Color scale
-    const colorScale = d3.scaleLinear<string>()
-      .domain([0, 35, 50, 65, 100])
-      .range(["#dc2626", "#ef4444", "#eab308", "#22c55e", "#16a34a"])
-      .clamp(true);
+    const colorScale = epiColorScale;
 
     const scoreMap = new Map(countries.map((c) => [c.iso3, c]));
 
@@ -108,35 +117,46 @@ export default function WorldGlobe({ countries }: Props) {
       .attr("fill", "url(#ocean-grad)");
 
     // Load topology
-    d3.json("/world-110m.json").then((world: any) => {
-      const geojson = feature(world, world.objects.countries) as any;
+    type CountryFeature = GeoJSON.Feature<GeoJSON.GeometryObject, GeoJSON.GeoJsonProperties> & { id?: string | number };
+
+    d3.json<Topology>("/world-110m.json").then((world) => {
+      if (!world) return;
+      const objects = world.objects as Record<string, GeometryObject>;
+      const countriesObject = objects.countries;
+      if (!countriesObject) return;
+
+      const geojson = feature(world, countriesObject) as GeoJSON.FeatureCollection<GeoJSON.GeometryObject>;
+      const features = geojson.features as CountryFeature[];
 
       // Countries
-      svg.selectAll(".country")
-        .data(geojson.features)
+      const countriesSelection = svg.selectAll<SVGPathElement, CountryFeature>(".country")
+        .data(features)
         .enter()
         .append("path")
         .attr("class", "country")
-        .attr("d", path as any)
-        .attr("fill", (d: any) => {
-            const iso3 = NUMERIC_TO_ISO3[+d.id];
-            const country = scoreMap.get(iso3);
+        .attr("d", (d) => path(d as unknown as d3.GeoPermissibleObjects) ?? "")
+        .attr("fill", (d) => {
+            const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
+            const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
+            const country = iso3 ? scoreMap.get(iso3) : undefined;
             if (!country || country.green_score === null) return "#334155";
             return colorScale(country.green_score);
         })
         .attr("stroke", "#94a3b830")
         .attr("stroke-width", 0.4)
         .style("cursor", "pointer")
-        .on("mouseover", function (event: MouseEvent, d: any) {
-            d3.select(this).attr("stroke-width", 1.5).attr("stroke", "#e2e8f0");
-            const iso3 = NUMERIC_TO_ISO3[+d.id];
-            const country = scoreMap.get(iso3);
+        .on("mouseover", (event: MouseEvent, d: CountryFeature) => {
+            const target = event.currentTarget as SVGPathElement | null;
+            if (target) d3.select(target).attr("stroke-width", 1.5).attr("stroke", "#e2e8f0");
+            const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
+            const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
+            const country = iso3 ? scoreMap.get(iso3) : undefined;
             if (country) {
                 setTooltip({
                 x: event.offsetX,
                 y: event.offsetY,
                 name: country.name,
-                score: country.green_score ?? 0,
+                score: country.green_score,
                 });
             }
         })
@@ -145,12 +165,14 @@ export default function WorldGlobe({ countries }: Props) {
             prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null
           );
         })
-        .on("mouseout", function () {
-            d3.select(this).attr("stroke-width", 0.4).attr("stroke", "#94a3b830");
+        .on("mouseout", (event: MouseEvent) => {
+            const target = event.currentTarget as SVGPathElement | null;
+            if (target) d3.select(target).attr("stroke-width", 0.4).attr("stroke", "#94a3b830");
             setTooltip(null);
         })
-        .on("click", (_event: MouseEvent, d: any) => {
-            const iso3 = NUMERIC_TO_ISO3[+d.id];
+        .on("click", (_event: MouseEvent, d: CountryFeature) => {
+            const numericId = typeof d.id === "string" ? Number(d.id) : d.id;
+            const iso3 = numericId !== undefined ? NUMERIC_TO_ISO3[+numericId] : undefined;
             if (iso3) {
               router.push(`/country/${iso3}`);
             }
@@ -158,23 +180,27 @@ export default function WorldGlobe({ countries }: Props) {
 
       // Graticule
       const graticule = d3.geoGraticule();
-      svg.append("path")
+      const graticulePath = svg.append<SVGPathElement>("path")
         .datum(graticule())
         .attr("class", "graticule")
-        .attr("d", path as any)
+        .attr("d", (d) => path(d as unknown as d3.GeoPermissibleObjects) ?? "")
         .attr("fill", "none")
         .attr("stroke", "#ffffff10")
         .attr("stroke-width", 0.5);
 
+      const render = () => {
+        countriesSelection.attr("d", (d) => path(d as unknown as d3.GeoPermissibleObjects) ?? "");
+        graticulePath.attr("d", (d) => path(d as unknown as d3.GeoPermissibleObjects) ?? "");
+      };
+
       // Auto-rotation
       let currentScale = 1;
       let rotation = 0;
-      let tilt = -20;
+      const tilt = -20;
       const timer = d3.timer(() => {
         rotation += 0.2;
         projection.rotate([rotation, tilt]);
-        svg.selectAll(".country").attr("d", path as any);
-        svg.selectAll(".graticule").attr("d", path as any);
+        render();
       });
 
       // Drag
@@ -185,8 +211,7 @@ export default function WorldGlobe({ countries }: Props) {
           const sensitivity = 0.5 / currentScale;
           const newTilt = Math.max(-60, Math.min(60, ry - event.dy * sensitivity));
           projection.rotate([rx + event.dx * sensitivity, newTilt]);
-          svg.selectAll(".country").attr("d", path as any);
-          svg.selectAll(".graticule").attr("d", path as any);
+          render();
         });
 
       svg.call(drag);
@@ -203,8 +228,7 @@ export default function WorldGlobe({ countries }: Props) {
           currentScale = event.transform.k;
           const newR = BASE_SCALE * currentScale;
           projection.scale(newR);
-          svg.selectAll(".country").attr("d", path as any);
-          svg.selectAll(".graticule").attr("d", path as any);
+          render();
           ocean.attr("r", newR);
           glowRing.attr("r", newR + 6);
         });
@@ -214,7 +238,7 @@ export default function WorldGlobe({ countries }: Props) {
       // Set initial transform so zoom knows the starting state
       svg.call(zoom.transform, d3.zoomIdentity);
     });
-  }, [countries, router]);
+  }, [countries, router, epiColorScale]);
 
   return (
     <div className="relative flex items-center justify-center">
@@ -225,8 +249,10 @@ export default function WorldGlobe({ countries }: Props) {
           style={{ left: tooltip.x + 12, top: tooltip.y - 35 }}
         >
           <span className="font-semibold">{tooltip.name}</span>
-          <span className="text-gray-500 mx-1.5">&middot;</span>
-          <span className="font-bold text-emerald-400">{tooltip.score}</span>
+          <span className="text-gray-300 mx-1.5">&middot;</span>
+          <span className="font-bold" style={{ color: tooltip.score === null ? "#cbd5e1" : epiColorScale(tooltip.score) }}>
+            {tooltip.score === null ? "No data" : tooltip.score.toFixed(1)}
+          </span>
         </div>
       )}
       <div className="absolute bottom-4 right-4 text-gray-400 text-xs">

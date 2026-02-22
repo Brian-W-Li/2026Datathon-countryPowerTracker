@@ -6,7 +6,6 @@ import GlobalStats from "./components/GlobalStats";
 import ColorLegend from "./components/ColorLegend";
 import countries from "../public/data/countries.json";
 import recommendations from "../public/data/recommendations.json";
-import overviewStats from "../public/data/overview_stats.json";
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
         <h1 className="text-white text-3xl font-bold tracking-tight mb-2">
           Country Power Tracker
         </h1>
-        <p className="text-gray-500 text-sm max-w-lg mx-auto mb-5">
+        <p className="text-gray-300 text-sm max-w-lg mx-auto mb-5">
           Explore environmental performance, clean energy capacity, and climate
           policy effectiveness for 180+ countries worldwide.
         </p>
@@ -48,7 +47,7 @@ export default function Home() {
 
       <Recommendations data={recommendations} />
 
-      <footer className="mt-12 text-center text-xs text-gray-600 max-w-2xl mx-auto space-y-0.5 pb-4">
+      <footer className="mt-12 text-center text-xs text-gray-400 max-w-2xl mx-auto space-y-0.5 pb-4">
         <p>
           EPI scores: Yale Center for Environmental Law & Policy — EPI 2024
         </p>
