@@ -13,6 +13,17 @@ export default function Home() {
         <EpiRankings countries={countries} />
       </div>
       <Recommendations data={recommendations} />
+      <footer className="mt-12 text-center text-xs text-gray-500 max-w-2xl mx-auto space-y-1 pb-4">
+        <p>
+          EPI scores from the <span className="text-gray-400">Yale Center for Environmental Law &amp; Policy — Environmental Performance Index (EPI) 2024</span>.
+        </p>
+        <p>
+          CO2 emissions data from <span className="text-gray-400">Our World in Data / Global Carbon Budget 2024</span>.
+        </p>
+        <p>
+          Clean energy capacity from <span className="text-gray-400">IRENA Renewable Capacity Statistics 2024</span>.
+        </p>
+      </footer>
     </main>
   );
 }

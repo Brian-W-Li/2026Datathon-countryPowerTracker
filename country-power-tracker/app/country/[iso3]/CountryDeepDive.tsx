@@ -35,9 +35,9 @@ export default function CountryDeepDive({
   const router = useRouter();
 
   const getScoreColor = (score: number) => {
-    if (score >= 60) return "text-green-400";
+    if (score >= 60) return "text-green-500";
     if (score >= 40) return "text-yellow-400";
-    return "text-red-400";
+    return "text-red-500";
   };
 
   return (
@@ -142,6 +142,12 @@ export default function CountryDeepDive({
             </p>
           </div>
         )}
+
+        {/* Data sources */}
+        <div className="mt-6 text-xs text-gray-500 space-y-1">
+          <p>EPI scores: <span className="text-gray-400">Yale Center for Environmental Law &amp; Policy — Environmental Performance Index (EPI) 2024</span></p>
+          <p>CO2 data: <span className="text-gray-400">Our World in Data / Global Carbon Budget 2024</span></p>
+        </div>
       </div>
     </main>
   );

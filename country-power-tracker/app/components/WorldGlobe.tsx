@@ -59,19 +59,40 @@ export default function WorldGlobe({ countries }: Props) {
 
     const path = d3.geoPath().projection(projection);
 
-    // Color scale: green (high score) → red (low score)
-    const colorScale = d3.scaleSequential()
-      .domain([0, 100])
-      .interpolator(d3.interpolateRdYlGn);
+    // Color scale: vivid red (low) → vivid green (high)
+    const colorScale = d3.scaleLinear<string>()
+      .domain([0, 35, 50, 65, 100])
+      .range(["#dc2626", "#ef4444", "#eab308", "#22c55e", "#16a34a"])
+      .clamp(true);
 
     const scoreMap = new Map(countries.map(c => [c.iso3, c]));
+
+    // Glow filter for ocean
+    const defs = svg.append("defs");
+    const radGrad = defs.append("radialGradient").attr("id", "ocean-grad");
+    radGrad.append("stop").attr("offset", "0%").attr("stop-color", "#1e3a5f");
+    radGrad.append("stop").attr("offset", "100%").attr("stop-color", "#0f172a");
+
+    const glow = defs.append("filter").attr("id", "globe-glow");
+    glow.append("feGaussianBlur").attr("stdDeviation", "8").attr("result", "blur");
+    glow.append("feComposite").attr("in", "SourceGraphic").attr("in2", "blur").attr("operator", "over");
+
+    // Outer glow ring
+    svg.append("circle")
+      .attr("cx", width / 2)
+      .attr("cy", height / 2)
+      .attr("r", 286)
+      .attr("fill", "none")
+      .attr("stroke", "#3b82f620")
+      .attr("stroke-width", 12)
+      .attr("filter", "url(#globe-glow)");
 
     // Draw ocean
     svg.append("circle")
       .attr("cx", width / 2)
       .attr("cy", height / 2)
       .attr("r", 280)
-      .attr("fill", "#1a1a2e");
+      .attr("fill", "url(#ocean-grad)");
 
     // Load world topology
     d3.json("/world-110m.json").then((world: any) => {
@@ -87,14 +108,14 @@ export default function WorldGlobe({ countries }: Props) {
         .attr("fill", (d: any) => {
             const iso3 = NUMERIC_TO_ISO3[+d.id];
             const country = scoreMap.get(iso3);
-            if (!country || country.green_score === null) return "#444444";
+            if (!country || country.green_score === null) return "#334155";
             return colorScale(country.green_score);
         })
-        .attr("stroke", "#ffffff")
-        .attr("stroke-width", 0.3)
+        .attr("stroke", "#94a3b830")
+        .attr("stroke-width", 0.4)
         .style("cursor", "pointer")
         .on("mouseover", function (event: MouseEvent, d: any) {
-            d3.select(this).attr("stroke-width", 1.5).attr("stroke", "#fff");
+            d3.select(this).attr("stroke-width", 1.5).attr("stroke", "#e2e8f0");
             const iso3 = NUMERIC_TO_ISO3[+d.id];
             const country = scoreMap.get(iso3);
             if (country) {
@@ -110,7 +131,7 @@ export default function WorldGlobe({ countries }: Props) {
             setTooltip(prev => prev ? { ...prev, x: event.offsetX, y: event.offsetY } : null);
         })
         .on("mouseout", function () {
-            d3.select(this).attr("stroke-width", 0.3).attr("stroke", "#ffffff");
+            d3.select(this).attr("stroke-width", 0.4).attr("stroke", "#94a3b830");
             setTooltip(null);
         })
         .on("click", (_event: MouseEvent, d: any) => {
@@ -131,19 +152,21 @@ export default function WorldGlobe({ countries }: Props) {
 
       // Auto-rotation
       let rotation = 0;
+      let tilt = -20;
       const timer = d3.timer(() => {
         rotation += 0.2;
-        projection.rotate([rotation, -20]);
+        projection.rotate([rotation, tilt]);
         svg.selectAll(".country").attr("d", path as any);
         svg.selectAll(".graticule").attr("d", path as any);
       });
 
-      // Stop rotation on drag
+      // Stop rotation on drag — clamp tilt to prevent flipping upside down
       const drag = d3.drag<SVGSVGElement, unknown>()
         .on("start", () => timer.stop())
         .on("drag", (event) => {
           const [rx, ry] = projection.rotate();
-          projection.rotate([rx + event.dx * 0.5, ry - event.dy * 0.5]);
+          const newTilt = Math.max(-60, Math.min(60, ry - event.dy * 0.5));
+          projection.rotate([rx + event.dx * 0.5, newTilt]);
           svg.selectAll(".country").attr("d", path as any);
         });
 
@@ -167,10 +190,10 @@ export default function WorldGlobe({ countries }: Props) {
       <svg ref={svgRef} className="rounded-full" />
       {tooltip && (
         <div
-          className="absolute bg-black text-white text-sm px-3 py-1 rounded pointer-events-none"
+          className="absolute bg-gray-900/90 text-white text-sm px-3 py-1.5 rounded-lg pointer-events-none border border-gray-700/50 shadow-lg backdrop-blur-sm"
           style={{ left: tooltip.x + 10, top: tooltip.y - 30 }}
         >
-          {tooltip.name} — {tooltip.score}
+          <span className="font-medium">{tooltip.name}</span> <span className="text-gray-400">—</span> <span className="font-bold">{tooltip.score}</span>
         </div>
       )}
     </div>
