@@ -4,6 +4,7 @@ import deepDiveData from "../../../public/data/country_deep_dive.json";
 import cleanEnergyData from "../../../public/data/clean_energy.json";
 import policyData from "../../../public/data/country_policies.json";
 import policyListData from "../../../public/data/country_policy_list.json";
+import policyAnalysis from "../../../public/data/policy_analysis.json";
 
 type DeepDiveEntry = {
   iso3: string;
@@ -54,6 +55,12 @@ type CountryEntry = {
   data_year: number;
 };
 
+type ScatterEntry = {
+  iso3: string;
+  co2_per_gdp: number;
+  total_policies: number;
+};
+
 type Props = {
   params: Promise<{ iso3: string }>;
 };
@@ -78,6 +85,26 @@ export default async function CountryPage({ params }: Props) {
     (d) => d.iso3 === upper
   );
 
+  // Compute top-quartile status (lowest 25% CO2/GDP among countries with 5+ policies)
+  const scatter = ((policyAnalysis as { scatter_data: ScatterEntry[] }).scatter_data ?? [])
+    .filter((c) => (c.total_policies ?? 0) >= 5 && c.co2_per_gdp != null);
+  const sorted = [...scatter].sort((a, b) => a.co2_per_gdp - b.co2_per_gdp);
+  const cutoff = Math.ceil(sorted.length * 0.25);
+  const topQuartileSet = new Set(sorted.slice(0, cutoff).map((c) => c.iso3));
+  const isTopTier = topQuartileSet.has(upper);
+
+  // Compute EPI top-quartile status (highest 25% green_score among countries with non-null score)
+  const eligibleEpi = (countriesData as CountryEntry[]).filter(
+    (c) => c.green_score !== null
+  );
+  const sortedEpi = [...eligibleEpi].sort(
+    (a, b) => (b.green_score ?? 0) - (a.green_score ?? 0)
+  );
+  const epiCutoff = Math.ceil(sortedEpi.length * 0.25);
+  const epiTopSet = new Set(sortedEpi.slice(0, epiCutoff).map((c) => c.iso3));
+  const isEpiTopTier: boolean | null =
+    country?.green_score != null ? epiTopSet.has(upper) : null;
+
   const name = country?.name ?? upper;
   const region = country?.region ?? "Unknown";
   const co2Series = deepDive?.series ?? [];
@@ -98,6 +125,8 @@ export default async function CountryPage({ params }: Props) {
       totalPolicies={totalPolicies}
       activePolicies={activePolicies}
       activePolicyList={activePolicyList}
+      isTopTier={isTopTier}
+      isEpiTopTier={isEpiTopTier}
     />
   );
 }
