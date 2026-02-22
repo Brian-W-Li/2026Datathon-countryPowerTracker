@@ -93,19 +93,6 @@ A lift > 1 means the sector is over-represented among high-GEPI performers.
 
 ---
 
-### `recommendations.json`
-Top 3 sectors by lift score — the policy areas most associated with top performers.
-
-```json
-[
-  { "bucket_id": "CPM", "bucket_name": "Carbon Pricing & Markets", "lift": 1.52 },
-  { "bucket_id": "FPD", "bucket_name": "Fossil Fuel Phase-Down",   "lift": 1.33 },
-  { "bucket_id": "EEF", "bucket_name": "Energy Efficiency",        "lift": 1.29 }
-]
-```
-
----
-
 ### `overview_stats.json`
 Aggregated stats for the homepage overview section:
 - `scatter_data` — policy count and GEPI score per country (for scatter chart)
