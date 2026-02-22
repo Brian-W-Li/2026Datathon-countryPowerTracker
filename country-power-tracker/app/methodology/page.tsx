@@ -85,14 +85,27 @@ export default function MethodologyPage() {
           </div>
         </section>
 
-        {/* Analytical Methods */}
-        <section className="mb-10">
-          <h2 className="text-lg font-semibold mb-4 text-white">Analytical Methods</h2>
-          <div className="space-y-4">
-            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-5">
-              <h3 className="text-sm font-semibold text-white mb-2">Correlation Analysis</h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Pearson correlation coefficient (r) measures linear association between each policy sector&apos;s
+	        {/* Analytical Methods */}
+	        <section className="mb-10">
+	          <h2 className="text-lg font-semibold mb-4 text-white">Analytical Methods</h2>
+	          <div className="space-y-4">
+	            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-5">
+	              <h3 className="text-sm font-semibold text-white mb-2">Policy Attribute Extraction</h3>
+	              <p className="text-xs text-gray-400 leading-relaxed">
+	                We transform the raw IEA/OECD Climate Policy Tracker export into a standardized policy table used
+	                by the frontend. Each policy is assigned a sector code using rule-based mapping from the IEA topic
+	                fields with a keyword fallback when topic metadata is missing. We then classify key policy
+	                attributes&mdash;instrument type, legal binding status, and whether the policy includes quantified
+	                targets&mdash;using an LLM-assisted workflow (GPT-4o-mini) and cache the results for reuse. Policy
+	                status (e.g., &quot;In force&quot; vs &quot;Ended&quot; or &quot;Announced&quot;) is retained so we can compute
+	                &quot;currently in effect&quot; counts and portfolio shares consistently across countries.
+	              </p>
+	            </div>
+
+	            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-5">
+	              <h3 className="text-sm font-semibold text-white mb-2">Correlation Analysis</h3>
+	              <p className="text-xs text-gray-400 leading-relaxed">
+	                Pearson correlation coefficient (r) measures linear association between each policy sector&apos;s
                 share of a country&apos;s portfolio and its CO2 emissions (per capita or per GDP). Statistical
                 significance tested via two-tailed t-test. A negative r indicates that countries with a larger share
                 of that policy type tend to have lower CO2.
