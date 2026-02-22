@@ -1,3 +1,4 @@
+import Link from "next/link";
 import WorldGlobe from "./components/WorldGlobe";
 import Recommendations from "./components/Recommendations";
 import EpiRankings from "./components/EpiRankings";
@@ -9,7 +10,13 @@ import recommendations from "../public/data/recommendations.json";
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-950 flex flex-col items-center py-12 px-4">
-      <h1 className="text-white text-3xl font-bold mb-8">Country Power Tracker</h1>
+      <h1 className="text-white text-3xl font-bold mb-4">Country Power Tracker</h1>
+      <Link
+        href="/policy-analysis"
+        className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-lg transition-colors"
+      >
+        Which policies actually reduce CO2? &rarr;
+      </Link>
       <GlobalStats countries={countries} />
       <div className="flex flex-col lg:flex-row items-start justify-center gap-8">
         <div className="flex flex-col items-center gap-3">
