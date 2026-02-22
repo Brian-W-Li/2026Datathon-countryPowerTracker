@@ -42,13 +42,22 @@ export default function Home() {
 
       <footer className="mt-12 text-center text-xs text-gray-400 max-w-2xl mx-auto space-y-0.5 pb-4">
         <p>
-          EPI scores: Yale Center for Environmental Law & Policy — EPI 2024
+          DATA SOURCES:
         </p>
         <p>
-          CO2 data: Our World in Data / Global Carbon Budget 2024
+          Yale Center for Environmental Law & Policy - EPI Report (2024)
         </p>
         <p>
-          Clean energy: IRENA Renewable Capacity Statistics 2024
+          Our World in Data - Global CO₂ Emissions per Capita  (Nov 2024)
+        </p>
+        <p>
+          World Bank Group - GDP in Current US Dollars (2024)
+        </p>
+        <p>
+          Global Energy Monitor - Global Integrated Power Tracker (Feb 2026)
+        </p>
+        <p>
+          International Energy Agency - Global Policies Database (2026)
         </p>
       </footer>
     </main>

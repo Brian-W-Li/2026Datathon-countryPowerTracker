@@ -450,21 +450,26 @@ export default function PolicyAnalysis({
   }, [data.scatter_data, data.sector_names, co2GdpChange5y, excludeOutliers]);
 
   // Instrument comparison
-  const instrumentBarData = useMemo(
-    () =>
-      data.instrument_effectiveness
-        .filter((ie) => ie.avg_co2_with !== null && ie.avg_co2_without !== null)
-        .map((ie) => ({
-          instrument: ie.instrument,
-          avgWith: ie.avg_co2_with!,
-          avgWithout: ie.avg_co2_without!,
-          diff: ie.difference ?? ie.avg_co2_with! - ie.avg_co2_without!,
-          significant: ie.significant,
-          r: ie.r,
-          p: ie.p,
-        })),
-    [data.instrument_effectiveness]
-  );
+  // Instrument comparison
+  const instrumentBarData = useMemo(() => {
+  const isOther = (name: string) => {
+    const s = name.trim().toLowerCase();
+    return s === "other" || s === "others" || s === "misc" || s === "miscellaneous";
+  };
+
+  return data.instrument_effectiveness
+    .filter((ie) => !isOther(ie.instrument)) // <-- remove "Other"
+    .filter((ie) => ie.avg_co2_with !== null && ie.avg_co2_without !== null)
+    .map((ie) => ({
+      instrument: ie.instrument,
+      avgWith: ie.avg_co2_with!,
+      avgWithout: ie.avg_co2_without!,
+      diff: ie.difference ?? ie.avg_co2_with! - ie.avg_co2_without!,
+      significant: ie.significant,
+      r: ie.r,
+      p: ie.p,
+    }));
+}, [data.instrument_effectiveness]);
 
   // Top cocktails
   const { cocktailData, cocktailMin, cocktailMax } = useMemo(() => {
