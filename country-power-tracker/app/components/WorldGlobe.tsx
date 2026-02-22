@@ -61,6 +61,11 @@ export default function WorldGlobe({ countries }: Props) {
   const timerRef = useRef<d3.Timer | null>(null);
   const pausedRef = useRef(false);
   const draggingRef = useRef(false);
+  const countriesRef = useRef<Country[]>(countries);
+
+  useEffect(() => {
+    countriesRef.current = countries;
+  }, [countries]);
 
   const epiColorScale = useMemo(
     () =>
@@ -72,13 +77,6 @@ export default function WorldGlobe({ countries }: Props) {
     []
   );
 
-  // Prevent globe re-init on every keystroke if parent recreates `countries` array.
-  // (If you truly change the dataset, this still updates because len/scored changes.)
-  const countriesKey = useMemo(() => {
-    const n = countries.length;
-    const scored = countries.reduce((acc, c) => acc + (c.green_score === null ? 0 : 1), 0);
-    return `${n}:${scored}`;
-  }, [countries]);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -92,7 +90,6 @@ export default function WorldGlobe({ countries }: Props) {
     }
     pausedRef.current = false;
     draggingRef.current = false;
-    setTooltip(null);
 
     const width = 600;
     const height = 600;
@@ -128,7 +125,7 @@ export default function WorldGlobe({ countries }: Props) {
 
     const path = d3.geoPath(projection);
 
-    const scoreMap = new Map(countries.map((c) => [c.iso3, c]));
+    const scoreMap = new Map(countriesRef.current.map((c) => [c.iso3, c]));
 
     // Defs
     const defs = svg.append("defs");
@@ -277,10 +274,11 @@ export default function WorldGlobe({ countries }: Props) {
       const zoom = d3
         .zoom<SVGSVGElement, unknown>()
         .scaleExtent([MIN_SCALE, MAX_SCALE])
-        .filter((event: any) => {
-          if (event.type === "wheel") return true;
-          if (event.type?.startsWith?.("touch")) return true;
-          return false;
+        .filter((event: unknown) => {
+            const t = (event as { type?: string }).type;
+            if (t === "wheel") return true;
+            if (t?.startsWith?.("touch")) return true;
+            return false;
         })
         .on("start.globe", (event) => {
           if (event.sourceEvent) stopAutoRotate();
@@ -311,13 +309,11 @@ export default function WorldGlobe({ countries }: Props) {
         localTimer = null;
       }
 
-      setTooltip(null);
-
       svg.on(".globe", null);
       svg.on(".zoom", null);
       svg.on("dblclick.zoom", null);
     };
-  }, [countriesKey, router, epiColorScale]);
+  }, [router, epiColorScale]);
 
   return (
     <div className="relative flex items-center justify-center">
