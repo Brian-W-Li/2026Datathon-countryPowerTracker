@@ -32,7 +32,6 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-import { useRouter } from "next/navigation";
 
 type Country = {
   iso3: string;
