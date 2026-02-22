@@ -1,0 +1,1522 @@
+{
+  "ABW": {
+    "country": "ABW",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 261.51,
+    "end_value": 255.24,
+    "pct_change": -2.3976
+  },
+  "AGO": {
+    "country": "AGO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 222.44,
+    "end_value": 207.17,
+    "pct_change": -6.8648
+  },
+  "ALB": {
+    "country": "ALB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 337.61,
+    "end_value": 243.08,
+    "pct_change": -27.9998
+  },
+  "AND": {
+    "country": "AND",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 163.13,
+    "end_value": 126.28,
+    "pct_change": -22.5893
+  },
+  "ARE": {
+    "country": "ARE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 500.58,
+    "end_value": 483.86,
+    "pct_change": -3.3401
+  },
+  "ARG": {
+    "country": "ARG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 315.74,
+    "end_value": 293.04,
+    "pct_change": -7.1895
+  },
+  "ARM": {
+    "country": "ARM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 498.21,
+    "end_value": 464.59,
+    "pct_change": -6.7482
+  },
+  "ATG": {
+    "country": "ATG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 376.62,
+    "end_value": 386.5,
+    "pct_change": 2.6233
+  },
+  "AUS": {
+    "country": "AUS",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 275.13,
+    "end_value": 235.48,
+    "pct_change": -14.4114
+  },
+  "AUT": {
+    "country": "AUT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 164.37,
+    "end_value": 134.47,
+    "pct_change": -18.1907
+  },
+  "AZE": {
+    "country": "AZE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 698.34,
+    "end_value": 656.32,
+    "pct_change": -6.0171
+  },
+  "BDI": {
+    "country": "BDI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 206.75,
+    "end_value": 242.85,
+    "pct_change": 17.4607
+  },
+  "BEL": {
+    "country": "BEL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 201.95,
+    "end_value": 161.61,
+    "pct_change": -19.9752
+  },
+  "BEN": {
+    "country": "BEN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 371.84,
+    "end_value": 316.62,
+    "pct_change": -14.8505
+  },
+  "BFA": {
+    "country": "BFA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 373.78,
+    "end_value": 361.79,
+    "pct_change": -3.2078
+  },
+  "BGD": {
+    "country": "BGD",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 367.53,
+    "end_value": 321.48,
+    "pct_change": -12.5296
+  },
+  "BGR": {
+    "country": "BGR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 701.25,
+    "end_value": 462.08,
+    "pct_change": -34.1062
+  },
+  "BHR": {
+    "country": "BHR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1017.91,
+    "end_value": 940.25,
+    "pct_change": -7.6294
+  },
+  "BHS": {
+    "country": "BHS",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 205.25,
+    "end_value": 225.2,
+    "pct_change": 9.7199
+  },
+  "BIH": {
+    "country": "BIH",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1114.1,
+    "end_value": 912.17,
+    "pct_change": -18.1249
+  },
+  "BLR": {
+    "country": "BLR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1051.27,
+    "end_value": 907.41,
+    "pct_change": -13.6844
+  },
+  "BLZ": {
+    "country": "BLZ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 340.07,
+    "end_value": 303.41,
+    "pct_change": -10.7801
+  },
+  "BMU": {
+    "country": "BMU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 86.74,
+    "end_value": 69.65,
+    "pct_change": -19.7026
+  },
+  "BOL": {
+    "country": "BOL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 603.97,
+    "end_value": 759.36,
+    "pct_change": 25.7281
+  },
+  "BRA": {
+    "country": "BRA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 261.98,
+    "end_value": 238.16,
+    "pct_change": -9.0923
+  },
+  "BRB": {
+    "country": "BRB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 241.51,
+    "end_value": 223.94,
+    "pct_change": -7.2751
+  },
+  "BRN": {
+    "country": "BRN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 720.25,
+    "end_value": 881.01,
+    "pct_change": 22.32
+  },
+  "BWA": {
+    "country": "BWA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 461.73,
+    "end_value": 426.62,
+    "pct_change": -7.604
+  },
+  "CAF": {
+    "country": "CAF",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 156.75,
+    "end_value": 189.87,
+    "pct_change": 21.1292
+  },
+  "CAN": {
+    "country": "CAN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 339.79,
+    "end_value": 302.16,
+    "pct_change": -11.0745
+  },
+  "CHE": {
+    "country": "CHE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 49.27,
+    "end_value": 39.91,
+    "pct_change": -18.9974
+  },
+  "CHL": {
+    "country": "CHL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 351.49,
+    "end_value": 273.2,
+    "pct_change": -22.2737
+  },
+  "CHN": {
+    "country": "CHN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 726.7,
+    "end_value": 659.85,
+    "pct_change": -9.1991
+  },
+  "CIV": {
+    "country": "CIV",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 178.59,
+    "end_value": 193.83,
+    "pct_change": 8.5335
+  },
+  "CMR": {
+    "country": "CMR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 256.13,
+    "end_value": 223.34,
+    "pct_change": -12.8021
+  },
+  "COD": {
+    "country": "COD",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 91.82,
+    "end_value": 97.49,
+    "pct_change": 6.1751
+  },
+  "COG": {
+    "country": "COG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 688.71,
+    "end_value": 831.06,
+    "pct_change": 20.6691
+  },
+  "COL": {
+    "country": "COL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 307.9,
+    "end_value": 255.27,
+    "pct_change": -17.0932
+  },
+  "COM": {
+    "country": "COM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 284.98,
+    "end_value": 454.06,
+    "pct_change": 59.3305
+  },
+  "CPV": {
+    "country": "CPV",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 297.82,
+    "end_value": 254.28,
+    "pct_change": -14.6196
+  },
+  "CRI": {
+    "country": "CRI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 118.98,
+    "end_value": 114.87,
+    "pct_change": -3.4544
+  },
+  "CUB": {
+    "country": "CUB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 247.05,
+    "end_value": 301.56,
+    "pct_change": 22.0644
+  },
+  "CUW": {
+    "country": "CUW",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 703.06,
+    "end_value": 684.09,
+    "pct_change": -2.6982
+  },
+  "CYP": {
+    "country": "CYP",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 202.1,
+    "end_value": 164.76,
+    "pct_change": -18.476
+  },
+  "CZE": {
+    "country": "CZE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 469.98,
+    "end_value": 344.53,
+    "pct_change": -26.6926
+  },
+  "DEU": {
+    "country": "DEU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 191.72,
+    "end_value": 153.74,
+    "pct_change": -19.8101
+  },
+  "DJI": {
+    "country": "DJI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 178.36,
+    "end_value": 146.68,
+    "pct_change": -17.7618
+  },
+  "DMA": {
+    "country": "DMA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 294.06,
+    "end_value": 281.26,
+    "pct_change": -4.3529
+  },
+  "DNK": {
+    "country": "DNK",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 93.2,
+    "end_value": 78.1,
+    "pct_change": -16.2017
+  },
+  "DOM": {
+    "country": "DOM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 321.97,
+    "end_value": 316.22,
+    "pct_change": -1.7859
+  },
+  "DZA": {
+    "country": "DZA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 901.75,
+    "end_value": 888.39,
+    "pct_change": -1.4816
+  },
+  "ECU": {
+    "country": "ECU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 387.11,
+    "end_value": 422.6,
+    "pct_change": 9.1679
+  },
+  "EGY": {
+    "country": "EGY",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 587.97,
+    "end_value": 535.82,
+    "pct_change": -8.8695
+  },
+  "ESP": {
+    "country": "ESP",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 186.72,
+    "end_value": 157.26,
+    "pct_change": -15.7776
+  },
+  "EST": {
+    "country": "EST",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 450.02,
+    "end_value": 304.09,
+    "pct_change": -32.4274
+  },
+  "ETH": {
+    "country": "ETH",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 199.29,
+    "end_value": 152.89,
+    "pct_change": -23.2827
+  },
+  "FIN": {
+    "country": "FIN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 167.47,
+    "end_value": 117.13,
+    "pct_change": -30.0591
+  },
+  "FJI": {
+    "country": "FJI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 289.39,
+    "end_value": 262.18,
+    "pct_change": -9.4025
+  },
+  "FRA": {
+    "country": "FRA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 124.34,
+    "end_value": 100.03,
+    "pct_change": -19.5512
+  },
+  "FRO": {
+    "country": "FRO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 254.68,
+    "end_value": 220.89,
+    "pct_change": -13.2676
+  },
+  "FSM": {
+    "country": "FSM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 429.11,
+    "end_value": 454.21,
+    "pct_change": 5.8493
+  },
+  "GAB": {
+    "country": "GAB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 362.69,
+    "end_value": 321.26,
+    "pct_change": -11.423
+  },
+  "GBR": {
+    "country": "GBR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 113.55,
+    "end_value": 94.36,
+    "pct_change": -16.9
+  },
+  "GEO": {
+    "country": "GEO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 556.7,
+    "end_value": 454.59,
+    "pct_change": -18.342
+  },
+  "GHA": {
+    "country": "GHA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 262.63,
+    "end_value": 281.68,
+    "pct_change": 7.2536
+  },
+  "GIN": {
+    "country": "GIN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 339.88,
+    "end_value": 260.89,
+    "pct_change": -23.2406
+  },
+  "GMB": {
+    "country": "GMB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 423.73,
+    "end_value": 383.23,
+    "pct_change": -9.558
+  },
+  "GNB": {
+    "country": "GNB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 184.55,
+    "end_value": 195.85,
+    "pct_change": 6.123
+  },
+  "GNQ": {
+    "country": "GNQ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 548.55,
+    "end_value": 734.68,
+    "pct_change": 33.9313
+  },
+  "GRC": {
+    "country": "GRC",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 319.15,
+    "end_value": 247.07,
+    "pct_change": -22.585
+  },
+  "GRD": {
+    "country": "GRD",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 293.75,
+    "end_value": 315.42,
+    "pct_change": 7.377
+  },
+  "GTM": {
+    "country": "GTM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 272.04,
+    "end_value": 236.7,
+    "pct_change": -12.9907
+  },
+  "GUY": {
+    "country": "GUY",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 521.63,
+    "end_value": 164.28,
+    "pct_change": -68.5064
+  },
+  "HKG": {
+    "country": "HKG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 126.64,
+    "end_value": 100.51,
+    "pct_change": -20.6333
+  },
+  "HND": {
+    "country": "HND",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 450.43,
+    "end_value": 461.43,
+    "pct_change": 2.4421
+  },
+  "HRV": {
+    "country": "HRV",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 305.32,
+    "end_value": 266.87,
+    "pct_change": -12.5933
+  },
+  "HTI": {
+    "country": "HTI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 201.41,
+    "end_value": 218.5,
+    "pct_change": 8.4852
+  },
+  "HUN": {
+    "country": "HUN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 329.05,
+    "end_value": 250.36,
+    "pct_change": -23.9143
+  },
+  "IDN": {
+    "country": "IDN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 633.78,
+    "end_value": 655.95,
+    "pct_change": 3.4981
+  },
+  "IND": {
+    "country": "IND",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 970.98,
+    "end_value": 918.24,
+    "pct_change": -5.4316
+  },
+  "IRL": {
+    "country": "IRL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 98.58,
+    "end_value": 67.1,
+    "pct_change": -31.9335
+  },
+  "IRN": {
+    "country": "IRN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1686.93,
+    "end_value": 1483.64,
+    "pct_change": -12.0509
+  },
+  "IRQ": {
+    "country": "IRQ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 950.5,
+    "end_value": 1213.88,
+    "pct_change": 27.7096
+  },
+  "ISL": {
+    "country": "ISL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 172.43,
+    "end_value": 163,
+    "pct_change": -5.4689
+  },
+  "ISR": {
+    "country": "ISR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 172.79,
+    "end_value": 134,
+    "pct_change": -22.4492
+  },
+  "ITA": {
+    "country": "ITA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 175.52,
+    "end_value": 147.5,
+    "pct_change": -15.964
+  },
+  "JAM": {
+    "country": "JAM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 574.99,
+    "end_value": 485.4,
+    "pct_change": -15.5811
+  },
+  "JOR": {
+    "country": "JOR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 587.46,
+    "end_value": 500.35,
+    "pct_change": -14.8282
+  },
+  "JPN": {
+    "country": "JPN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 241.32,
+    "end_value": 209.2,
+    "pct_change": -13.3101
+  },
+  "KAZ": {
+    "country": "KAZ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1402.32,
+    "end_value": 1173.89,
+    "pct_change": -16.2894
+  },
+  "KEN": {
+    "country": "KEN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 215.5,
+    "end_value": 202.21,
+    "pct_change": -6.1671
+  },
+  "KGZ": {
+    "country": "KGZ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1159.08,
+    "end_value": 1176.94,
+    "pct_change": 1.5409
+  },
+  "KHM": {
+    "country": "KHM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 562.73,
+    "end_value": 568.37,
+    "pct_change": 1.0023
+  },
+  "KIR": {
+    "country": "KIR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 306.09,
+    "end_value": 263.79,
+    "pct_change": -13.8195
+  },
+  "KNA": {
+    "country": "KNA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 248.36,
+    "end_value": 255.5,
+    "pct_change": 2.8749
+  },
+  "KOR": {
+    "country": "KOR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 372.6,
+    "end_value": 304.63,
+    "pct_change": -18.2421
+  },
+  "KWT": {
+    "country": "KWT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 886.34,
+    "end_value": 1099.7,
+    "pct_change": 24.072
+  },
+  "LAO": {
+    "country": "LAO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 991.78,
+    "end_value": 1154.08,
+    "pct_change": 16.3645
+  },
+  "LBR": {
+    "country": "LBR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 290.12,
+    "end_value": 230.2,
+    "pct_change": -20.6535
+  },
+  "LBY": {
+    "country": "LBY",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1210.48,
+    "end_value": 1148.84,
+    "pct_change": -5.0922
+  },
+  "LCA": {
+    "country": "LCA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 254.18,
+    "end_value": 251.96,
+    "pct_change": -0.8734
+  },
+  "LKA": {
+    "country": "LKA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 211.36,
+    "end_value": 215.31,
+    "pct_change": 1.8688
+  },
+  "LSO": {
+    "country": "LSO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 951.05,
+    "end_value": 1110.17,
+    "pct_change": 16.731
+  },
+  "LTU": {
+    "country": "LTU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 280.1,
+    "end_value": 229.75,
+    "pct_change": -17.9757
+  },
+  "LUX": {
+    "country": "LUX",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 146.12,
+    "end_value": 100.43,
+    "pct_change": -31.2688
+  },
+  "LVA": {
+    "country": "LVA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 260.15,
+    "end_value": 210.82,
+    "pct_change": -18.9621
+  },
+  "MAC": {
+    "country": "MAC",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 23.87,
+    "end_value": 23.14,
+    "pct_change": -3.0582
+  },
+  "MAR": {
+    "country": "MAR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 564.21,
+    "end_value": 515.78,
+    "pct_change": -8.5837
+  },
+  "MDA": {
+    "country": "MDA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 502.5,
+    "end_value": 455.71,
+    "pct_change": -9.3114
+  },
+  "MDG": {
+    "country": "MDG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 314.45,
+    "end_value": 312.47,
+    "pct_change": -0.6297
+  },
+  "MDV": {
+    "country": "MDV",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 365.05,
+    "end_value": 370.33,
+    "pct_change": 1.4464
+  },
+  "MEX": {
+    "country": "MEX",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 366.47,
+    "end_value": 341.47,
+    "pct_change": -6.8218
+  },
+  "MHL": {
+    "country": "MHL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 644.73,
+    "end_value": 707.55,
+    "pct_change": 9.7436
+  },
+  "MKD": {
+    "country": "MKD",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 673.97,
+    "end_value": 547.78,
+    "pct_change": -18.7234
+  },
+  "MLI": {
+    "country": "MLI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 291.86,
+    "end_value": 313.38,
+    "pct_change": 7.3734
+  },
+  "MLT": {
+    "country": "MLT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 110.83,
+    "end_value": 92.41,
+    "pct_change": -16.62
+  },
+  "MMR": {
+    "country": "MMR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 443.17,
+    "end_value": 500.55,
+    "pct_change": 12.9476
+  },
+  "MNE": {
+    "country": "MNE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 542.06,
+    "end_value": 435.8,
+    "pct_change": -19.603
+  },
+  "MNG": {
+    "country": "MNG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 3360.76,
+    "end_value": 2779.36,
+    "pct_change": -17.2997
+  },
+  "MOZ": {
+    "country": "MOZ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 384.83,
+    "end_value": 410.65,
+    "pct_change": 6.7095
+  },
+  "MRT": {
+    "country": "MRT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 643.3,
+    "end_value": 600.14,
+    "pct_change": -6.7092
+  },
+  "MUS": {
+    "country": "MUS",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 316.98,
+    "end_value": 308.06,
+    "pct_change": -2.8141
+  },
+  "MWI": {
+    "country": "MWI",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 156.37,
+    "end_value": 157.41,
+    "pct_change": 0.6651
+  },
+  "MYS": {
+    "country": "MYS",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 761.58,
+    "end_value": 686.82,
+    "pct_change": -9.8164
+  },
+  "NAM": {
+    "country": "NAM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 331.67,
+    "end_value": 283.78,
+    "pct_change": -14.4391
+  },
+  "NER": {
+    "country": "NER",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 205.8,
+    "end_value": 197.03,
+    "pct_change": -4.2614
+  },
+  "NGA": {
+    "country": "NGA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 251.01,
+    "end_value": 251.11,
+    "pct_change": 0.0398
+  },
+  "NIC": {
+    "country": "NIC",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 397.67,
+    "end_value": 355.42,
+    "pct_change": -10.6244
+  },
+  "NLD": {
+    "country": "NLD",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 176.81,
+    "end_value": 123.04,
+    "pct_change": -30.4112
+  },
+  "NOR": {
+    "country": "NOR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 104.49,
+    "end_value": 83.69,
+    "pct_change": -19.9062
+  },
+  "NPL": {
+    "country": "NPL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 416.61,
+    "end_value": 536.72,
+    "pct_change": 28.8303
+  },
+  "NRU": {
+    "country": "NRU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 574.81,
+    "end_value": 598.48,
+    "pct_change": 4.1179
+  },
+  "NZL": {
+    "country": "NZL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 180.66,
+    "end_value": 146.89,
+    "pct_change": -18.6926
+  },
+  "OMN": {
+    "country": "OMN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 867.33,
+    "end_value": 902.22,
+    "pct_change": 4.0227
+  },
+  "PAK": {
+    "country": "PAK",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 525.34,
+    "end_value": 437.77,
+    "pct_change": -16.6692
+  },
+  "PAN": {
+    "country": "PAN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 188.41,
+    "end_value": 163.79,
+    "pct_change": -13.0672
+  },
+  "PER": {
+    "country": "PER",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 272.85,
+    "end_value": 305.9,
+    "pct_change": 12.1129
+  },
+  "PHL": {
+    "country": "PHL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 359.9,
+    "end_value": 384.58,
+    "pct_change": 6.8575
+  },
+  "PNG": {
+    "country": "PNG",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 306.75,
+    "end_value": 307.66,
+    "pct_change": 0.2967
+  },
+  "POL": {
+    "country": "POL",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 545.58,
+    "end_value": 393.33,
+    "pct_change": -27.9061
+  },
+  "PRT": {
+    "country": "PRT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 213.29,
+    "end_value": 150.52,
+    "pct_change": -29.4294
+  },
+  "PRY": {
+    "country": "PRY",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 203.27,
+    "end_value": 172.48,
+    "pct_change": -15.1473
+  },
+  "PSE": {
+    "country": "PSE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 194.91,
+    "end_value": 419.78,
+    "pct_change": 115.3712
+  },
+  "PYF": {
+    "country": "PYF",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 149.87,
+    "end_value": 157.09,
+    "pct_change": 4.8175
+  },
+  "QAT": {
+    "country": "QAT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 571.52,
+    "end_value": 663.98,
+    "pct_change": 16.1779
+  },
+  "ROU": {
+    "country": "ROU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 351.2,
+    "end_value": 289.34,
+    "pct_change": -17.6139
+  },
+  "RUS": {
+    "country": "RUS",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1177.08,
+    "end_value": 1113.32,
+    "pct_change": -5.4168
+  },
+  "RWA": {
+    "country": "RWA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 126.49,
+    "end_value": 133.25,
+    "pct_change": 5.3443
+  },
+  "SAU": {
+    "country": "SAU",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 933.31,
+    "end_value": 816.37,
+    "pct_change": -12.5296
+  },
+  "SDN": {
+    "country": "SDN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 428.88,
+    "end_value": 609.85,
+    "pct_change": 42.196
+  },
+  "SEN": {
+    "country": "SEN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 563.44,
+    "end_value": 503.77,
+    "pct_change": -10.5903
+  },
+  "SGP": {
+    "country": "SGP",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 140.88,
+    "end_value": 136.54,
+    "pct_change": -3.0806
+  },
+  "SLB": {
+    "country": "SLB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 199.49,
+    "end_value": 199.11,
+    "pct_change": -0.1905
+  },
+  "SLE": {
+    "country": "SLE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 138.05,
+    "end_value": 145.93,
+    "pct_change": 5.7081
+  },
+  "SLV": {
+    "country": "SLV",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 296.13,
+    "end_value": 308.73,
+    "pct_change": 4.2549
+  },
+  "SOM": {
+    "country": "SOM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 134.98,
+    "end_value": 148.52,
+    "pct_change": 10.0311
+  },
+  "SRB": {
+    "country": "SRB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 928.58,
+    "end_value": 727,
+    "pct_change": -21.7084
+  },
+  "STP": {
+    "country": "STP",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 483.42,
+    "end_value": 439.95,
+    "pct_change": -8.9922
+  },
+  "SUR": {
+    "country": "SUR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 500.77,
+    "end_value": 649.9,
+    "pct_change": 29.7801
+  },
+  "SVK": {
+    "country": "SVK",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 340.3,
+    "end_value": 267.13,
+    "pct_change": -21.5016
+  },
+  "SVN": {
+    "country": "SVN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 281.71,
+    "end_value": 230.29,
+    "pct_change": -18.2528
+  },
+  "SWE": {
+    "country": "SWE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 74.81,
+    "end_value": 66.25,
+    "pct_change": -11.4423
+  },
+  "SWZ": {
+    "country": "SWZ",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 247.79,
+    "end_value": 217.52,
+    "pct_change": -12.216
+  },
+  "SXM": {
+    "country": "SXM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 503.16,
+    "end_value": 474.92,
+    "pct_change": -5.6125
+  },
+  "SYC": {
+    "country": "SYC",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 257.35,
+    "end_value": 301.63,
+    "pct_change": 17.2061
+  },
+  "TCA": {
+    "country": "TCA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 160.21,
+    "end_value": 142.29,
+    "pct_change": -11.1853
+  },
+  "TCD": {
+    "country": "TCD",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 150.28,
+    "end_value": 164.16,
+    "pct_change": 9.2361
+  },
+  "TGO": {
+    "country": "TGO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 344.59,
+    "end_value": 310.82,
+    "pct_change": -9.8001
+  },
+  "THA": {
+    "country": "THA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 612.49,
+    "end_value": 568.28,
+    "pct_change": -7.2181
+  },
+  "TJK": {
+    "country": "TJK",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 796.27,
+    "end_value": 677.69,
+    "pct_change": -14.8919
+  },
+  "TKM": {
+    "country": "TKM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1361.94,
+    "end_value": 1313.09,
+    "pct_change": -3.5868
+  },
+  "TLS": {
+    "country": "TLS",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 344.46,
+    "end_value": 415.07,
+    "pct_change": 20.4988
+  },
+  "TTO": {
+    "country": "TTO",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1593.35,
+    "end_value": 1405.79,
+    "pct_change": -11.7714
+  },
+  "TUN": {
+    "country": "TUN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 620,
+    "end_value": 664.1,
+    "pct_change": 7.1129
+  },
+  "TUR": {
+    "country": "TUR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 389.2,
+    "end_value": 380.97,
+    "pct_change": -2.1146
+  },
+  "TZA": {
+    "country": "TZA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 260.14,
+    "end_value": 260.52,
+    "pct_change": 0.1461
+  },
+  "UGA": {
+    "country": "UGA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 145.49,
+    "end_value": 128.42,
+    "pct_change": -11.7328
+  },
+  "UKR": {
+    "country": "UKR",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 2060.89,
+    "end_value": 1696.13,
+    "pct_change": -17.6991
+  },
+  "URY": {
+    "country": "URY",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 106.23,
+    "end_value": 124.18,
+    "pct_change": 16.8973
+  },
+  "USA": {
+    "country": "USA",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 255.15,
+    "end_value": 213.96,
+    "pct_change": -16.1434
+  },
+  "UZB": {
+    "country": "UZB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1004.68,
+    "end_value": 984.25,
+    "pct_change": -2.0335
+  },
+  "VCT": {
+    "country": "VCT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 254.4,
+    "end_value": 267.85,
+    "pct_change": 5.2869
+  },
+  "VEN": {
+    "country": "VEN",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 2066.85,
+    "end_value": 2721.61,
+    "pct_change": 31.6791
+  },
+  "VNM": {
+    "country": "VNM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1077.36,
+    "end_value": 914.2,
+    "pct_change": -15.1444
+  },
+  "VUT": {
+    "country": "VUT",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 189.09,
+    "end_value": 222.92,
+    "pct_change": 17.891
+  },
+  "WSM": {
+    "country": "WSM",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 277.65,
+    "end_value": 230.79,
+    "pct_change": -16.8774
+  },
+  "XKX": {
+    "country": "XKX",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1132.51,
+    "end_value": 848.41,
+    "pct_change": -25.0859
+  },
+  "ZAF": {
+    "country": "ZAF",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 1309.45,
+    "end_value": 1202.28,
+    "pct_change": -8.1844
+  },
+  "ZMB": {
+    "country": "ZMB",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 367.22,
+    "end_value": 420.59,
+    "pct_change": 14.5335
+  },
+  "ZWE": {
+    "country": "ZWE",
+    "start_year": 2019,
+    "end_year": 2024,
+    "start_value": 495.23,
+    "end_value": 580.98,
+    "pct_change": 17.3152
+  }
+}

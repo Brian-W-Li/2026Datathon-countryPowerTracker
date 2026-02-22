@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import overviewStats from "../../public/data/overview_stats.json";
 import {
   BarChart,
   Bar,
@@ -13,6 +14,7 @@ import {
   ResponsiveContainer,
   ScatterChart,
   Scatter,
+  Line,
   Cell,
   ZAxis,
   RadarChart,
@@ -124,6 +126,41 @@ export type Co2PcChange5y = Record<
   }
 >;
 
+export type Co2GdpChange5y = Record<
+  string,
+  {
+    pct_change: number;
+    start_year: number;
+    end_year: number;
+    start_value?: number;
+    end_value?: number;
+  }
+>;
+
+/* ---------- helpers ---------- */
+
+function linearFit(points: Array<{ x: number; y: number }>) {
+  if (points.length < 2) return null;
+  let n = 0;
+  let sumX = 0;
+  let sumY = 0;
+  let sumXX = 0;
+  let sumXY = 0;
+  for (const p of points) {
+    n++;
+    sumX += p.x;
+    sumY += p.y;
+    sumXX += p.x * p.x;
+    sumXY += p.x * p.y;
+  }
+  const den = n * sumXX - sumX * sumX;
+  if (!isFinite(den) || den === 0) return null;
+  const m = (n * sumXY - sumX * sumY) / den;
+  const b = (sumY - m * sumX) / n;
+  if (!isFinite(m) || !isFinite(b)) return null;
+  return { m, b };
+}
+
 /* ---------- constants ---------- */
 
 const SECTOR_COLORS: Record<string, string> = {
@@ -161,14 +198,13 @@ const COLOR_NO_DATA = "#334155";
 const NON_SIG_OPACITY = 0.35; // visually distinct, but still readable
 const AXIS_STROKE = "#9ca3af";
 
-type TabId = "overview" | "sectors" | "instruments" | "lift" | "methodology";
+type TabId = "overview" | "sectors" | "instruments" | "lift";
 
 const TABS: { id: TabId; label: string }[] = [
   { id: "overview", label: "Overview" },
   { id: "sectors", label: "Sector Analysis" },
   { id: "instruments", label: "Instrument Analysis" },
   { id: "lift", label: "Lift Scores" },
-  { id: "methodology", label: "Methodology" },
 ];
 
 function sigStars(p: number | null): string {
@@ -206,6 +242,35 @@ function pearson(xs: number[], ys: number[]): number | null {
   const den = Math.sqrt(denA * denB);
   if (!isFinite(den) || den === 0) return null;
   return num / den;
+}
+function quantile(sorted: number[], q: number): number {
+  const pos = (sorted.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  if (sorted[base + 1] === undefined) return sorted[base];
+  return sorted[base] + rest * (sorted[base + 1] - sorted[base]);
+}
+
+function filterPairsByYIqr(xs: number[], ys: number[], k = 1.5) {
+  if (xs.length !== ys.length || xs.length < 8) return { xs, ys }; // too small to trim
+  const sortedY = [...ys].sort((a, b) => a - b);
+  const q1 = quantile(sortedY, 0.25);
+  const q3 = quantile(sortedY, 0.75);
+  const iqr = q3 - q1;
+  if (!isFinite(iqr) || iqr === 0) return { xs, ys };
+
+  const lo = q1 - k * iqr;
+  const hi = q3 + k * iqr;
+
+  const fx: number[] = [];
+  const fy: number[] = [];
+  for (let i = 0; i < ys.length; i++) {
+    const y = ys[i];
+    if (y < lo || y > hi) continue;
+    fx.push(xs[i]);
+    fy.push(y);
+  }
+  return { xs: fx, ys: fy };
 }
 
 function erf(x: number): number {
@@ -294,12 +359,19 @@ function sectorCodeFromCorrelation(s: unknown): string | null {
 
 /* ---------- component ---------- */
 
-export default function PolicyAnalysis({ data, co2PcChange5y }: { data: AnalysisData; co2PcChange5y: Co2PcChange5y }) {
+export default function PolicyAnalysis({
+  data,
+  co2GdpChange5y,
+  inForceCountByIso3,
+}: {
+  data: AnalysisData;
+  co2GdpChange5y: Co2GdpChange5y;
+  inForceCountByIso3?: Record<string, number>;
+}) {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabId>("overview");
-  const [scatterMetric, setScatterMetric] = useState<"co2_per_capita" | "co2_per_gdp">("co2_per_capita");
-  const [scatterColorBy, setScatterColorBy] = useState<"top_sector" | "total_policies">("top_sector");
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [excludeOutliers, setExcludeOutliers] = useState(true);
 
   // Sector correlation bar data
   const sectorBarData = useMemo(
@@ -316,7 +388,7 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
     [data.sector_correlations]
   );
 
-  const sectorBarData5y = useMemo(() => {
+    const sectorBarData5y = useMemo(() => {
     const sectorCodes = Object.keys(data.sector_names);
     type SectorBarPoint = {
       name: string;
@@ -326,31 +398,48 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
       p_value: number | null;
       significant: boolean;
       fill: string;
+      removed_outliers: number;
+      trimmed: boolean;
     };
 
     const points: SectorBarPoint[] = sectorCodes
       .map((code) => {
         const xs: number[] = [];
         const ys: number[] = [];
+
         for (const c of data.scatter_data) {
-          const change = co2PcChange5y?.[c.iso3];
+          const change = co2GdpChange5y?.[c.iso3];
           if (!change) continue;
+          if (typeof change.pct_change !== "number" || Number.isNaN(change.pct_change)) continue;
+
           const total = c.total_policies || 0;
           if (total <= 0) continue;
+
           const share = (c.sectors?.[code] ?? 0) / total;
           xs.push(share);
           ys.push(change.pct_change);
         }
-        const r = pearson(xs, ys);
-        const p = r === null ? null : pValueFromPearson(r, xs.length);
+
+        // Optional outlier trimming (IQR on Y)
+        const beforeN = xs.length;
+        const filtered = excludeOutliers ? filterPairsByYIqr(xs, ys, 1.5) : { xs, ys };
+        const afterN = filtered.xs.length;
+        const removed = Math.max(0, beforeN - afterN);
+        const trimmed = excludeOutliers && beforeN >= 8 && removed > 0;
+
+        const r = pearson(filtered.xs, filtered.ys);
+        const p = r === null ? null : pValueFromPearson(r, filtered.xs.length);
+
         return {
           name: data.sector_names[code] ?? code,
           code,
-          n: xs.length,
+          n: filtered.xs.length,
           r_value: r,
           p_value: p,
           significant: p !== null && p < 0.05,
           fill: r === null ? COLOR_NO_DATA : correlationFill(r),
+          removed_outliers: removed,
+          trimmed,
         };
       })
       .filter((d) => d.n >= 3);
@@ -358,7 +447,7 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
     return points
       .filter((d): d is SectorBarPoint & { r_value: number } => d.r_value !== null)
       .sort((a, b) => a.r_value - b.r_value);
-  }, [data.scatter_data, data.sector_names, co2PcChange5y]);
+  }, [data.scatter_data, data.sector_names, co2GdpChange5y, excludeOutliers]);
 
   // Instrument comparison
   const instrumentBarData = useMemo(
@@ -477,15 +566,70 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
     return { countryCount, mostEffective, leastEffective, sectorSummary };
   }, [data.scatter_data, data.lift_scores, data.sector_correlations, data.sector_names]);
 
-  // Scatter data
-  const scatterPoints = data.scatter_data
-    .filter((d) => d.total_policies >= 5 && d.co2_per_capita < 50)
-    .map((d) => ({
-      ...d,
-      x: d.total_policies,
-      y: scatterMetric === "co2_per_capita" ? d.co2_per_capita : d.co2_per_gdp,
-      z: d.population ? Math.sqrt(d.population / 1e6) * 3 : 20,
-    }));
+  // Scatter data (EPI)
+  const epiByIso3 = useMemo(() => {
+    const map = new Map<string, number>();
+    const rows = (overviewStats as unknown as { scatter_data?: unknown }).scatter_data;
+    if (!Array.isArray(rows)) return map;
+    for (const row of rows as Array<Record<string, unknown>>) {
+      const iso3 = row.iso3;
+      const score = row.gepi_score;
+      if (typeof iso3 !== "string" || iso3.trim().length === 0) continue;
+      if (typeof score !== "number" || Number.isNaN(score)) continue;
+      map.set(iso3, score);
+    }
+    return map;
+  }, []);
+
+  const epiScatter = useMemo(() => {
+    const points: Array<
+      ScatterPoint & {
+        x: number;
+        y: number;
+        z: number;
+        epi_score: number;
+        in_force_policies: number;
+      }
+    > = [];
+
+    for (const d of data.scatter_data) {
+      const epi = epiByIso3.get(d.iso3);
+      if (typeof epi !== "number" || Number.isNaN(epi)) continue;
+
+      const inForce = (inForceCountByIso3?.[d.iso3] ?? d.active_policies ?? 0) as number;
+      if (typeof inForce !== "number" || !isFinite(inForce) || inForce <= 0) continue;
+
+      points.push({
+        ...d,
+        epi_score: epi,
+        in_force_policies: inForce,
+        x: inForce,
+        y: epi,
+        z: d.population ? Math.sqrt(d.population / 1e6) * 3 : 20,
+      });
+    }
+
+    points.sort((a, b) => a.x - b.x);
+    const maxInForce = points.length > 0 ? Math.max(...points.map((p) => p.in_force_policies)) : 0;
+    const minX = points.length > 0 ? Math.min(...points.map((p) => p.x)) : 0;
+    const maxX = points.length > 0 ? Math.max(...points.map((p) => p.x)) : 0;
+
+    return { points, maxInForce, minX, maxX };
+  }, [data.scatter_data, epiByIso3, inForceCountByIso3]);
+
+  const epiTrendLine = useMemo(() => {
+    const pts = epiScatter.points;
+    if (pts.length < 8) return [] as Array<{ x: number; y: number }>;
+    const fit = linearFit(pts);
+    if (!fit) return [] as Array<{ x: number; y: number }>;
+    const minX = epiScatter.minX;
+    const maxX = epiScatter.maxX;
+    if (!isFinite(minX) || !isFinite(maxX) || minX === maxX) return [] as Array<{ x: number; y: number }>;
+    return [
+      { x: minX, y: fit.m * minX + fit.b },
+      { x: maxX, y: fit.m * maxX + fit.b },
+    ];
+  }, [epiScatter.maxX, epiScatter.minX, epiScatter.points]);
 
   const bt = data.binding_target;
   const lift = data.lift_scores;
@@ -612,76 +756,83 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
             </div>
 
             {/* Scatter Plot */}
-              <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
-                <div>
-                  <h2 className="text-lg font-semibold mb-0.5">Policy Count vs Carbon Intensity</h2>
-                  <p className="text-xs text-gray-300">Each bubble is a country. Size proportional to population.</p>
-                </div>
-                <div className="flex gap-2">
-                  <select
-                    value={scatterMetric}
-                    onChange={(e) => setScatterMetric(e.target.value as "co2_per_capita" | "co2_per_gdp")}
-                    className="px-3 py-1.5 bg-gray-800 text-white text-xs rounded-lg border border-gray-700 focus:border-emerald-500 focus:outline-none"
-                  >
-                    <option value="co2_per_capita">CO2 / Capita</option>
-                    <option value="co2_per_gdp">CO2 / GDP</option>
-                  </select>
-                  <select
-                    value={scatterColorBy}
-                    onChange={(e) => setScatterColorBy(e.target.value as "top_sector" | "total_policies")}
-                    className="px-3 py-1.5 bg-gray-800 text-white text-xs rounded-lg border border-gray-700 focus:border-emerald-500 focus:outline-none"
-                  >
-                    <option value="top_sector">Color by Top Sector</option>
-                    <option value="total_policies">Color by Policy Count</option>
-                  </select>
-                </div>
+            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold mb-0.5">Policy Count vs Environmental Performance (EPI)</h2>
+                <p className="text-xs text-gray-300">Each dot is a country. Higher EPI is better.</p>
               </div>
               <ResponsiveContainer width="100%" height={420}>
                 <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />
-                  <XAxis dataKey="x" name="Total Policies" stroke={AXIS_STROKE} tick={{ fontSize: 11, fill: AXIS_STROKE }}
-                    label={{ value: "Total Policies", position: "insideBottom", offset: -10, style: { fill: AXIS_STROKE, fontSize: 11 } }} />
-                  <YAxis dataKey="y" name={scatterMetric === "co2_per_capita" ? "CO2/Capita (t)" : "CO2/GDP (kg/$)"}
-                    stroke={AXIS_STROKE} tick={{ fontSize: 11, fill: AXIS_STROKE }}
-                    label={{ value: scatterMetric === "co2_per_capita" ? "CO2/Capita (t)" : "CO2/GDP (kg/$)", angle: -90, position: "insideLeft", style: { fill: AXIS_STROKE, fontSize: 11 } }} />
+	                  <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />
+	                  <XAxis
+	                    type="number"
+	                    dataKey="x"
+	                    name="Policies (In force)"
+	                    stroke={AXIS_STROKE}
+	                    tick={{ fontSize: 11, fill: AXIS_STROKE }}
+	                    domain={[0, "dataMax"]}
+	                    allowDecimals={false}
+	                    label={{
+	                      value: "Policies (In force)",
+	                      position: "insideBottom",
+	                      offset: -10,
+	                      style: { fill: AXIS_STROKE, fontSize: 11 },
+	                    }}
+	                  />
+	                  <YAxis
+	                    type="number"
+	                    dataKey="y"
+	                    name="EPI score"
+	                    stroke={AXIS_STROKE}
+	                    tick={{ fontSize: 11, fill: AXIS_STROKE }}
+	                    domain={[0, 100]}
+	                    label={{ value: "EPI score", angle: -90, position: "insideLeft", style: { fill: AXIS_STROKE, fontSize: 11 } }}
+	                  />
                   <ZAxis dataKey="z" range={[30, 400]} />
-                  <Tooltip contentStyle={TOOLTIP_STYLE} content={({ payload }) => {
-                    if (!payload || payload.length === 0) return null;
-                    const d = payload[0].payload as ScatterPoint & { x: number; y: number };
-                    return (
-                      <div className="bg-gray-900 border border-gray-700 rounded-lg p-3 text-sm shadow-xl">
-                        <div className="font-bold text-white">{d.country}</div>
-                        <div className="text-gray-300">{d.total_policies} policies &middot; {scatterMetric === "co2_per_capita" ? `${d.co2_per_capita.toFixed(2)} t/cap` : `${d.co2_per_gdp.toFixed(3)} kg/$`}</div>
-                        <div className="text-gray-300 text-xs mt-1">Top sector: {data.sector_names[d.top_sector ?? ""] ?? d.top_sector}</div>
-                      </div>
-                    );
-                  }} />
-                  <Scatter data={scatterPoints}>
-                    {scatterPoints.map((entry, i) => {
-                      let color = "#6b7280";
-                      if (scatterColorBy === "top_sector" && entry.top_sector) {
-                        color = SECTOR_COLORS[entry.top_sector] ?? "#6b7280";
-                      } else if (scatterColorBy === "total_policies") {
-                        const intensity = Math.min(entry.total_policies / 500, 1);
-                        const h = 200 - intensity * 180;
-                        color = `hsl(${h}, 70%, 55%)`;
-                      }
-                      return <Cell key={i} fill={color} fillOpacity={0.75} />;
-                    })}
-                  </Scatter>
+	                  <Tooltip
+	                    contentStyle={TOOLTIP_STYLE}
+	                    content={({ payload }) => {
+	                      if (!payload || payload.length === 0) return null;
+	                      const d = payload[0].payload as ScatterPoint & {
+	                        x: number;
+	                        y: number;
+	                        epi_score: number;
+	                        in_force_policies: number;
+	                      };
+	                      return (
+	                        <div className="bg-gray-900 border border-gray-700 rounded-lg p-3 text-sm shadow-xl">
+	                          <div className="font-bold text-white">{d.country}</div>
+	                          <div className="text-gray-300">{d.in_force_policies} in-force policies</div>
+	                          <div className="text-gray-300">EPI: {d.epi_score.toFixed(1)}</div>
+	                          {typeof d.population === "number" && isFinite(d.population) && (
+	                            <div className="text-gray-400 text-xs mt-1">Population: {(d.population / 1e6).toFixed(1)}M</div>
+	                          )}
+	                        </div>
+	                      );
+	                    }}
+	                  />
+	                  {epiTrendLine.length === 2 && (
+	                    <Line
+	                      type="linear"
+	                      data={epiTrendLine}
+	                      dataKey="y"
+	                      dot={false}
+	                      isAnimationActive={false}
+	                      stroke="#d1d5db"
+	                      strokeWidth={2}
+	                    />
+	                  )}
+	                  <Scatter data={epiScatter.points}>
+	                    {epiScatter.points.map((entry, i) => {
+	                      const max = Math.max(1, epiScatter.maxInForce);
+	                      const intensity = Math.max(0, Math.min(1, entry.in_force_policies / max));
+	                      const h = 200 - intensity * 180;
+	                      const color = `hsl(${h}, 70%, 55%)`;
+	                      return <Cell key={i} fill={color} fillOpacity={0.78} />;
+	                    })}
+	                  </Scatter>
                 </ScatterChart>
               </ResponsiveContainer>
-              {scatterColorBy === "top_sector" && (
-                <div className="flex flex-wrap gap-4 mt-3 text-xs text-gray-300">
-                  {Object.entries(data.sector_names).map(([code, name]) => (
-                    <span key={code} className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full inline-block" style={{ backgroundColor: SECTOR_COLORS[code] }} />
-                      {name}
-                    </span>
-                  ))}
-                </div>
-              )}
             </div>
 
             {/* Top Performers Table */}
@@ -730,41 +881,68 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
           <div className="space-y-6">
             {/* Sector Correlation Bar Chart */}
             <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
-              <h2 className="text-lg font-semibold mb-0.5">Policy Sector vs CO2 per Capita Change (5y %)</h2>
+              <h2 className="text-lg font-semibold mb-0.5">Policy Sector vs CO2 per GDP Change (5y %)</h2>
               <p className="text-xs text-gray-300 mb-1">
-                Pearson correlation between each sector&apos;s share of a country&apos;s policy portfolio and its CO2 per capita percent change over 5 years.
+                Pearson correlation between each sector&apos;s share of a country&apos;s policy portfolio and its CO2 per GDP percent change over 5 years.
               </p>
               <p className="text-xs text-gray-300 mb-5">
-                <span className="text-emerald-400">Green (negative r)</span> = higher share correlates with <em>more negative</em> CO2 change (bigger reductions).{" "}
-                <span className="text-red-400">Red (positive r)</span> = higher share correlates with <em>more positive</em> CO2 change (bigger increases).
+                <span className="text-emerald-400">Green (negative r)</span> = higher share correlates with <em>more negative</em> CO2 per GDP change (bigger reductions).{" "}
+                <span className="text-red-400">Red (positive r)</span> = higher share correlates with <em>more positive</em> CO2 per GDP change (bigger increases).
               </p>
-              <ResponsiveContainer width="100%" height={sectorBarData5y.length * 55 + 60}>
-                <BarChart data={sectorBarData5y} layout="vertical" margin={{ left: 180, right: 40, top: 10, bottom: 10 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" horizontal={false} />
-                  <XAxis type="number" stroke={AXIS_STROKE} tick={{ fontSize: 11, fill: AXIS_STROKE }} domain={[-0.5, 0.5]} tickFormatter={(v: number) => v.toFixed(2)} />
-                  <YAxis type="category" dataKey="name" stroke={AXIS_STROKE} tick={{ fontSize: 12, fill: AXIS_STROKE }} width={170} />
-                  <Tooltip contentStyle={TOOLTIP_STYLE} labelStyle={{ color: "#6b7280" }}
-                    formatter={((value: number, _name: string, entry: { payload: typeof sectorBarData5y[number] }) => {
-                      const p = entry.payload;
-                      return [`r = ${(value ?? 0).toFixed(4)} ${sigStars(p.p_value)} (${sigLabel(p.p_value)})`, "Correlation"];
-                    }) as never} />
-                  <Bar dataKey="r_value" radius={[0, 4, 4, 0]}>
-                    {sectorBarData5y.map((entry, i) => (
-                      <Cell key={i} fill={entry.fill} fillOpacity={entry.significant ? 1 : NON_SIG_OPACITY}
-                        stroke={entry.significant ? (entry.r_value < 0 ? "#16a34a" : "#dc2626") : "transparent"} strokeWidth={entry.significant ? 2 : 0} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-              <div className="flex items-center gap-6 mt-3 text-xs text-gray-300">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-3 h-2.5 rounded-sm bg-gray-200 inline-block" /> Solid = p &lt; 0.05
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="w-3 h-2.5 rounded-sm bg-gray-200/30 inline-block" /> Faded = p ≥ 0.05
-                </span>
-                <span className="text-gray-400">Correlation ≠ causation.</span>
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+                <label className="flex items-center gap-2 text-xs text-gray-300 select-none">
+                  <input
+                    type="checkbox"
+                    checked={excludeOutliers}
+                    onChange={(e) => setExcludeOutliers(e.target.checked)}
+                    className="accent-emerald-500"
+                  />
+                  Exclude outliers (IQR on CO2/GDP % change)
+                  <span className="text-gray-400">(applies only when n ≥ 8 per sector)</span>
+                </label>
+
+                {excludeOutliers && sectorBarData5y.length > 0 && (
+                  <div className="text-xs text-gray-400">
+                    Total removed:{" "}
+                    <span className="text-gray-200 font-mono">
+                      {sectorBarData5y.reduce((acc, d) => acc + (d.removed_outliers ?? 0), 0)}
+                    </span>
+                  </div>
+                )}
               </div>
+              {sectorBarData5y.length === 0 ? (
+                <div className="h-40 flex items-center justify-center text-sm text-gray-400">No data.</div>
+              ) : (
+                <>
+                  <ResponsiveContainer width="100%" height={sectorBarData5y.length * 55 + 60}>
+                    <BarChart data={sectorBarData5y} layout="vertical" margin={{ left: 180, right: 40, top: 10, bottom: 10 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" horizontal={false} />
+                      <XAxis type="number" stroke={AXIS_STROKE} tick={{ fontSize: 11, fill: AXIS_STROKE }} domain={[-0.5, 0.5]} tickFormatter={(v: number) => v.toFixed(2)} />
+                      <YAxis type="category" dataKey="name" stroke={AXIS_STROKE} tick={{ fontSize: 12, fill: AXIS_STROKE }} width={170} />
+                      <Tooltip contentStyle={TOOLTIP_STYLE} labelStyle={{ color: "#6b7280" }}
+                        formatter={((value: number, _name: string, entry: { payload: typeof sectorBarData5y[number] }) => {
+                          const p = entry.payload;
+                          return [`r = ${(value ?? 0).toFixed(4)} ${sigStars(p.p_value)} (${sigLabel(p.p_value)})`, "Correlation"];
+                        }) as never} />
+                      <Bar dataKey="r_value" radius={[0, 4, 4, 0]}>
+                        {sectorBarData5y.map((entry, i) => (
+                          <Cell key={i} fill={entry.fill} fillOpacity={entry.significant ? 1 : NON_SIG_OPACITY}
+                            stroke={entry.significant ? (entry.r_value < 0 ? "#16a34a" : "#dc2626") : "transparent"} strokeWidth={entry.significant ? 2 : 0} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                  <div className="flex items-center gap-6 mt-3 text-xs text-gray-300">
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-3 h-2.5 rounded-sm bg-gray-200 inline-block" /> Solid = p &lt; 0.05
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <span className="w-3 h-2.5 rounded-sm bg-gray-200/30 inline-block" /> Faded = p ≥ 0.05
+                    </span>
+                    <span className="text-gray-400">Correlation ≠ causation.</span>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Best Policy Cocktails */}
@@ -1127,125 +1305,26 @@ export default function PolicyAnalysis({ data, co2PcChange5y }: { data: Analysis
           </div>
         )}
 
-        {/* =================== METHODOLOGY TAB =================== */}
-        {activeTab === "methodology" && (
-          <div className="space-y-6">
-            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
-              <h2 className="text-lg font-semibold mb-4">Data Sources</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-gray-800/40 rounded-lg border border-gray-700/40 p-4">
-                  <div className="text-xs text-emerald-400 font-semibold mb-1 uppercase tracking-widest">Environmental Performance</div>
-                  <div className="text-sm font-medium text-white mb-1">Yale EPI 2024</div>
-                  <p className="text-xs text-gray-300">
-                    Environmental Performance Index from the Yale Center for Environmental Law & Policy.
-                    Scores 180 countries across 58 indicators in 11 issue categories spanning climate, health, and ecosystem vitality.
-                  </p>
-                </div>
-                <div className="bg-gray-800/40 rounded-lg border border-gray-700/40 p-4">
-                  <div className="text-xs text-blue-400 font-semibold mb-1 uppercase tracking-widest">Climate Policies</div>
-                  <div className="text-sm font-medium text-white mb-1">IEA / OECD Climate Policy Tracker</div>
-                  <p className="text-xs text-gray-300">
-                    12,470+ climate and energy policies across 217 jurisdictions. Includes policy type, sector,
-                    instrument, legal status, and targets. Updated continuously by the International Energy Agency.
-                  </p>
-                </div>
-                <div className="bg-gray-800/40 rounded-lg border border-gray-700/40 p-4">
-                  <div className="text-xs text-orange-400 font-semibold mb-1 uppercase tracking-widest">CO2 Emissions</div>
-                  <div className="text-sm font-medium text-white mb-1">Our World in Data / Global Carbon Budget 2024</div>
-                  <p className="text-xs text-gray-300">
-                    National CO2 emissions data including per-capita and per-GDP metrics. Based on the Global Carbon
-                    Project&apos;s annual budget with CDIAC and national inventory data.
-                  </p>
-                </div>
-                <div className="bg-gray-800/40 rounded-lg border border-gray-700/40 p-4">
-                  <div className="text-xs text-cyan-400 font-semibold mb-1 uppercase tracking-widest">Clean Energy</div>
-                  <div className="text-sm font-medium text-white mb-1">IRENA Renewable Capacity Statistics 2024</div>
-                  <p className="text-xs text-gray-300">
-                    Installed renewable energy capacity by country and technology. Covers solar, wind, hydro, geothermal,
-                    biomass, and marine energy from the International Renewable Energy Agency.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
-              <h2 className="text-lg font-semibold mb-4">Methodology</h2>
-              <div className="space-y-5">
-                <div>
-                  <h3 className="text-sm font-semibold text-white mb-1">Correlation Analysis</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    Pearson correlation (r) between each policy dimension&apos;s share of a country&apos;s portfolio and
-                    its current CO2 emissions. Significance tested via two-tailed t-test approximation. A negative r
-                    indicates that countries with a higher share of that policy type tend to have lower CO2 emissions.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white mb-1">Lift Score</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    Lift measures how over-represented a policy characteristic is among top-performing countries.
-                    Computed as: <code className="text-emerald-400 bg-gray-800 px-1.5 py-0.5 rounded text-[11px]">
-                    Lift = P(top quartile | above-median sector share) / P(top quartile)</code>.
-                    &quot;Top quartile&quot; = lowest 25% of CO2/GDP among countries with 5+ policies.
-                    A lift of 1.2x means a country emphasizing that sector is 20% more likely to be a top performer.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white mb-1">Sector Density</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    Computed as (sector policy count / total policies) per country, avoiding bias toward large economies
-                    with more policies overall. This normalizes for portfolio size.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white mb-1">Policy Cocktails</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    Countries grouped by their top-2 sectors (by count). Average CO2/GDP compared across groups
-                    with n &ge; 3 countries. Identifies which sector combinations are most associated with low carbon intensity.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white mb-1">Instrument Effectiveness</h3>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    For each instrument type (subsidies, carbon taxes, standards, etc.), we compare average CO2/capita
-                    between countries that have adopted it vs those that haven&apos;t. Point-biserial correlation and
-                    significance testing identify which instruments are genuinely associated with lower emissions.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-6">
-              <h2 className="text-lg font-semibold mb-4">Limitations</h2>
-              <div className="space-y-3 text-xs text-gray-300 leading-relaxed">
-                <p>
-                  <strong className="text-gray-300">Correlation ≠ Causation.</strong> Cross-sectional correlation does not
-                  imply that a policy directly caused lower emissions. Wealthier nations may simultaneously afford more
-                  policies and have lower carbon intensity due to structural economic factors.
-                </p>
-                <p>
-                  <strong className="text-gray-300">Policy quality vs quantity.</strong> This analysis counts policies
-                  but does not measure implementation quality, enforcement rigor, or budgetary commitment. A well-funded
-                  single policy may outperform dozens of poorly enforced ones.
-                </p>
-                <p>
-                  <strong className="text-gray-300">Time lag.</strong> Policies enacted recently may not yet show
-                  measurable effects on national emissions. This snapshot compares current policy portfolios with
-                  current emissions, not the trajectory of change.
-                </p>
-                <p>
-                  <strong className="text-gray-300">Selection bias.</strong> Countries with better data reporting
-                  infrastructure may appear to have more policies simply because they are better documented in the
-                  IEA/OECD tracker.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Footer */}
         <div className="mt-8 text-xs text-gray-300 space-y-0.5 pb-8">
-          <p>Policy data: IEA/OECD Climate Policy Tracker &middot; CO2 data: Our World in Data / Global Carbon Budget 2024</p>
-          <p>EPI: Yale Center for Environmental Law & Policy &middot; Energy: IRENA Renewable Capacity Statistics 2024</p>
+          <p>
+          DATA SOURCES:
+        </p>
+        <p>
+          Yale Center for Environmental Law & Policy - EPI Report (2024)
+        </p>
+        <p>
+          Our World in Data - Global CO₂ Emissions per Capita  (Nov 2024)
+        </p>
+        <p>
+          World Bank Group - GDP in Current US Dollars (2024)
+        </p>
+        <p>
+          Global Energy Monitor - Global Integrated Power Tracker (Feb 2026)
+        </p>
+        <p>
+          International Energy Agency - Global Policies Database (2026)
+        </p>
         </div>
       </div>
     </main>
