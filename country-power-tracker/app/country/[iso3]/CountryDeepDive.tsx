@@ -56,7 +56,9 @@ type Props = {
   activePolicies: number;
   activePolicyList: PolicyRecord[];
   isTopTier: boolean;
-  isEpiTopTier: boolean | null;
+  scatterData: Array<{ iso3: string; total_policies: number; sectors: Record<string, number> }>;
+  sectorNames: Record<string, string>;
+  sectorLifts: Array<{ bucket_id: string; bucket_name: string; lift: number; top_in_sector: number; total_in_sector: number }>;
 };
 
 const TOPIC_COLORS: Record<string, string> = {
@@ -86,6 +88,7 @@ const TOPIC_ICONS: Record<string, string> = {
 };
 
 export default function CountryDeepDive({
+  iso3,
   name,
   region,
   co2Series,
@@ -95,7 +98,9 @@ export default function CountryDeepDive({
   activePolicies,
   activePolicyList,
   isTopTier,
-  isEpiTopTier,
+  scatterData,
+  sectorNames,
+  sectorLifts,
 }: Props) {
   const router = useRouter();
   const [policySearch, setPolicySearch] = useState("");
@@ -208,7 +213,13 @@ export default function CountryDeepDive({
           </div>
         </div>
 
-        <PathToTopTier isTopTier={isTopTier} isEpiTopTier={isEpiTopTier} />
+        <PathToTopTier
+          iso3={iso3}
+          scatterData={scatterData}
+          sectorNames={sectorNames}
+          sectorLifts={sectorLifts}
+          isTopTier={isTopTier}
+        />
 
         {/* Clean Energy Share Trend (small sparkline-style) */}
         {energySeries.length > 1 && cleanShareChange !== null && (

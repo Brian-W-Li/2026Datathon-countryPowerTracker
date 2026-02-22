@@ -59,10 +59,19 @@ type ScatterEntry = {
   iso3: string;
   co2_per_gdp: number;
   total_policies: number;
+  sectors: Record<string, number>;
 };
 
 type Props = {
   params: Promise<{ iso3: string }>;
+};
+
+type SectorLift = {
+  bucket_id: string;
+  bucket_name: string;
+  lift: number;
+  top_in_sector: number;
+  total_in_sector: number;
 };
 
 export default async function CountryPage({ params }: Props) {
@@ -93,17 +102,11 @@ export default async function CountryPage({ params }: Props) {
   const topQuartileSet = new Set(sorted.slice(0, cutoff).map((c) => c.iso3));
   const isTopTier = topQuartileSet.has(upper);
 
-  // Compute EPI top-quartile status (highest 25% green_score among countries with non-null score)
-  const eligibleEpi = (countriesData as CountryEntry[]).filter(
-    (c) => c.green_score !== null
-  );
-  const sortedEpi = [...eligibleEpi].sort(
-    (a, b) => (b.green_score ?? 0) - (a.green_score ?? 0)
-  );
-  const epiCutoff = Math.ceil(sortedEpi.length * 0.25);
-  const epiTopSet = new Set(sortedEpi.slice(0, epiCutoff).map((c) => c.iso3));
-  const isEpiTopTier: boolean | null =
-    country?.green_score != null ? epiTopSet.has(upper) : null;
+  const analysis = policyAnalysis as unknown as {
+    scatter_data: ScatterEntry[];
+    sector_names: Record<string, string>;
+    lift_scores: { sector_lifts: SectorLift[] };
+  };
 
   const name = country?.name ?? upper;
   const region = country?.region ?? "Unknown";
@@ -126,7 +129,9 @@ export default async function CountryPage({ params }: Props) {
       activePolicies={activePolicies}
       activePolicyList={activePolicyList}
       isTopTier={isTopTier}
-      isEpiTopTier={isEpiTopTier}
+      scatterData={analysis.scatter_data ?? []}
+      sectorNames={analysis.sector_names ?? {}}
+      sectorLifts={analysis.lift_scores?.sector_lifts ?? []}
     />
   );
 }
