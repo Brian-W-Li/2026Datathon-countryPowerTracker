@@ -15,12 +15,10 @@ export default function GlobalStats({ countries }: Props) {
   const scores = scored.map((c) => c.green_score!);
   const avgEpi = scores.reduce((a, b) => a + b, 0) / scores.length;
 
-  // "Improving" = countries scoring above global median (proxy for positive trajectory)
   const sorted = [...scores].sort((a, b) => a - b);
   const median = sorted[Math.floor(sorted.length / 2)];
   const aboveMedian = scores.filter((s) => s >= median).length;
 
-  // Region breakdown
   const regionMap = new Map<string, number[]>();
   for (const c of scored) {
     const arr = regionMap.get(c.region) || [];
@@ -42,32 +40,32 @@ export default function GlobalStats({ countries }: Props) {
   return (
     <div className="w-full max-w-5xl mx-auto mb-8">
       {/* Stats cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-          <div className="text-xs text-gray-500 mb-1">Countries Scored</div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+        <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
+          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Countries Scored</div>
           <div className="text-2xl font-bold text-white">{scored.length}</div>
-          <div className="text-xs text-gray-500 mt-1">of {countries.length} total</div>
+          <div className="text-[10px] text-gray-600 mt-1">of {countries.length} total</div>
         </div>
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-          <div className="text-xs text-gray-500 mb-1">Average EPI</div>
+        <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
+          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Average EPI</div>
           <div className="text-2xl font-bold text-yellow-400">{avgEpi.toFixed(1)}</div>
-          <div className="text-xs text-gray-500 mt-1">global mean</div>
+          <div className="text-[10px] text-gray-600 mt-1">global mean</div>
         </div>
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-          <div className="text-xs text-gray-500 mb-1">Above Median</div>
+        <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
+          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Above Median</div>
           <div className="text-2xl font-bold text-emerald-400">{aboveMedian}</div>
-          <div className="text-xs text-gray-500 mt-1">EPI &ge; {median.toFixed(1)}</div>
+          <div className="text-[10px] text-gray-600 mt-1">EPI &ge; {median.toFixed(1)}</div>
         </div>
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-          <div className="text-xs text-gray-500 mb-1">Top Performer</div>
+        <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
+          <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-1">Top Performer</div>
           <div className="text-2xl font-bold text-green-400">{topCountry.green_score!.toFixed(1)}</div>
-          <div className="text-xs text-gray-500 mt-1">{topCountry.name}</div>
+          <div className="text-[10px] text-gray-600 mt-1">{topCountry.name}</div>
         </div>
       </div>
 
       {/* Region averages bar */}
-      <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
-        <div className="text-xs text-gray-500 mb-3">Average EPI by Region</div>
+      <div className="bg-gray-900/80 rounded-xl border border-gray-800/60 p-4">
+        <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider mb-3">Average EPI by Region</div>
         <div className="space-y-2">
           {regions.map((r) => {
             const pct = (r.avg / 100) * 100;
@@ -78,9 +76,9 @@ export default function GlobalStats({ countries }: Props) {
                 <span className="text-xs text-gray-400 w-28 shrink-0 text-right">
                   {r.region}
                 </span>
-                <div className="flex-1 bg-gray-800 rounded-full h-2.5">
+                <div className="flex-1 bg-gray-800/80 rounded-full h-2">
                   <div
-                    className={`h-2.5 rounded-full ${barColor} transition-all`}
+                    className={`h-2 rounded-full ${barColor} transition-all`}
                     style={{ width: `${pct}%` }}
                   />
                 </div>
