@@ -57,18 +57,22 @@ One entry per policy. Each policy belongs to one sector (bucket). Used to show w
 
 ```json
 {
-  "iso3": "DEU",
-  "country": "Germany",
-  "policy_name": "Renewable Energy Act (EEG)",
-  "start_year": 2000,
-  "bucket_id": "RE",
-  "bucket_name": "Renewable Energy Incentives",
-  "instrument_type": "feed_in_tariff",
-  "legally_binding": true,
-  "has_quantified_target": false,
-  "scope": "national"
-  "status": enforced
-}
+    "id": 1,
+    "title": "Smart Farming Initiative",
+    "countries": [
+      {
+        "iso3": "IRL",
+        "name": "Ireland"
+      }
+    ],
+    "year": "2016",
+    "status": "In force",
+    "scope": "national",
+    "sector": "EEF",
+    "instrument_type": "subsidy",
+    "legally_binding": false,
+    "has_quantified_target": false
+  }
 ```
 
 **Bucket (sector) options:**
